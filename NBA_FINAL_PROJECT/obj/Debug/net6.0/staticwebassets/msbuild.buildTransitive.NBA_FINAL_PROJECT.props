@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\NBA_FINAL_PROJECT.props" />
-</Project>
