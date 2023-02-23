@@ -7,12 +7,17 @@
     <input type="search" name="busqueda" />
 </div>
 
-@if (jugadores3 == null)
+@if (jugadores2 == null)
 {
-    <div class="spinner"></div>   
-}else if(jugadores3!=null)
+    <div class="spinner"></div>
+}else if(jugadores2!=null)
 {
-    <RadzenDataGrid Data="@jugadores3.data" TItem="Datum"
+    <div>
+        <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=anterior>Anterior</RadzenButton>
+        <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=siguiente>Siguiente</RadzenButton>
+    </div>
+
+    <RadzenDataGrid Data="@jugadores2.data" TItem="Datum"
                 AllowFiltering="true"
                 AllowSorting="true"
                 AllowPaging="true"
@@ -33,18 +38,47 @@
     protected override async Task OnInitializedAsync()
     {
         jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100");
-        for(int i=1; i<jugadores.meta.total_pages; i++)
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={i}");
-            
-            if (jugadores3 == null)
-            {
-                jugadores3 = jugadores2;
-            }
-            else{
-                jugadores3.data = jugadores2.data.Union(jugadores3.data).ToArray();
-            }
-        }
+        jugadores2 = jugadores;
+        //for (int i = 1; i < jugadores.meta.total_pages; i++)
+        //{
+        //    jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={i}");
+
+        //    if (jugadores3 == null)
+        //    {
+        //        jugadores3 = jugadores2;
+        //    }
+        //    else
+        //    {
+        //        jugadores3.data = jugadores2.data.Union(jugadores3.data).ToArray();
+        //    }
+        //}
+    }
+
+    private async Task primero()
+    {
+        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page=1");
+    }
+
+    private async Task ultimo()
+    {
+        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.total_pages}");
+    }
+
+    private async Task numero(int numero)
+    {
+        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={numero}");
+    }
+
+    private async Task siguiente()
+    {
+        jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.next_page}");
+        jugadores = jugadores2;
+    }
+
+    private async Task anterior()
+    {
+        jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={(jugadores.meta.current_page - 1)}");
+        jugadores = jugadores2;
     }
 
 }
