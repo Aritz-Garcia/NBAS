@@ -1,1 +1,44 @@
 ﻿@page "/"
+@using System.Net.Http;
+@inject HttpClient http;
+<div> 
+    <input type="search" name="busqueda" />
+</div>
+
+
+<RadzenDataGrid Data="@jugadores3" TItem="Jugador"
+                AllowFiltering="true"
+                AllowSorting="true"
+                AllowPaging="true"
+                PageSize="10">
+    <Columns>
+        <RadzenDataGridColumn TItem="Jugador" Property="first_name" Title="Name" />
+        <RadzenDataGridColumn TItem="Jugador" Property="last_name" Title="Last Name" />
+        
+    </Columns>
+</RadzenDataGrid>
+
+
+@code{
+    Jugador[] jugadores;
+    Jugador[] jugadores2;
+    Jugador[] jugadores3;
+
+    protected override async Task OnInitializedAsync()
+    {
+        jugadores = await http.GetFromJsonAsync<Jugador[]>($"https://www.balldontlie.io/api/v1/players?per_page=100");
+        for(int i=1; i<=jugadores[0].meta.total_pages; i++)
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador[]>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={i}");
+            
+            if (jugadores3 == null)
+            {
+                jugadores3 = jugadores2;
+            }
+            else{
+                jugadores3 = jugadores2.Union(jugadores3).ToArray();
+            }
+        }
+    }
+
+}
