@@ -7,11 +7,11 @@
 
 @if(equipo != null)
 {
-    <div>
+    <div  style="align-items:center;">
         <div>
 
         </div>
-        <div>
+        <div >
             <ul>
                 <li>@equipo.abbreviation</li>
                 <li>@equipo.city</li>
@@ -26,16 +26,74 @@
         <RadzenButton ButtonStyle="ButtonStyle.Primary" Text="Atras"  Size="ButtonSize.Medium" Click=pan>
         </RadzenButton>
     </div>
+    <div class="container">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Id</th>
+                <th>Nombre Completo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @*posible Card*@
+            @for(int i =0;i< jugadoresdelequiponombre.Count; i++)
+            {
+                <tr>
+                    <td><img src="($'https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/{@jugadoresdelequipoid[i]}.png')"/></td>
+                    <td>@jugadoresdelequipoid[i].ToString()</td>
+                    <td>@jugadoresdelequiponombre[i].ToString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
 @code {
     [Parameter]
     public String Id { get; set;}
-
     Equipo equipo;
+    Jugador jugadores;
+    Jugador jugadores2;
+    Jugador jugadores3;
+    List<int> jugadoresdelequipoid = new List<int>();
+    List<String> jugadoresdelequiponombre = new List<String>();
     protected override async Task OnInitializedAsync()
     {
         equipo = await http.GetFromJsonAsync<Equipo>($"https://www.balldontlie.io/api/v1/teams/{Id}");
+
+        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100");
+        jugadores2 = jugadores;
+        for (int i = 1; i < jugadores.meta.total_pages; i++)
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={i}");
+
+            if (jugadores3 == null)
+            {
+                jugadores3 = jugadores2;
+            }
+            else
+            {
+                jugadores3.data = jugadores2.data.Union(jugadores3.data).ToArray();
+            }
+        }
+        for(int i=0; i<jugadores3.data.Length; i++)
+        {
+            if (jugadores3.data[i].team.id == equipo.id) {
+                jugadoresdelequipoid.Add(jugadores3.data[i].id);
+                String nombrecompleto = jugadores3.data[i].first_name +" "+ jugadores3.data[i].last_name;
+                jugadoresdelequiponombre.Add(nombrecompleto);
+            }
+        }
     }
 
     public void pan(){
