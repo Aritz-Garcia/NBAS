@@ -1,6 +1,8 @@
 ﻿@page "/"
-@using System.Net.Http;
-@inject HttpClient http;
+@using NBA_FINAL_PROJECT.Model
+@using System.Net.Http
+@using System.Text.Json.Serialization
+@inject HttpClient http
 <div> 
     <input type="search" name="busqueda" />
 </div>
@@ -14,7 +16,6 @@
     <Columns>
         <RadzenDataGridColumn TItem="Jugador" Property="first_name" Title="Name" />
         <RadzenDataGridColumn TItem="Jugador" Property="last_name" Title="Last Name" />
-        
     </Columns>
 </RadzenDataGrid>
 
