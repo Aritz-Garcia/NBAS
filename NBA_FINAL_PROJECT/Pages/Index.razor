@@ -4,8 +4,10 @@
 @using System.Text.Json.Serialization
 @inject HttpClient http
 <div> 
-    <input type="search" name="busqueda" />
+    <RadzenTextBox Placeholder="Buscar..." id="buscador" class="w-100" />
+    <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=buscar />
 </div>
+<br/>
 
 @if (jugadores2 == null)
 {
@@ -16,6 +18,7 @@
         <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=anterior>Anterior</RadzenButton>
         <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=siguiente>Siguiente</RadzenButton>
     </div>
+    <br/>
 
     <RadzenDataGrid Data="@jugadores2.data" TItem="Datum"
                 AllowFiltering="true"
@@ -79,6 +82,11 @@
     {
         jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={(jugadores.meta.current_page - 1)}");
         jugadores = jugadores2;
+    }
+
+    private async void buscar()
+    {
+        
     }
 
 }
