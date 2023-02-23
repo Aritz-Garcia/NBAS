@@ -1,18 +1,46 @@
 ﻿@page "/counter"
+@using NBA_FINAL_PROJECT.Model
+@using System.Net.Http
+@using System.Text.Json.Serialization
+@inject HttpClient http
 
-<PageTitle>Counter</PageTitle>
+@if (equipo2 == null)
+{
+    <div class="spinner"></div>
+}
+else if (equipo2 != null)
+{
+    <RadzenDataGrid Data="@equipo2.data" TItem="Datum1"
+                AllowFiltering="true"
+                AllowSorting="true"
+                AllowPaging="true"
+                PageSize="10">
+        <Columns>
+            <RadzenDataGridColumn TItem="Datum1" Property="abbreviation" Title="Abbreviation" />
+            <RadzenDataGridColumn TItem="Datum1" Property="city" Title="City" />
+            <RadzenDataGridColumn TItem="Datum1" Property="conference" Title="Conference" />
+            <RadzenDataGridColumn TItem="Datum1" Property="division" Title="Division" />
+            <RadzenDataGridColumn TItem="Datum1" Property="full_name" Title="Full Name" />
+            <RadzenDataGridColumn TItem="Datum1" Property="name" Title="Name" />
+            <RadzenDataGridColumn TItem="Datum1" Property="id" Title="Id" Filterable="false" Sortable="false">
+                <Template Context="counter">
+                    <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click=pan>
+                    </RadzenButton>
+                </Template>
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+}
 
-<h1>Counter</h1>
-
-<p role="status">Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
-    private int currentCount = 0;
+    Equipos equipo;
+    Equipos equipo2;
 
-    private void IncrementCount()
+    protected override async Task OnInitializedAsync()
     {
-        currentCount++;
+        equipo = await http.GetFromJsonAsync<Equipos>($"https://www.balldontlie.io/api/v1/teams");
+        equipo2 = equipo;
     }
+    private void  pan(){}
 }
