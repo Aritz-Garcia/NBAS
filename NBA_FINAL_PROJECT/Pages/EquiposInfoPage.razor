@@ -1,0 +1,34 @@
+﻿@page "/equiposinfo/{id}"
+@using NBA_FINAL_PROJECT.Model
+@using System.Net.Http
+@using System.Text.Json.Serialization
+@inject HttpClient http
+
+<div>
+    <div>
+
+    </div>
+    <div>
+        <ul>
+            <li>@equipo.abbreviation</li>
+            <li>@equipo.city</li>
+            <li>@equipo.conference</li>
+            <li>@equipo.division</li>
+            <li>@equipo.full_name</li>
+            <li>@equipo.name</li>
+        </ul>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public String Id { get; set;}
+
+    Equipo equipo;
+    protected override async Task OnInitializedAsync()
+    {
+        equipo = await http.GetFromJsonAsync<Equipo>($"https://www.balldontlie.io/api/v1/teams/{Id}");
+    }
+
+}
