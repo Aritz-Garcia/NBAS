@@ -3,23 +3,30 @@
 @using System.Net.Http
 @using System.Text.Json.Serialization
 @inject HttpClient http
+@inject NavigationManager navigation
 
-<div>
+@if(equipo != null)
+{
     <div>
+        <div>
 
+        </div>
+        <div>
+            <ul>
+                <li>@equipo.abbreviation</li>
+                <li>@equipo.city</li>
+                <li>@equipo.conference</li>
+                <li>@equipo.division</li>
+                <li>@equipo.full_name</li>
+                <li>@equipo.name</li>
+            </ul>
+        </div>
     </div>
     <div>
-        <ul>
-            <li>@equipo.abbreviation</li>
-            <li>@equipo.city</li>
-            <li>@equipo.conference</li>
-            <li>@equipo.division</li>
-            <li>@equipo.full_name</li>
-            <li>@equipo.name</li>
-        </ul>
+        <RadzenButton ButtonStyle="ButtonStyle.Primary" Text="Atras"  Size="ButtonSize.Medium" Click=pan>
+        </RadzenButton>
     </div>
-</div>
-
+}
 
 @code {
     [Parameter]
@@ -29,6 +36,10 @@
     protected override async Task OnInitializedAsync()
     {
         equipo = await http.GetFromJsonAsync<Equipo>($"https://www.balldontlie.io/api/v1/teams/{Id}");
+    }
+
+    public void pan(){
+        navigation.NavigateTo("/counter");
     }
 
 }
