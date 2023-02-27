@@ -29,12 +29,12 @@
     <Columns>
         <RadzenDataGridColumn TItem="Datum" Property="first_name" Title="Name" />
         <RadzenDataGridColumn TItem="Datum" Property="last_name" Title="Last Name" />
-            <RadzenDataGridColumn TItem="Datum" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
-                <Template Context="Datum">
-                    <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> info(Datum.id))>
-                    </RadzenButton>
-                </Template>
-            </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="Datum" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
+            <Template Context="Datum">
+                 <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> info(Datum.id))>
+                 </RadzenButton>
+             </Template>
+        </RadzenDataGridColumn>
     </Columns>
 </RadzenDataGrid>
 }

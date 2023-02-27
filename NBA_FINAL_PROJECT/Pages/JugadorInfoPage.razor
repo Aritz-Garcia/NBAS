@@ -5,18 +5,20 @@
 @inject HttpClient http
 @inject NavigationManager navigation
 
+<h3>JUGADOR @Id</h3>
 
 @code {
     [Parameter]
     public String Id { get; set; }
 
-    Jugador jugador;
+    JugadorUnico jugador;
     Estadisticas stats;
     
 
     protected override async Task OnInitializedAsync()
     {
-        jugador = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players/{Id}");
-        stats = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?seasons[]=2020&player_ids[]={Id}");
+        jugador = await http.GetFromJsonAsync<JugadorUnico>($"https://www.balldontlie.io/api/v1/players/{Id}");
+                                                         
+        stats = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&seasons[]=2020&player_ids[]=220");
     }
 }
