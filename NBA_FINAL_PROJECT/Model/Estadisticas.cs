@@ -31,19 +31,19 @@
         public float ft_pct { get; set; }
         public int fta { get; set; }
         public int ftm { get; set; }
-        public Game game { get; set; }
+        public Game3 game { get; set; }
         public string min { get; set; }
         public int oreb { get; set; }
         public int pf { get; set; }
-        public Player player { get; set; }
+        public Player3 player { get; set; }
         public int pts { get; set; }
         public int reb { get; set; }
         public int stl { get; set; }
-        public Team1 team { get; set; }
+        public Team3 team { get; set; }
         public int turnover { get; set; }
     }
 
-    public class Game
+    public class Game3
     {
         public int id { get; set; }
         public DateTime date { get; set; }
@@ -58,19 +58,19 @@
         public int visitor_team_score { get; set; }
     }
 
-    public class Player
+    public class Player3
     {
         public int id { get; set; }
         public string first_name { get; set; }
-        public int? height_feet { get; set; }
-        public int? height_inches { get; set; }
+        public int height_feet { get; set; }
+        public int height_inches { get; set; }
         public string last_name { get; set; }
         public string position { get; set; }
         public int team_id { get; set; }
-        public int? weight_pounds { get; set; }
+        public int weight_pounds { get; set; }
     }
 
-    public class Team1
+    public class Team3
     {
         public int id { get; set; }
         public string abbreviation { get; set; }
@@ -80,5 +80,6 @@
         public string full_name { get; set; }
         public string name { get; set; }
     }
+
 
 }

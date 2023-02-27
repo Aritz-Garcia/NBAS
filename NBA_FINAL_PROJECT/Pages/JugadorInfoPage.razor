@@ -1,0 +1,22 @@
+﻿@page "/jugadorinfopage/{id}"
+@using NBA_FINAL_PROJECT.Model
+@using System.Net.Http
+@using System.Text.Json.Serialization
+@inject HttpClient http
+@inject NavigationManager navigation
+
+
+@code {
+    [Parameter]
+    public String Id { get; set; }
+
+    Jugador jugador;
+    Estadisticas stats;
+    
+
+    protected override async Task OnInitializedAsync()
+    {
+        jugador = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players/{Id}");
+        stats = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?seasons[]=2020&player_ids[]={Id}");
+    }
+}

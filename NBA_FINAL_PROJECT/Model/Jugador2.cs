@@ -96,7 +96,7 @@
         public string weightKilograms { get; set; }
         public string dateOfBirthUTC { get; set; }
         public Teamsitesonly1 teamSitesOnly { get; set; }
-        public Team1[] teams { get; set; }
+        public Team2[] teams { get; set; }
         public Draft1 draft { get; set; }
         public string nbaDebutYear { get; set; }
         public string yearsPro { get; set; }

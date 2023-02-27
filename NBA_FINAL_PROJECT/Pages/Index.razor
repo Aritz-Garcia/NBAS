@@ -3,6 +3,7 @@
 @using System.Net.Http
 @using System.Text.Json.Serialization
 @inject HttpClient http
+@inject NavigationManager navigation
 <div> 
     <RadzenTextBox Placeholder="Buscar..." id="buscador" class="w-100" />
     <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=buscar />
@@ -28,6 +29,12 @@
     <Columns>
         <RadzenDataGridColumn TItem="Datum" Property="first_name" Title="Name" />
         <RadzenDataGridColumn TItem="Datum" Property="last_name" Title="Last Name" />
+            <RadzenDataGridColumn TItem="Datum" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
+                <Template Context="Datum">
+                    <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> info(Datum.id))>
+                    </RadzenButton>
+                </Template>
+            </RadzenDataGridColumn>
     </Columns>
 </RadzenDataGrid>
 }
@@ -86,7 +93,11 @@
 
     private async void buscar()
     {
-        
+
+    }
+    private void info(int id)
+    {
+        navigation.NavigateTo($"/jugadorinfopage/{id}");
     }
 
 }

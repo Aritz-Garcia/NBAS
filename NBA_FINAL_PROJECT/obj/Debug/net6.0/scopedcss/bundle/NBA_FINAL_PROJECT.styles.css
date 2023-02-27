@@ -1,21 +1,4 @@
 /* _content/NBA_FINAL_PROJECT/Pages/EquiposInfoPage.razor.rz.scp.css */
-.container[b-lodusj336b]{
-    display:flex;
-}
-
-.card[b-lodusj336b]{
-    border-radius:20px;
-    margin-left: 10px;
-    height: 200px;
-    background-color:aqua;
-    flex:1;
-    transition: .3s all ease;
-}
-
-.card:hover[b-lodusj336b]{
-    flex:2;
-    background-color: aqua ;
-}
 /* _content/NBA_FINAL_PROJECT/Shared/MainLayout.razor.rz.scp.css */
 .page[b-4n3sby3lyr] {
     position: relative;
