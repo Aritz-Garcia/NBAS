@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\agerz\\OneDrive\\Documentos\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj": {}
+    "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\agerz\\OneDrive\\Documentos\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj": {
+    "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\agerz\\OneDrive\\Documentos\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj",
+        "projectUniqueName": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj",
         "projectName": "NBA_FINAL_PROJECT",
-        "projectPath": "C:\\Users\\agerz\\OneDrive\\Documentos\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj",
-        "packagesPath": "C:\\Users\\agerz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\agerz\\OneDrive\\Documentos\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\",
+        "projectPath": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj",
+        "packagesPath": "C:\\Users\\Aritz\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\agerz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aritz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
