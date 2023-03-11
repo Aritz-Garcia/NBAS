@@ -6,6 +6,35 @@
 @inject NavigationManager navigation
 
 <h3>JUGADOR @Id</h3>
+@if (jugador != null) {
+    <h5>EQUIPO: @jugador.team.full_name</h5>
+}
+
+@if (idJugador != null)
+{
+    <img src="@url" alt="foto jugador" />
+}
+
+
+@if (stats != null && !stats.data.Equals(statsVacia.data))
+{
+    <table>
+        <tr>
+            <th>Partidos</th>
+            <th>Temporada</th>
+            <th>Minutos</th>
+        </tr>
+
+        <tr>
+            <td>@stats.data[0].games_played</td>
+            <td>@stats.data[0].season</td>
+            <td>@stats.data[0].min</td>
+        </tr>
+
+    </table>
+} else {
+    <p>No hay estadisticas de esta temporada de este jugador</p>
+}
 
 
 
@@ -14,68 +43,37 @@
     public String Id { get; set; }
 
     JugadorUnico jugador;
-    Estadisticas stats;
-    Estadisticas stats2, stats3;
-
-    int ast, blk, dreb, fg3a, fg3m, fga, fgm, fta, ftm, oreb, pf, pts, reb, stl;
-    double ast2, blk2, dreb2, fg3a2, fg3m2, fga2, fgm2, fta2, ftm2, oreb2, pf2, pts2, reb2, stl2;
-    float fg3_pct, fg_pct, ft_pct;
-
+    EstadisticasJugador stats;
+    Jugador_API2 jugadorInfo;
+    Equipos_API2 equipos_API2;
+    EstadisticasJugador statsVacia;
+    string idJugador;
+    string url;
 
     protected override async Task OnInitializedAsync()
     {
         jugador = await http.GetFromJsonAsync<JugadorUnico>($"https://www.balldontlie.io/api/v1/players/{Id}");
 
-        stats = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&seasons[]=2020&player_ids[]=220");
+        stats = await http.GetFromJsonAsync<EstadisticasJugador>($"https://www.balldontlie.io/api/v1/season_averages?player_ids[]={Id}");
 
-        for(int i=1; i <=stats.meta.total_pages; i++){
-            stats2 = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&seasons[]=2020&player_ids[]=220&page={i}");
+        jugadorInfo = await http.GetFromJsonAsync<Jugador_API2>($"https://data.nba.net/data/10s/prod/v1/2022/players.json");
 
-            if (stats3 == null){
-                stats3 = stats2;
-            }else{
-                stats3.data = stats2.data.Union(stats3.data).ToArray();
-            }
-        }
+        equipos_API2 = await http.GetFromJsonAsync<Equipos_API2>($"https://data.nba.net/data/10s/prod/v1/2022/teams.json");
 
-        for(int i=0; i <stats3.meta.total_count; i++)
-        {
-            ast = ast + stats3.data[i].ast;
-            blk = blk + stats3.data[i].blk;
-            dreb = dreb + stats3.data[i].dreb;
-            fg3a = fg3a + stats3.data[i].fg3a;
-            fg3m = fg3m + stats3.data[i].fg3m;
-            fga = fga + stats3.data[i].fga;
-            fgm = fgm + stats3.data[i].fgm;
-            fta = fta + stats3.data[i].fta;
-            ftm = ftm + stats3.data[i].ftm;
-            oreb = oreb + stats3.data[i].oreb;
-            pf = pf + stats3.data[i].pf;
-            pts = pts + stats3.data[i].pts;
-            reb = reb + stats3.data[i].reb;
-            stl = stl + stats3.data[i].stl;
+        statsVacia = await http.GetFromJsonAsync<EstadisticasJugador>($"https://www.balldontlie.io/api/v1/season_averages?player_ids[]=14");
 
-            fg3_pct = fg3_pct + stats3.data[i].fg3_pct;
-            fg_pct = fg_pct + stats3.data[i].fg_pct;
-            ft_pct = ft_pct + stats3.data[i].ft_pct;
-
-
-        }
-        ast2 = (ast / stats3.data.Length);
-        blk2 = blk / stats3.meta.total_count;
-        dreb2 = dreb / stats3.meta.total_count;
-        fg3a2 = fg3a / stats3.meta.total_count;
-        fg3m2 = fg3m / stats3.meta.total_count;
-        fga2 = fga / stats3.meta.total_count;
-        fgm2 = fgm / stats3.meta.total_count;
-        fta2 = fta / stats3.meta.total_count;
-        ftm2 = ftm / stats3.meta.total_count;
-        oreb2 = oreb / stats3.meta.total_count;
-        pf2 = pf / stats3.meta.total_count;
-        pts2 = pts / stats3.meta.total_count;
-        reb2 = reb / stats3.meta.total_count;
-        stl2 = stl / stats3.meta.total_count;
+        fotoJuagdor();
     }
 
-   
+    private void fotoJuagdor()
+    {
+        for (int i = 0; i < jugadorInfo.league.standard.Length; i++)
+        {
+            if (jugadorInfo.league.standard[i].firstName == jugador.first_name && jugadorInfo.league.standard[i].lastName == jugador.last_name)
+            {
+                idJugador = jugadorInfo.league.standard[i].personId;
+                url = "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/" + idJugador + ".png";
+            }
+        }
+    }
 }

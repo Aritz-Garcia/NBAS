@@ -1,7 +1,7 @@
 ﻿namespace NBA_FINAL_PROJECT.Model
 {
 
-    public class Jugador2
+    public class Jugador_API2
     {
         public _Internal _internal { get; set; }
         public League league { get; set; }
