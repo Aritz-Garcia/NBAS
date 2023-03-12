@@ -62,3 +62,41 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+.imgRedonda {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+
+.imgRedonda1 {
+    width: 260px;
+    height: 190px;
+    border-radius: 150px;
+}
+
+.contenedor-flexbox {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.divMedio {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.row {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.row1 {
+    margin-bottom: 16px;
+}
+
+.flexbox-estadisticas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

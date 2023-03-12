@@ -9,61 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NBA_FINAL_PROJECT
 build_property.RootNamespace = NBA_FINAL_PROJECT
-build_property.ProjectDir = C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\
+build_property.ProjectDir = D:\Github\G05_NBA\NBA_FINAL_PROJECT\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT
+build_property.MSBuildProjectDirectory = D:\Github\G05_NBA\NBA_FINAL_PROJECT
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/App.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Pages/Counter.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Pages/FetchData.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Pages/Index.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Pages/JugadorInfoPage.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Pages/JugadorInfoPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSnVnYWRvckluZm9QYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Shared/SurveyPrompt.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/_Imports.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Pages/EquiposInfoPage.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Pages/EquiposInfoPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXF1aXBvc0luZm9QYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-lodusj336b
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Shared/MainLayout.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-4n3sby3lyr
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Shared/NavMenu.razor]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-glriutecr9
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Pages/Error.cshtml]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Pages/_Host.cshtml]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/6002441/Documents/GitHub/G05_NBA/NBA_FINAL_PROJECT/Pages/_Layout.cshtml]
+[D:/Github/G05_NBA/NBA_FINAL_PROJECT/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

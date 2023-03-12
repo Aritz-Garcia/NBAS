@@ -1,60 +1,188 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NBA_FINAL_PROJECT.bundle.scp.css",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NBA_FINAL_PROJECT.bundle.scp.css",
       "PackagePath": "staticwebassets\\NBA_FINAL_PROJECT.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\README.md",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\README.md",
       "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\site.css",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\favicon.ico",
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ADL.png",
+      "PackagePath": "staticwebassets\\img\\ADL.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ATL.png",
+      "PackagePath": "staticwebassets\\img\\ATL.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\BKN.png",
+      "PackagePath": "staticwebassets\\img\\BKN.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\BOS.png",
+      "PackagePath": "staticwebassets\\img\\BOS.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CHA.png",
+      "PackagePath": "staticwebassets\\img\\CHA.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CHI.png",
+      "PackagePath": "staticwebassets\\img\\CHI.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CLE.png",
+      "PackagePath": "staticwebassets\\img\\CLE.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DAL.png",
+      "PackagePath": "staticwebassets\\img\\DAL.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DEN.png",
+      "PackagePath": "staticwebassets\\img\\DEN.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DET.png",
+      "PackagePath": "staticwebassets\\img\\DET.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\GSW.png",
+      "PackagePath": "staticwebassets\\img\\GSW.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\HOU.png",
+      "PackagePath": "staticwebassets\\img\\HOU.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\IND.png",
+      "PackagePath": "staticwebassets\\img\\IND.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\LAC.png",
+      "PackagePath": "staticwebassets\\img\\LAC.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\LAL.png",
+      "PackagePath": "staticwebassets\\img\\LAL.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MEM.png",
+      "PackagePath": "staticwebassets\\img\\MEM.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIA.png",
+      "PackagePath": "staticwebassets\\img\\MIA.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIL.png",
+      "PackagePath": "staticwebassets\\img\\MIL.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIN.png",
+      "PackagePath": "staticwebassets\\img\\MIN.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\NOP.png",
+      "PackagePath": "staticwebassets\\img\\NOP.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\NYK.png",
+      "PackagePath": "staticwebassets\\img\\NYK.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\OKC.png",
+      "PackagePath": "staticwebassets\\img\\OKC.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ORL.png",
+      "PackagePath": "staticwebassets\\img\\ORL.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\PHI.png",
+      "PackagePath": "staticwebassets\\img\\PHI.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\PHX.png",
+      "PackagePath": "staticwebassets\\img\\PHX.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\POR.png",
+      "PackagePath": "staticwebassets\\img\\POR.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\SAC.png",
+      "PackagePath": "staticwebassets\\img\\SAC.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\SAS.png",
+      "PackagePath": "staticwebassets\\img\\SAS.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\TOR.png",
+      "PackagePath": "staticwebassets\\img\\TOR.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\USA.png",
+      "PackagePath": "staticwebassets\\img\\USA.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\UTA.png",
+      "PackagePath": "staticwebassets\\img\\UTA.png"
+    },
+    {
+      "Id": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\WAS.png",
+      "PackagePath": "staticwebassets\\img\\WAS.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.NBA_FINAL_PROJECT.Microsoft.AspNetCore.StaticWebAssets.props",
