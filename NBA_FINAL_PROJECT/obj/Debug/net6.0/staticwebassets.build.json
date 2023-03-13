@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hEPudkL7efczTy03Im6GHGnW83addjColQ6dUQbXmec=",
+  "Hash": "MKJr50e7whJsGh7Lhha5uCYSaoccUq/W0sjUltLmvwo=",
   "Source": "NBA_FINAL_PROJECT",
   "BasePath": "_content/NBA_FINAL_PROJECT",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "NBA_FINAL_PROJECT\\wwwroot",
       "Source": "NBA_FINAL_PROJECT",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\dark.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\dark.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\dark.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\dark-base.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark-base.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\default.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\default.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default.css",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\default.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\default.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\default-base.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\default-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default-base.css",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\default-base.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\default-base.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\humanistic.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\humanistic.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic.css",
       "AssetKind": "All",
@@ -99,13 +99,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\humanistic.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\humanistic.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\humanistic-base.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\humanistic-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-base.css",
       "AssetKind": "All",
@@ -116,13 +116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\humanistic-base.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\humanistic-base.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\material.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\material.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material.css",
       "AssetKind": "All",
@@ -133,13 +133,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\material.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\material.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\material-base.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\material-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-base.css",
       "AssetKind": "All",
@@ -150,13 +150,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\material-base.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\material-base.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\software.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\software.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software.css",
       "AssetKind": "All",
@@ -167,13 +167,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\software.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\software.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\software-base.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\software-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-base.css",
       "AssetKind": "All",
@@ -184,13 +184,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\software-base.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\software-base.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\standard.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\standard.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard.css",
       "AssetKind": "All",
@@ -201,13 +201,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\standard.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\standard.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\standard-base.css",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\standard-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-base.css",
       "AssetKind": "All",
@@ -218,13 +218,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\standard-base.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\css\\standard-base.css"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/MaterialIcons-Regular.woff",
       "AssetKind": "All",
@@ -235,13 +235,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-300.woff",
       "AssetKind": "All",
@@ -252,13 +252,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-700.woff",
       "AssetKind": "All",
@@ -269,13 +269,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-regular.woff",
       "AssetKind": "All",
@@ -286,13 +286,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-300.woff",
       "AssetKind": "All",
@@ -303,13 +303,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-500.woff",
       "AssetKind": "All",
@@ -320,13 +320,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-700.woff",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-regular.woff",
       "AssetKind": "All",
@@ -354,13 +354,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Black.woff",
       "AssetKind": "All",
@@ -371,13 +371,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BlackIt.woff",
       "AssetKind": "All",
@@ -388,13 +388,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Bold.woff",
       "AssetKind": "All",
@@ -405,13 +405,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BoldIt.woff",
       "AssetKind": "All",
@@ -422,13 +422,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLight.woff",
       "AssetKind": "All",
@@ -439,13 +439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLightIt.woff",
       "AssetKind": "All",
@@ -456,13 +456,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-It.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-It.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-It.woff",
       "AssetKind": "All",
@@ -473,13 +473,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-It.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-It.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Light.woff",
       "AssetKind": "All",
@@ -490,13 +490,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-LightIt.woff",
       "AssetKind": "All",
@@ -507,13 +507,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Regular.woff",
       "AssetKind": "All",
@@ -524,13 +524,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Semibold.woff",
       "AssetKind": "All",
@@ -541,13 +541,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-SemiboldIt.woff",
       "AssetKind": "All",
@@ -558,13 +558,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\Radzen.Blazor.js",
+      "Identity": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\Radzen.Blazor.js",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "Radzen.Blazor.js",
       "AssetKind": "All",
@@ -575,13 +575,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Aritz\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\Radzen.Blazor.js"
+      "OriginalItemSpec": "C:\\Users\\6002441\\.nuget\\packages\\radzen.blazor\\4.7.1\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NBA_FINAL_PROJECT.styles.css",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NBA_FINAL_PROJECT.styles.css",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "NBA_FINAL_PROJECT.styles.css",
       "AssetKind": "All",
@@ -592,13 +592,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NBA_FINAL_PROJECT.styles.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\bundle\\NBA_FINAL_PROJECT.styles.css"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NBA_FINAL_PROJECT.bundle.scp.css",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NBA_FINAL_PROJECT.bundle.scp.css",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "NBA_FINAL_PROJECT.bundle.scp.css",
       "AssetKind": "All",
@@ -609,13 +609,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NBA_FINAL_PROJECT.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NBA_FINAL_PROJECT.bundle.scp.css"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\css\\site.css",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\favicon.ico",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ADL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ADL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/ADL.png",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\img\\ADL.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ATL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ATL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/ATL.png",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\img\\ATL.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\BKN.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\BKN.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/BKN.png",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\img\\BKN.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\BOS.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\BOS.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/BOS.png",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\img\\BOS.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CHA.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CHA.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/CHA.png",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\img\\CHA.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CHI.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CHI.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/CHI.png",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\img\\CHI.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CLE.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CLE.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/CLE.png",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\img\\CLE.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DAL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DAL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/DAL.png",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\img\\DAL.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DEN.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DEN.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/DEN.png",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\img\\DEN.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DET.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DET.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/DET.png",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\img\\DET.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\GSW.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\GSW.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/GSW.png",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\img\\GSW.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\HOU.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\HOU.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/HOU.png",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\img\\HOU.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\IND.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\IND.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/IND.png",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\img\\IND.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\LAC.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\LAC.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/LAC.png",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\img\\LAC.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\LAL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\LAL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/LAL.png",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\img\\LAL.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MEM.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MEM.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/MEM.png",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\img\\MEM.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIA.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIA.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/MIA.png",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\img\\MIA.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/MIL.png",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\img\\MIL.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIN.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIN.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/MIN.png",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\img\\MIN.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\NOP.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\NOP.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/NOP.png",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\img\\NOP.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\NYK.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\NYK.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/NYK.png",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\img\\NYK.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\OKC.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\OKC.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/OKC.png",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\img\\OKC.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ORL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ORL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/ORL.png",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\img\\ORL.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\PHI.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\PHI.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/PHI.png",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\img\\PHI.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\PHX.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\PHX.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/PHX.png",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\img\\PHX.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\POR.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\POR.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/POR.png",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\img\\POR.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\SAC.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\SAC.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/SAC.png",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\img\\SAC.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\SAS.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\SAS.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/SAS.png",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\img\\SAS.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\TOR.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\TOR.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/TOR.png",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\img\\TOR.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\USA.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\USA.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/USA.png",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\img\\USA.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\UTA.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\UTA.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/UTA.png",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\img\\UTA.png"
     },
     {
-      "Identity": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\WAS.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\WAS.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Github\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
       "RelativePath": "img/WAS.png",
       "AssetKind": "All",

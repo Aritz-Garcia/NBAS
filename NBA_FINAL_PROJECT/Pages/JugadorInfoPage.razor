@@ -10,12 +10,9 @@
     <h3>@jugador.first_name @jugador.last_name</h3>
 
     <div class="contenedor-flexbox">
-        @if (imgEquipo != null)
-        {
-            <div style="display:inline-block">
-                <img src="@imgEquipo" alt="foto equipo" class="imgRedonda"/>
-            </div>
-        }
+        <div style="display:inline-block">
+            <img src="@getImgTeam(jugador.team.abbreviation)" alt="foto equipo" class="imgRedonda"/>
+        </div>
 
         <div style="display:inline-block">
             <h5>@jugador.team.full_name</h5>
@@ -41,7 +38,7 @@
         <Tabs>
             <RadzenTabsItem Text="Información">
                 <div class="divMedio">
-                    <RadzenFieldset Text="Información" Color="black" Style="border-radius: 10px;border-color:black; font-weight:bold">
+                    <RadzenFieldset Text="Información" Style="border-radius: 10px;border-color:black; font-weight:bold">
 
                         @if (numeroCamiseta != null)
                         {
@@ -50,7 +47,7 @@
                                     <RadzenLabel Text="Numero de Camiseta" />
                                 </div>
                                 <div style="width:50%">
-                                    <RadzenLabel Text="@numeroCamiseta" />
+                                    <RadzenLabel Text="@numeroCamiseta" Style="font-weight:normal" />
                                 </div>
                             </div>
                         }
@@ -62,7 +59,7 @@
                                     <RadzenLabel Text="Posición" />
                                 </div>
                                 <div style="width:50%">
-                                    <RadzenLabel Text="@posicion" />
+                                    <RadzenLabel Text="@posicion" Style="font-weight:normal" />
                                 </div>
                             </div>
                         }
@@ -74,7 +71,7 @@
                                     <RadzenLabel Text="Altura" />
                                 </div>
                                 <div style="width:50%">
-                                    <RadzenLabel Text="@altura" />
+                                    <RadzenLabel Text="@altura" Style="font-weight:normal" />
                                 </div>
                             </div>
                         }
@@ -86,7 +83,7 @@
                                     <RadzenLabel Text="Peso" />
                                 </div>
                                 <div style="width:50%">
-                                    <RadzenLabel Text="@peso" />
+                                    <RadzenLabel Text="@peso" Style="font-weight:normal" />
                                 </div>
                             </div>
                         }
@@ -98,26 +95,131 @@
                                     <RadzenLabel Text="Fecha de Nacimiento" />
                                 </div>
                                 <div style="width:50%">
-                                    <RadzenLabel Text="@fechaNacimiento" />
+                                    <RadzenLabel Text="@fechaNacimiento" Style="font-weight:normal" />
+                                </div>
+                            </div>
+                        }
+
+                        @if (debut != null) {
+                            <div class="row">
+                                <div style="width:50%;font-weight: bold">
+                                    <RadzenLabel Text="Año de debut" />
+                                </div>
+                                <div style="width:50%">
+                                    <RadzenLabel Text="@debut" Style="font-weight:normal" />
+                                </div>
+                            </div>
+                        }
+
+                        @if (anosPro != null)
+                        {
+                            <div class="row">
+                                <div style="width:50%;font-weight: bold">
+                                    <RadzenLabel Text="Años de profesional" />
+                                </div>
+                                <div style="width:50%">
+                                    <RadzenLabel Text="@anosPro" Style="font-weight:normal" />
+                                </div>
+                            </div>
+                        }
+
+                        @if (universidad != null)
+                        {
+                            <div class="row">
+                                <div style="width:50%;font-weight: bold">
+                                    <RadzenLabel Text="Universidad" />
+                                </div>
+                                <div style="width:50%">
+                                    <RadzenLabel Text="@universidad" Style="font-weight:normal" />
                                 </div>
                             </div>
                         }
 
                     </RadzenFieldset>
                 </div>
+
+                <br/>
+
+                <div class="divMedio">
+                    <RadzenFieldset Text="Draft" Style="border-radius: 10px;border-color:black; font-weight:bold">
+
+                        @if (seasonDraft != null)
+                        {
+                            <div class="row">
+                                <div style="width:50%;font-weight: bold">
+                                    <RadzenLabel Text="Temporada del draft" />
+                                </div>
+                                <div style="width:50%">
+                                    <RadzenLabel Text="@seasonDraft" Style="font-weight:normal" />
+                                </div>
+                            </div>
+                        }
+
+                        @if (roundDraft != null)
+                        {
+                            <div class="row">
+                                <div style="width:50%;font-weight: bold">
+                                    <RadzenLabel Text="Ronda del draft" />
+                                </div>
+                                <div style="width:50%">
+                                    <RadzenLabel Text="@roundDraft" Style="font-weight:normal" />
+                                </div>
+                            </div>
+                        }
+
+                        @if (pickDraft != null)
+                        {
+                            <div class="row">
+                                <div style="width:50%;font-weight: bold">
+                                    <RadzenLabel Text="Eleccion del draft" />
+                                </div>
+                                <div style="width:50%">
+                                    <RadzenLabel Text="@pickDraft" Style="font-weight:normal" />
+                                </div>
+                            </div>
+                        }
+
+                    </RadzenFieldset>
+                </div>
+
+                <br/>
+
+                @if (equipos != null) {
+                    <table class="tabla">
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="tablerows">Equipo</th>
+                                <th class="tablerows">Foto</th>
+                                <th class="tablerows">Apodo</th>
+                                <th class="tablerows">Ciudad</th>
+                                <th class="tablerows">Temporada inicial</th>
+                                <th class="tablerows">Temporada final</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < equipos.Length; i++)
+                            {
+                                <tr>
+                                    <td class="tablerows">@getInfoTeam(equipos[i].teamId, 1)</td>
+                                    <td class="tablerows"><img src="@getImgTeam(getInfoTeam(equipos[i].teamId, 3))" alt="team img" style="width:100px;height:100px" class="imgRedonda"/></td>
+                                    <td class="tablerows">@getInfoTeam(equipos[i].teamId, 4)</td>
+                                    <td class="tablerows">@getInfoTeam(equipos[i].teamId, 2)</td>
+                                    <td class="tablerows">@equipos[i].seasonStart</td>
+                                    <td class="tablerows">@equipos[i].seasonEnd</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+
             </RadzenTabsItem>
 
             <RadzenTabsItem Text="Estadisticas">
                 <RadzenFieldset Text="Estadisticas" Style="border-radius: 10px;border-color:black; font-weight:bold">
                     <div>
                         <div class="flexbox-estadisticas">
-                            <div style="width:50%;text-align:center">
-                                <p>Porcentaje de acierto en tiros de campo</p>
-                            </div>
-
-                            <div class="row1" style="width:50%">
-                                <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
-                                    <RadzenArcGauge Style="width: 100%; height: 250px;">
+                            <div class="row1" style="width:33%">
+                                    <RadzenArcGauge Style="width: 100%; height: 150px;">
                                         <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
                                             <RadzenArcGaugeScaleValue Value=@(stats.data[0].fg_pct * 1000)>
                                                 <Template Context="pointer">
@@ -128,19 +230,10 @@
                                             </RadzenArcGaugeScaleValue>
                                         </RadzenArcGaugeScale>
                                     </RadzenArcGauge>
-                                </div>
-                            </div>
-                        </div>
-                        
-
-                        <div class="flexbox-estadisticas">
-                            <div style="width:50%;text-align:center">
-                                <p>Porcentaje de acierto en triples</p>
                             </div>
 
-                            <div class="row1" style="width:50%">
-                                <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
-                                    <RadzenArcGauge Style="width: 100%; height: 250px;">
+                            <div class="row1" style="width:33%">
+                                    <RadzenArcGauge Style="width: 100%; height: 150px;">
                                         <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
                                             <RadzenArcGaugeScaleValue Value=@(stats.data[0].fg3_pct * 1000)>
                                                 <Template Context="pointer">
@@ -151,18 +244,10 @@
                                             </RadzenArcGaugeScaleValue>
                                         </RadzenArcGaugeScale>
                                     </RadzenArcGauge>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flexbox-estadisticas">
-                            <div style="width:50%;text-align:center">
-                                <p>Porcentaje de acierto en tiros libres</p>
                             </div>
 
-                            <div class="row1" style="width:50%">
-                                <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
-                                    <RadzenArcGauge Style="width: 100%; height: 250px;">
+                            <div class="row1" style="width:33%">
+                                    <RadzenArcGauge Style="width: 100%; height: 150px;">
                                         <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
                                             <RadzenArcGaugeScaleValue Value=@(stats.data[0].ft_pct * 1000)>
                                                 <Template Context="pointer">
@@ -173,36 +258,27 @@
                                             </RadzenArcGaugeScaleValue>
                                         </RadzenArcGaugeScale>
                                     </RadzenArcGauge>
-                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flexbox-estadisticas">
+                            <div style="width:33%;text-align:center">
+                                <p>Porcentaje de acierto en tiros de campo</p>
+                            </div>
+
+                            <div style="width:33%;text-align:center">
+                                <p>Porcentaje de acierto en triples</p>
+                            </div>
+
+                            <div style="width:33%;text-align:center">
+                                <p>Porcentaje de acierto en tiros libres</p>
                             </div>
                         </div>
                     </div>
-
-
                 </RadzenFieldset>
             </RadzenTabsItem>
         </Tabs>
     </RadzenTabs>
-    
-    <br/>
-    
-
-    <table>
-        <tr>
-            <th>Partidos</th>
-            <th>Temporada</th>
-            <th>Minutos</th>
-            <th>Numero de Camiseta</th>
-        </tr>
-
-        <tr>
-            <td>@stats.data[0].games_played</td>
-            <td>@stats.data[0].season</td>
-            <td>@stats.data[0].min</td>
-            <td>@numeroCamiseta</td>
-        </tr>
-
-    </table>
 } else {
     <p>No hay estadisticas de esta temporada de este jugador</p>
 }
@@ -228,16 +304,10 @@
     string debut;
     string anosPro;
     string universidad;
-    Team[] equipos;
+    Team2[] equipos;
     string seasonDraft;
     string roundDraft;
     string pickDraft;
-
-    string imgEquipo;
-
-    int fg_pct;
-    int fg3_pct;
-    int ft_pct;
 
     protected override async Task OnInitializedAsync()
     {
@@ -254,8 +324,6 @@
         fotoJuagdor();
 
         infoJugador();
-
-        imgEquipo = "/img/" + jugador.team.abbreviation + ".png";
     }
 
     private void fotoJuagdor()
@@ -290,5 +358,34 @@
                 equipos = jugadorInfo.league.standard[i].teams;
             }
         }
+    }
+
+    private string getImgTeam(string nombre)
+    {
+        return "/img/" + nombre + ".png";
+    }
+
+    private string getInfoTeam(string id, int info)
+    {
+        for (int i = 0; i < equipos_API2.league.standard.Length; i++)
+        {
+            if (equipos_API2.league.standard[i].teamId == id)
+            {
+                if (info == 1)
+                {
+                    return equipos_API2.league.standard[i].fullName;
+                } else if (info == 2)
+                {
+                    return equipos_API2.league.standard[i].city;
+                } else if (info == 3)
+                {
+                    return equipos_API2.league.standard[i].tricode;
+                } else if (info == 4) 
+                {
+                    return equipos_API2.league.standard[i].nickname;
+                }
+            }
+        }
+        return null;
     }
 }
