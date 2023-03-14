@@ -514,22 +514,316 @@
                         <option value=@getIdEquipo(item)>@item</option>
                     }
                 </select>
+                <br/>
+                <br/>
 
                 @if (equipoElegido) 
                 {
                     @for (int i = 0; i < estadisticasPartidos.data.Length; i++)
                     {
                         @if (estadisticasPartidos.data[i].game.home_team_id == idEquipoEstadisticas || estadisticasPartidos.data[i].game.visitor_team_id == idEquipoEstadisticas) {
-                            <div class="flexbox-estadisticas">
-                                <div style="width:50%">
-                                    <p>@getEquipo(estadisticasPartidos.data[i].game.visitor_team_id)</p>
-                                    <p>@estadisticasPartidos.data[i].game.visitor_team_score</p>
+                            <div style="text-align:center">
+                                <h1>@estadisticasPartidos.data[i].game.date</h1>
+                                <h3>@estadisticasPartidos.data[i].game.status</h3>
+                                @if (estadisticasPartidos.data[i].game.status != "Final")
+                                {
+                                    <h4>@estadisticasPartidos.data[i].game.time</h4>
+                                }
+                            </div>
+                            
+                            <div class="flexbox-estadisticas" style="text-align:center">
+                                <div style="width:33%" class="flexbox-estadisticas">
+                                    <img src="@getImgTeam(getEquipo(estadisticasPartidos.data[i].game.visitor_team_id, 2))" alt="img equipo visitante" class="imgRedonda" />
+                                    @*<p>@getEquipo(estadisticasPartidos.data[i].game.visitor_team_id, 1)</p>*@
+                                    <h2>@estadisticasPartidos.data[i].game.visitor_team_score</h2>
                                 </div>
-                                <div style="width:50%">
-                                    <p>@getEquipo(estadisticasPartidos.data[i].game.home_team_id)</p>
-                                    <p>@estadisticasPartidos.data[i].game.home_team_score</p>
+                                <div style="width:33%">
+                                    <h2>VS</h2>
+                                </div>
+
+                                <div style="width:33%" class="flexbox-estadisticas">
+                                    <h2>@estadisticasPartidos.data[i].game.home_team_score</h2>
+                                    @*<p>@getEquipo(estadisticasPartidos.data[i].game.home_team_id, 1)</p>*@
+                                    <img src="@getImgTeam(getEquipo(estadisticasPartidos.data[i].game.home_team_id, 2))" alt="img equipo local" class="imgRedonda"/>
                                 </div>
                             </div>
+
+                            <br/>
+                            <br/>
+
+                            <div>
+                                <div class="flexbox-estadisticas">
+                                    <div style="width:50%;text-align:left">
+                                        <p style="font-weight:bold">Minutos de media</p>
+                                    </div>
+                                    <div style="width:50%;text-align:right">
+                                        <p>@estadisticasPartidos.data[i].min</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <RadzenTabs>
+                                <Tabs>
+                                    <RadzenTabsItem Text="Ataque">
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div class="row1" style="width:33%">
+                                                    <RadzenArcGauge Style="width: 100%; height: 150px;">
+                                                        <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
+                                                            <RadzenArcGaugeScaleValue Value=@(estadisticasPartidos.data[i].fg_pct * 1000)>
+                                                                <Template Context="pointer">
+                                                                    <h1>
+                                                                        @estadisticasPartidos.data[i].fg_pct
+                                                                    </h1>
+                                                                </Template>
+                                                            </RadzenArcGaugeScaleValue>
+                                                        </RadzenArcGaugeScale>
+                                                    </RadzenArcGauge>
+                                                </div>
+
+                                                <div class="row1" style="width:33%">
+                                                    <RadzenArcGauge Style="width: 100%; height: 150px;">
+                                                        <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
+                                                            <RadzenArcGaugeScaleValue Value=@(estadisticasPartidos.data[i].fg3_pct * 1000)>
+                                                                <Template Context="pointer">
+                                                                    <h1>
+                                                                        @estadisticasPartidos.data[i].fg3_pct
+                                                                    </h1>
+                                                                </Template>
+                                                            </RadzenArcGaugeScaleValue>
+                                                        </RadzenArcGaugeScale>
+                                                    </RadzenArcGauge>
+                                                </div>
+
+                                                <div class="row1" style="width:33%">
+                                                    <RadzenArcGauge Style="width: 100%; height: 150px;">
+                                                        <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
+                                                            <RadzenArcGaugeScaleValue Value=@(estadisticasPartidos.data[i].ft_pct * 1000)>
+                                                                <Template Context="pointer">
+                                                                    <h1>
+                                                                        @estadisticasPartidos.data[i].ft_pct
+                                                                    </h1>
+                                                                </Template>
+                                                            </RadzenArcGaugeScaleValue>
+                                                        </RadzenArcGaugeScale>
+                                                    </RadzenArcGauge>
+                                                </div>
+                                            </div>
+
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:33%;text-align:center">
+                                                    <p>Porcentaje de acierto en tiros de campo</p>
+                                                </div>
+
+                                                <div style="width:33%;text-align:center">
+                                                    <p>Porcentaje de acierto en triples</p>
+                                                </div>
+
+                                                <div style="width:33%;text-align:center">
+                                                    <p>Porcentaje de acierto en tiros libres</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br />
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Puntos de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].pts</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Asistencias de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].ast</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Tiros de campo anotados de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].fgm</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Tiros de campo intentados de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].fga</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Triples anotados de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].fg3m</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Triples intentados de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].fg3a</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Tiros libres anotados de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].ftm</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Tiros libres intentados de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].fta</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </RadzenTabsItem>
+
+                                    <RadzenTabsItem Text="Defensa">
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Rebotes de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].reb</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Rebotes ofensivos de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].oreb</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Rebotes defensivos de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].dreb</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Robos de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].stl</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Tapones de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].blk</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Perdidas de balon de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].turnover</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="solid"></p>
+
+                                        <div>
+                                            <div class="flexbox-estadisticas">
+                                                <div style="width:50%;text-align:left">
+                                                    <p style="font-weight:bold">Faltas personales de media</p>
+                                                </div>
+                                                <div style="width:50%;text-align:right">
+                                                    <p>@estadisticasPartidos.data[i].pf</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </RadzenTabsItem>
+                                </Tabs>
+                            </RadzenTabs>
                         }
                     }
                 }
@@ -660,13 +954,21 @@
         return null;
     }
 
-    private string getEquipo(int id)
+    private string getEquipo(int id, int info)
     {
         for (int i = 0; i < allEquipos.data.Length; i++)
         {
             if (allEquipos.data[i].id == id)
             {
-                return allEquipos.data[i].full_name;
+                if (info == 1)
+                {
+                    return allEquipos.data[i].full_name;
+                }
+                else if (info == 2)
+                {
+                    return allEquipos.data[i].abbreviation;
+                }
+
             }
         }
         return null;
@@ -679,10 +981,10 @@
         {
             if (estadisticasPartidos.data[i].game.home_team_id != jugador.team.id) 
             {
-                todos.Add(getEquipo(estadisticasPartidos.data[i].game.home_team_id));
+                todos.Add(getEquipo(estadisticasPartidos.data[i].game.home_team_id, 1));
             } else
             {
-                todos.Add(getEquipo(estadisticasPartidos.data[i].game.visitor_team_id));
+                todos.Add(getEquipo(estadisticasPartidos.data[i].game.visitor_team_id, 1));
             }
         }
 
