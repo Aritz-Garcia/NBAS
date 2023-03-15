@@ -519,32 +519,57 @@
 
                 @if (equipoElegido) 
                 {
-                    @for (int i = 0; i < estadisticasPartidos.data.Length; i++)
+
+                    @if (numeroMenu != 0) {
+                        <RadzenButton Text="<" Click="atras"/>
+                    } else
                     {
-                        @if (estadisticasPartidos.data[i].game.home_team_id == idEquipoEstadisticas || estadisticasPartidos.data[i].game.visitor_team_id == idEquipoEstadisticas) {
+                        <RadzenButton Text="<" Click="atras" Disabled/>
+                    }
+
+                    @for (int i = 0; i < estadisticas.Count; i++) {
+                        int z = i + 1;
+                        @if (i == numeroMenu) {
+                            <RadzenButton Text="@z.ToString()" Click="@(args => buscar(z))" Style="background-color:deepskyblue"/>
+                        } else {
+                            <RadzenButton Text="@z.ToString()" Click="@(args => buscar(z))"/>
+                        }
+                        
+                    }
+
+                    @if (numeroMenu != estadisticas.Count - 1) {
+                        <RadzenButton Text=">" Click="adelante"/>
+                    } else {
+                        <RadzenButton Text=">" Click="adelante" Disabled/>
+                    }
+
+                        
+
+
+                        
                             <div style="text-align:center">
-                                <h1>@estadisticasPartidos.data[i].game.date</h1>
-                                <h3>@estadisticasPartidos.data[i].game.status</h3>
-                                @if (estadisticasPartidos.data[i].game.status != "Final")
+                                <h1>@estadisticas[numeroMenu].game.date</h1>
+                                <h3>@estadisticas[numeroMenu].game.status</h3>
+                                @if (estadisticas[numeroMenu].game.status != "Final")
                                 {
-                                    <h4>@estadisticasPartidos.data[i].game.time</h4>
+                                    <h4>@estadisticas[numeroMenu].game.time</h4>
                                 }
                             </div>
                             
                             <div class="flexbox-estadisticas" style="text-align:center">
                                 <div style="width:33%" class="flexbox-estadisticas">
-                                    <img src="@getImgTeam(getEquipo(estadisticasPartidos.data[i].game.visitor_team_id, 2))" alt="img equipo visitante" class="imgRedonda" />
+                                    <img src="@getImgTeam(getEquipo(estadisticas[numeroMenu].game.visitor_team_id, 2))" alt="img equipo visitante" class="imgRedonda" />
                                     @*<p>@getEquipo(estadisticasPartidos.data[i].game.visitor_team_id, 1)</p>*@
-                                    <h2>@estadisticasPartidos.data[i].game.visitor_team_score</h2>
+                                    <h2>@estadisticas[numeroMenu].game.visitor_team_score</h2>
                                 </div>
                                 <div style="width:33%">
                                     <h2>VS</h2>
                                 </div>
 
                                 <div style="width:33%" class="flexbox-estadisticas">
-                                    <h2>@estadisticasPartidos.data[i].game.home_team_score</h2>
+                                    <h2>@estadisticas[numeroMenu].game.home_team_score</h2>
                                     @*<p>@getEquipo(estadisticasPartidos.data[i].game.home_team_id, 1)</p>*@
-                                    <img src="@getImgTeam(getEquipo(estadisticasPartidos.data[i].game.home_team_id, 2))" alt="img equipo local" class="imgRedonda"/>
+                                    <img src="@getImgTeam(getEquipo(estadisticas[numeroMenu].game.home_team_id, 2))" alt="img equipo local" class="imgRedonda"/>
                                 </div>
                             </div>
 
@@ -557,7 +582,7 @@
                                         <p style="font-weight:bold">Minutos de media</p>
                                     </div>
                                     <div style="width:50%;text-align:right">
-                                        <p>@estadisticasPartidos.data[i].min</p>
+                                        <p>@estadisticas[numeroMenu].min</p>
                                     </div>
                                 </div>
                             </div>
@@ -567,15 +592,16 @@
                             <RadzenTabs>
                                 <Tabs>
                                     <RadzenTabsItem Text="Ataque">
+                                        <h3 style="text-align:center">ATAQUE</h3>
                                         <div>
                                             <div class="flexbox-estadisticas">
                                                 <div class="row1" style="width:33%">
                                                     <RadzenArcGauge Style="width: 100%; height: 150px;">
                                                         <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                            <RadzenArcGaugeScaleValue Value=@(estadisticasPartidos.data[i].fg_pct * 1000)>
+                                                            <RadzenArcGaugeScaleValue Value=@(estadisticas[numeroMenu].fg_pct * 1000)>
                                                                 <Template Context="pointer">
                                                                     <h1>
-                                                                        @estadisticasPartidos.data[i].fg_pct
+                                                                        @estadisticas[numeroMenu].fg_pct
                                                                     </h1>
                                                                 </Template>
                                                             </RadzenArcGaugeScaleValue>
@@ -586,10 +612,10 @@
                                                 <div class="row1" style="width:33%">
                                                     <RadzenArcGauge Style="width: 100%; height: 150px;">
                                                         <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                            <RadzenArcGaugeScaleValue Value=@(estadisticasPartidos.data[i].fg3_pct * 1000)>
+                                                            <RadzenArcGaugeScaleValue Value=@(estadisticas[numeroMenu].fg3_pct * 1000)>
                                                                 <Template Context="pointer">
                                                                     <h1>
-                                                                        @estadisticasPartidos.data[i].fg3_pct
+                                                                        @estadisticas[numeroMenu].fg3_pct
                                                                     </h1>
                                                                 </Template>
                                                             </RadzenArcGaugeScaleValue>
@@ -600,10 +626,10 @@
                                                 <div class="row1" style="width:33%">
                                                     <RadzenArcGauge Style="width: 100%; height: 150px;">
                                                         <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                            <RadzenArcGaugeScaleValue Value=@(estadisticasPartidos.data[i].ft_pct * 1000)>
+                                                            <RadzenArcGaugeScaleValue Value=@(estadisticas[numeroMenu].ft_pct * 1000)>
                                                                 <Template Context="pointer">
                                                                     <h1>
-                                                                        @estadisticasPartidos.data[i].ft_pct
+                                                                        @estadisticas[numeroMenu].ft_pct
                                                                     </h1>
                                                                 </Template>
                                                             </RadzenArcGaugeScaleValue>
@@ -635,7 +661,7 @@
                                                     <p style="font-weight:bold">Puntos de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].pts</p>
+                                                    <p>@estadisticas[numeroMenu].pts</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -648,7 +674,7 @@
                                                     <p style="font-weight:bold">Asistencias de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].ast</p>
+                                                    <p>@estadisticas[numeroMenu].ast</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -661,7 +687,7 @@
                                                     <p style="font-weight:bold">Tiros de campo anotados de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].fgm</p>
+                                                    <p>@estadisticas[numeroMenu].fgm</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -674,7 +700,7 @@
                                                     <p style="font-weight:bold">Tiros de campo intentados de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].fga</p>
+                                                    <p>@estadisticas[numeroMenu].fga</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -687,7 +713,7 @@
                                                     <p style="font-weight:bold">Triples anotados de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].fg3m</p>
+                                                    <p>@estadisticas[numeroMenu].fg3m</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -700,7 +726,7 @@
                                                     <p style="font-weight:bold">Triples intentados de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].fg3a</p>
+                                                    <p>@estadisticas[numeroMenu].fg3a</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -713,7 +739,7 @@
                                                     <p style="font-weight:bold">Tiros libres anotados de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].ftm</p>
+                                                    <p>@estadisticas[numeroMenu].ftm</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -726,20 +752,22 @@
                                                     <p style="font-weight:bold">Tiros libres intentados de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].fta</p>
+                                                    <p>@estadisticas[numeroMenu].fta</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </RadzenTabsItem>
 
                                     <RadzenTabsItem Text="Defensa">
+
+                                        <h3 style="text-align:center">DEFENSA</h3>
                                         <div>
                                             <div class="flexbox-estadisticas">
                                                 <div style="width:50%;text-align:left">
                                                     <p style="font-weight:bold">Rebotes de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].reb</p>
+                                                    <p>@estadisticas[numeroMenu].reb</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -752,7 +780,7 @@
                                                     <p style="font-weight:bold">Rebotes ofensivos de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].oreb</p>
+                                                    <p>@estadisticas[numeroMenu].oreb</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -765,7 +793,7 @@
                                                     <p style="font-weight:bold">Rebotes defensivos de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].dreb</p>
+                                                    <p>@estadisticas[numeroMenu].dreb</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -778,7 +806,7 @@
                                                     <p style="font-weight:bold">Robos de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].stl</p>
+                                                    <p>@estadisticas[numeroMenu].stl</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -791,7 +819,7 @@
                                                     <p style="font-weight:bold">Tapones de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].blk</p>
+                                                    <p>@estadisticas[numeroMenu].blk</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -804,7 +832,7 @@
                                                     <p style="font-weight:bold">Perdidas de balon de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].turnover</p>
+                                                    <p>@estadisticas[numeroMenu].turnover</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -817,15 +845,13 @@
                                                     <p style="font-weight:bold">Faltas personales de media</p>
                                                 </div>
                                                 <div style="width:50%;text-align:right">
-                                                    <p>@estadisticasPartidos.data[i].pf</p>
+                                                <p>@estadisticas[numeroMenu].pf</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </RadzenTabsItem>
                                 </Tabs>
                             </RadzenTabs>
-                        }
-                    }
                 }
             </RadzenTabsItem>
         </Tabs>
@@ -863,6 +889,8 @@
     string pickDraft;
 
     List<string> equiposEstadisticas = new List<string>();
+    List<Datum3> estadisticas = new List<Datum3>();
+    int numeroMenu = 0;
 
     int idEquipoEstadisticas;
     bool equipoElegido = false;
@@ -1008,6 +1036,31 @@
     {
         equipoElegido = false;
         idEquipoEstadisticas = Int32.Parse(e.Value.ToString());
+        estadisticas.Clear();
+
+        for (int i = 0; i < estadisticasPartidos.data.Length; i++)
+        {
+            if (estadisticasPartidos.data[i].game.home_team_id == idEquipoEstadisticas || estadisticasPartidos.data[i].game.visitor_team_id == idEquipoEstadisticas)
+            {
+                estadisticas.Add(estadisticasPartidos.data[i]);
+            }
+        }
+
         equipoElegido = true;
+    }
+
+    private void adelante() {
+        numeroMenu++;
+    }
+
+    private void atras()
+    {
+        numeroMenu--;
+    }
+
+    private void buscar(int i)
+    {
+        i = i - 1;
+        numeroMenu = i;
     }
 }
