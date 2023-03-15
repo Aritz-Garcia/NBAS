@@ -543,315 +543,327 @@
                         <RadzenButton Text=">" Click="adelante" Disabled/>
                     }
 
-                        
-
-
-                        
-                            <div style="text-align:center">
-                                <h1>@estadisticas[numeroMenu].game.date</h1>
-                                <h3>@estadisticas[numeroMenu].game.status</h3>
-                                @if (estadisticas[numeroMenu].game.status != "Final")
-                                {
-                                    <h4>@estadisticas[numeroMenu].game.time</h4>
-                                }
-                            </div>
+                    <div style="text-align:center">
+                        <h1>@estadisticas[numeroMenu].game.date</h1>
+                        <h3>@estadisticas[numeroMenu].game.status</h3>
+                        @if (estadisticas[numeroMenu].game.status != "Final")
+                        {
+                            <h4>@estadisticas[numeroMenu].game.time</h4>
+                        }
+                    </div>
                             
-                            <div class="flexbox-estadisticas" style="text-align:center">
-                                <div style="width:33%" class="flexbox-estadisticas">
-                                    <img src="@getImgTeam(getEquipo(estadisticas[numeroMenu].game.visitor_team_id, 2))" alt="img equipo visitante" class="imgRedonda" />
-                                    @*<p>@getEquipo(estadisticasPartidos.data[i].game.visitor_team_id, 1)</p>*@
-                                    <h2>@estadisticas[numeroMenu].game.visitor_team_score</h2>
-                                </div>
-                                <div style="width:33%">
-                                    <h2>VS</h2>
-                                </div>
+                    <div class="flexbox-estadisticas" style="text-align:center">
+                        <div style="width:33%" class="flexbox-estadisticas">
+                            <img src="@getImgTeam(getEquipo(estadisticas[numeroMenu].game.visitor_team_id, 2))" alt="img equipo visitante" class="imgRedonda" />
+                            @*<p>@getEquipo(estadisticasPartidos.data[i].game.visitor_team_id, 1)</p>*@
+                            <h2>@estadisticas[numeroMenu].game.visitor_team_score</h2>
+                        </div>
+                        <div style="width:33%">
+                            <h2>VS</h2>
+                        </div>
 
-                                <div style="width:33%" class="flexbox-estadisticas">
-                                    <h2>@estadisticas[numeroMenu].game.home_team_score</h2>
-                                    @*<p>@getEquipo(estadisticasPartidos.data[i].game.home_team_id, 1)</p>*@
-                                    <img src="@getImgTeam(getEquipo(estadisticas[numeroMenu].game.home_team_id, 2))" alt="img equipo local" class="imgRedonda"/>
-                                </div>
+                        <div style="width:33%" class="flexbox-estadisticas">
+                            <h2>@estadisticas[numeroMenu].game.home_team_score</h2>
+                            @*<p>@getEquipo(estadisticasPartidos.data[i].game.home_team_id, 1)</p>*@
+                            <img src="@getImgTeam(getEquipo(estadisticas[numeroMenu].game.home_team_id, 2))" alt="img equipo local" class="imgRedonda"/>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <br/>
+
+                    <div>
+                        <div class="flexbox-estadisticas">
+                            <div style="width:50%;text-align:left">
+                                <p style="font-weight:bold">Minutos</p>
                             </div>
+                            <div style="width:50%;text-align:right">
+                                <p>@estadisticas[numeroMenu].min</p>
+                            </div>
+                        </div>
+                    </div>
 
-                            <br/>
-                            <br/>
+                    <br />
 
-                            <div>
-                                <div class="flexbox-estadisticas">
-                                    <div style="width:50%;text-align:left">
-                                        <p style="font-weight:bold">Minutos de media</p>
+                    <RadzenTabs>
+                        <Tabs>
+                            <RadzenTabsItem Text="Ataque">
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div class="row1" style="width:33%">
+                                            <RadzenArcGauge Style="width: 100%; height: 150px;">
+                                                <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
+                                                    <RadzenArcGaugeScaleValue Value=@getEstadisticasDouble(1)>
+                                                        <Template Context="pointer">
+                                                            @if (getEstadisticasDouble(1) == 0)
+                                                            {
+                                                                <h1>0</h1>
+                                                            } else
+                                                            {
+                                                                <h1>
+                                                                    @estadisticas[numeroMenu].fg_pct
+                                                                </h1>
+                                                            }
+                                                            
+                                                        </Template>
+                                                    </RadzenArcGaugeScaleValue>
+                                                </RadzenArcGaugeScale>
+                                            </RadzenArcGauge>
+                                        </div>
+
+                                        <div class="row1" style="width:33%">
+                                            <RadzenArcGauge Style="width: 100%; height: 150px;">
+                                                <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
+                                                    <RadzenArcGaugeScaleValue Value=@getEstadisticasDouble(2)>
+                                                        <Template Context="pointer">
+                                                            @if (getEstadisticasDouble(2) == 0) {
+                                                                <h1>0</h1>
+                                                            } else
+                                                            {
+                                                                <h1>
+                                                                    @estadisticas[numeroMenu].fg3_pct
+                                                                </h1>
+                                                            }
+                                                            
+                                                        </Template>
+                                                    </RadzenArcGaugeScaleValue>
+                                                </RadzenArcGaugeScale>
+                                            </RadzenArcGauge>
+                                        </div>
+                                        
+                                        <div class="row1" style="width:33%">
+                                            <RadzenArcGauge Style="width: 100%; height: 150px;">
+                                                <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
+                                                    <RadzenArcGaugeScaleValue Value=@getEstadisticasDouble(3)>
+                                                        <Template Context="pointer">
+                                                            @if (getEstadisticasDouble(3) == 0) {
+                                                                <h1>0</h1>
+                                                            } else
+                                                            {
+                                                                <h1>
+                                                                    @estadisticas[numeroMenu].ft_pct
+                                                                </h1>
+                                                            }
+                                                            
+                                                        </Template>
+                                                    </RadzenArcGaugeScaleValue>
+                                                </RadzenArcGaugeScale>
+                                            </RadzenArcGauge>
+                                        </div>
                                     </div>
-                                    <div style="width:50%;text-align:right">
-                                        <p>@estadisticas[numeroMenu].min</p>
+
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:33%;text-align:center">
+                                            <p>Porcentaje de acierto en tiros de campo</p>
+                                        </div>
+
+                                        <div style="width:33%;text-align:center">
+                                            <p>Porcentaje de acierto en triples</p>
+                                        </div>
+
+                                        <div style="width:33%;text-align:center">
+                                            <p>Porcentaje de acierto en tiros libres</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <br />
+                                <br />
 
-                            <RadzenTabs>
-                                <Tabs>
-                                    <RadzenTabsItem Text="Ataque">
-                                        <h3 style="text-align:center">ATAQUE</h3>
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div class="row1" style="width:33%">
-                                                    <RadzenArcGauge Style="width: 100%; height: 150px;">
-                                                        <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                            <RadzenArcGaugeScaleValue Value=@(estadisticas[numeroMenu].fg_pct * 1000)>
-                                                                <Template Context="pointer">
-                                                                    <h1>
-                                                                        @estadisticas[numeroMenu].fg_pct
-                                                                    </h1>
-                                                                </Template>
-                                                            </RadzenArcGaugeScaleValue>
-                                                        </RadzenArcGaugeScale>
-                                                    </RadzenArcGauge>
-                                                </div>
-
-                                                <div class="row1" style="width:33%">
-                                                    <RadzenArcGauge Style="width: 100%; height: 150px;">
-                                                        <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                            <RadzenArcGaugeScaleValue Value=@(estadisticas[numeroMenu].fg3_pct * 1000)>
-                                                                <Template Context="pointer">
-                                                                    <h1>
-                                                                        @estadisticas[numeroMenu].fg3_pct
-                                                                    </h1>
-                                                                </Template>
-                                                            </RadzenArcGaugeScaleValue>
-                                                        </RadzenArcGaugeScale>
-                                                    </RadzenArcGauge>
-                                                </div>
-
-                                                <div class="row1" style="width:33%">
-                                                    <RadzenArcGauge Style="width: 100%; height: 150px;">
-                                                        <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                            <RadzenArcGaugeScaleValue Value=@(estadisticas[numeroMenu].ft_pct * 1000)>
-                                                                <Template Context="pointer">
-                                                                    <h1>
-                                                                        @estadisticas[numeroMenu].ft_pct
-                                                                    </h1>
-                                                                </Template>
-                                                            </RadzenArcGaugeScaleValue>
-                                                        </RadzenArcGaugeScale>
-                                                    </RadzenArcGauge>
-                                                </div>
-                                            </div>
-
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:33%;text-align:center">
-                                                    <p>Porcentaje de acierto en tiros de campo</p>
-                                                </div>
-
-                                                <div style="width:33%;text-align:center">
-                                                    <p>Porcentaje de acierto en triples</p>
-                                                </div>
-
-                                                <div style="width:33%;text-align:center">
-                                                    <p>Porcentaje de acierto en tiros libres</p>
-                                                </div>
-                                            </div>
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Puntos</p>
                                         </div>
-
-                                        <br />
-
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Puntos de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].pts</p>
-                                                </div>
-                                            </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].pts</p>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <p class="solid"></p>
+                                <p class="solid"></p>
 
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Asistencias de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].ast</p>
-                                                </div>
-                                            </div>
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Asistencias</p>
                                         </div>
-
-                                        <p class="solid"></p>
-
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Tiros de campo anotados de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].fgm</p>
-                                                </div>
-                                            </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].ast</p>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <p class="solid"></p>
+                                <p class="solid"></p>
 
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Tiros de campo intentados de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].fga</p>
-                                                </div>
-                                            </div>
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Tiros de campo anotados</p>
                                         </div>
-
-                                        <p class="solid"></p>
-
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Triples anotados de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].fg3m</p>
-                                                </div>
-                                            </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].fgm</p>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <p class="solid"></p>
+                                <p class="solid"></p>
 
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Triples intentados de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].fg3a</p>
-                                                </div>
-                                            </div>
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Tiros de campo intentados</p>
                                         </div>
-
-                                        <p class="solid"></p>
-
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Tiros libres anotados de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].ftm</p>
-                                                </div>
-                                            </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].fga</p>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <p class="solid"></p>
+                                <p class="solid"></p>
 
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Tiros libres intentados de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].fta</p>
-                                                </div>
-                                            </div>
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Triples anotados</p>
                                         </div>
-                                    </RadzenTabsItem>
-
-                                    <RadzenTabsItem Text="Defensa">
-
-                                        <h3 style="text-align:center">DEFENSA</h3>
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Rebotes de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].reb</p>
-                                                </div>
-                                            </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].fg3m</p>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <p class="solid"></p>
+                                <p class="solid"></p>
 
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Rebotes ofensivos de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].oreb</p>
-                                                </div>
-                                            </div>
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Triples intentados</p>
                                         </div>
-
-                                        <p class="solid"></p>
-
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Rebotes defensivos de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].dreb</p>
-                                                </div>
-                                            </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].fg3a</p>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <p class="solid"></p>
+                                <p class="solid"></p>
 
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Robos de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].stl</p>
-                                                </div>
-                                            </div>
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Tiros libres anotados</p>
                                         </div>
-
-                                        <p class="solid"></p>
-
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Tapones de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].blk</p>
-                                                </div>
-                                            </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].ftm</p>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <p class="solid"></p>
+                                <p class="solid"></p>
 
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Perdidas de balon de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                    <p>@estadisticas[numeroMenu].turnover</p>
-                                                </div>
-                                            </div>
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Tiros libres intentados</p>
                                         </div>
-
-                                        <p class="solid"></p>
-
-                                        <div>
-                                            <div class="flexbox-estadisticas">
-                                                <div style="width:50%;text-align:left">
-                                                    <p style="font-weight:bold">Faltas personales de media</p>
-                                                </div>
-                                                <div style="width:50%;text-align:right">
-                                                <p>@estadisticas[numeroMenu].pf</p>
-                                                </div>
-                                            </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].fta</p>
                                         </div>
-                                    </RadzenTabsItem>
-                                </Tabs>
-                            </RadzenTabs>
+                                    </div>
+                                </div>
+                            </RadzenTabsItem>
+
+                            <RadzenTabsItem Text="Defensa">
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Rebotes</p>
+                                        </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].reb</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="solid"></p>
+
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Rebotes ofensivos</p>
+                                        </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].oreb</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="solid"></p>
+
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Rebotes defensivos</p>
+                                        </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].dreb</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="solid"></p>
+
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Robos</p>
+                                        </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].stl</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="solid"></p>
+
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Tapones</p>
+                                        </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].blk</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="solid"></p>
+
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Perdidas de balon</p>
+                                        </div>
+                                        <div style="width:50%;text-align:right">
+                                            <p>@estadisticas[numeroMenu].turnover</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="solid"></p>
+
+                                <div>
+                                    <div class="flexbox-estadisticas">
+                                        <div style="width:50%;text-align:left">
+                                            <p style="font-weight:bold">Faltas personales</p>
+                                        </div>
+                                        <div style="width:50%;text-align:right">
+                                        <p>@estadisticas[numeroMenu].pf</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </RadzenTabsItem>
+                        </Tabs>
+                    </RadzenTabs>
                 }
             </RadzenTabsItem>
         </Tabs>
@@ -1035,6 +1047,7 @@
     private async Task OnSelect(ChangeEventArgs e)
     {
         equipoElegido = false;
+        numeroMenu = 0;
         idEquipoEstadisticas = Int32.Parse(e.Value.ToString());
         estadisticas.Clear();
 
@@ -1062,5 +1075,34 @@
     {
         i = i - 1;
         numeroMenu = i;
+    }
+
+    private double getEstadisticasDouble(int i)
+    {
+
+        if (i == 1)
+        {
+            if (estadisticas[numeroMenu].ft_pct == null)
+            {
+                return 0;
+            }
+            return Convert.ToDouble(estadisticas[numeroMenu].fg_pct) * 1000;
+        } else if (i == 2)
+        {
+            if (estadisticas[numeroMenu].fg_pct == null)
+            {
+                return 0;
+            }
+            return Convert.ToDouble(estadisticas[numeroMenu].fg3_pct) * 1000;
+        } else if (i == 3)
+        {
+            if (estadisticas[numeroMenu].fg3_pct == null)
+            {
+                return 0;
+            }
+            return Convert.ToDouble(estadisticas[numeroMenu].ft_pct) * 1000;
+        }
+
+        return 0;
     }
 }

@@ -22,13 +22,13 @@
         public int ast { get; set; }
         public int blk { get; set; }
         public int dreb { get; set; }
-        public float fg3_pct { get; set; }
+        public float? fg3_pct { get; set; }
         public int fg3a { get; set; }
         public int fg3m { get; set; }
-        public float fg_pct { get; set; }
+        public float? fg_pct { get; set; }
         public int fga { get; set; }
         public int fgm { get; set; }
-        public float ft_pct { get; set; }
+        public float? ft_pct { get; set; }
         public int fta { get; set; }
         public int ftm { get; set; }
         public Game3 game { get; set; }
@@ -62,12 +62,12 @@
     {
         public int id { get; set; }
         public string first_name { get; set; }
-        public int height_feet { get; set; }
-        public int height_inches { get; set; }
+        public int? height_feet { get; set; }
+        public int? height_inches { get; set; }
         public string last_name { get; set; }
-        public string position { get; set; }
+        public string? position { get; set; }
         public int team_id { get; set; }
-        public int weight_pounds { get; set; }
+        public int? weight_pounds { get; set; }
     }
 
     public class Team3
