@@ -601,7 +601,7 @@
                                                             } else
                                                             {
                                                                 <h1>
-                                                                    @estadisticas[numeroMenu].fg_pct
+                                                                    @tresDecimales(estadisticas[numeroMenu].fg_pct)
                                                                 </h1>
                                                             }
                                                             
@@ -621,7 +621,7 @@
                                                             } else
                                                             {
                                                                 <h1>
-                                                                    @estadisticas[numeroMenu].fg3_pct
+                                                                    @tresDecimales(estadisticas[numeroMenu].fg3_pct)
                                                                 </h1>
                                                             }
                                                             
@@ -641,7 +641,7 @@
                                                             } else
                                                             {
                                                                 <h1>
-                                                                    @estadisticas[numeroMenu].ft_pct
+                                                                    @tresDecimales(estadisticas[numeroMenu].ft_pct)
                                                                 </h1>
                                                             }
                                                             
@@ -1082,21 +1082,21 @@
 
         if (i == 1)
         {
-            if (estadisticas[numeroMenu].ft_pct == null)
+            if (estadisticas[numeroMenu].fg_pct == null)
             {
                 return 0;
             }
             return Convert.ToDouble(estadisticas[numeroMenu].fg_pct) * 1000;
         } else if (i == 2)
         {
-            if (estadisticas[numeroMenu].fg_pct == null)
+            if (estadisticas[numeroMenu].fg3_pct == null)
             {
                 return 0;
             }
             return Convert.ToDouble(estadisticas[numeroMenu].fg3_pct) * 1000;
         } else if (i == 3)
         {
-            if (estadisticas[numeroMenu].fg3_pct == null)
+            if (estadisticas[numeroMenu].ft_pct == null)
             {
                 return 0;
             }
@@ -1104,5 +1104,104 @@
         }
 
         return 0;
+    }
+
+    private double tresDecimales(float? value) {
+        double d = Convert.ToDouble(value);
+        return Math.Round(d, 3);
+    }
+
+    private void colorEquipos(string tresLetras) {
+        switch (tresLetras) {
+            case "ATL":
+                break;
+
+            case "BOS":
+                break;
+
+            case "BKN":
+                break;
+
+            case "CHA":
+                break;
+
+            case "CHI":
+                break;
+
+            case "CLE":
+                break;
+
+            case "DAL":
+                break;
+
+            case "DEN":
+                break;
+
+            case "DET":
+                break;
+
+            case "GSW":
+                break;
+
+            case "HOU":
+                break;
+
+            case "IND":
+                break;
+
+            case "LAC":
+                break;
+
+            case "LAL":
+                break;
+
+            case "MEM":
+                break;
+
+            case "MIA":
+                break;
+
+            case "MIL":
+                break;
+
+            case "MIN":
+                break;
+
+            case "NOP":
+                break;
+
+            case "NYK":
+                break;
+
+            case "OKC":
+                break;
+
+            case "ORL":
+                break;
+
+            case "PHI":
+                break;
+
+            case "PHX":
+                break;
+
+            case "POR":
+                break;
+
+            case "SAC":
+                break;
+
+            case "SAS":
+                break;
+
+            case "TOR":
+                break;
+
+            case "UTA":
+                break;
+
+            case "WAS":
+                break;
+        }
     }
 }
