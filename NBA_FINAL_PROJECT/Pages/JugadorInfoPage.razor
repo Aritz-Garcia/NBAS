@@ -36,7 +36,7 @@
 {
     <RadzenTabs>
         <Tabs>
-            <RadzenTabsItem Text="Información">
+            <RadzenTabsItem Text="Información" Style="@colorEquipos(2, 1, jugador.team.abbreviation)">
                 <div class="divMedio">
                     <RadzenFieldset Text="Información" Style="border-radius: 10px;border-color:black; font-weight:bold">
 
@@ -218,7 +218,7 @@
 
             </RadzenTabsItem>
 
-            <RadzenTabsItem Text="Estadisticas de la Temporada">
+            <RadzenTabsItem Text="Estadisticas de la Temporada" Style="@colorEquipos(2, 1, jugador.team.abbreviation)">
                 <div>
                     <div class="flexbox-estadisticas">
                         <div style="width:50%;text-align:left">
@@ -247,13 +247,13 @@
 
                 <RadzenTabs>
                     <Tabs>
-                        <RadzenTabsItem Text="Ataque">
+                        <RadzenTabsItem Text="Ataque" Style="@colorEquipos(2, 1, jugador.team.abbreviation)">
                             <div>
                                 <div class="flexbox-estadisticas">
                                     <div class="row1" style="width:33%">
                                         <RadzenArcGauge Style="width: 100%; height: 150px;">
                                             <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                <RadzenArcGaugeScaleValue Value=@(stats.data[0].fg_pct * 1000)>
+                                                <RadzenArcGaugeScaleValue Value=@(stats.data[0].fg_pct * 1000) Fill=@colorFill(1, stats.data[0].fg_pct * 1000)>
                                                     <Template Context="pointer">
                                                         <h1>
                                                             @stats.data[0].fg_pct
@@ -267,7 +267,7 @@
                                     <div class="row1" style="width:33%">
                                         <RadzenArcGauge Style="width: 100%; height: 150px;">
                                             <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                <RadzenArcGaugeScaleValue Value=@(stats.data[0].fg3_pct * 1000)>
+                                                <RadzenArcGaugeScaleValue Value=@(stats.data[0].fg3_pct * 1000) Fill=@colorFill(2, stats.data[0].fg3_pct * 1000)>
                                                     <Template Context="pointer">
                                                         <h1>
                                                             @stats.data[0].fg3_pct
@@ -281,7 +281,7 @@
                                     <div class="row1" style="width:33%">
                                         <RadzenArcGauge Style="width: 100%; height: 150px;">
                                             <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                <RadzenArcGaugeScaleValue Value=@(stats.data[0].ft_pct * 1000)>
+                                                <RadzenArcGaugeScaleValue Value=@(stats.data[0].ft_pct * 1000) Fill=@colorFill(3, stats.data[0].ft_pct * 1000)>
                                                     <Template Context="pointer">
                                                         <h1>
                                                             @stats.data[0].ft_pct
@@ -413,7 +413,7 @@
                             </div>
                         </RadzenTabsItem>
 
-                        <RadzenTabsItem Text="Defensa">
+                        <RadzenTabsItem Text="Defensa" Style="@colorEquipos(2, 1, jugador.team.abbreviation)">
                             <div>
                                 <div class="flexbox-estadisticas">
                                     <div style="width:50%;text-align:left">
@@ -506,7 +506,7 @@
                     </Tabs>
                 </RadzenTabs>
             </RadzenTabsItem>
-            <RadzenTabsItem Text="Estadisticas de partidos">
+            <RadzenTabsItem Text="Estadisticas de partidos" Style="@colorEquipos(2, 1, jugador.team.abbreviation)">
                 <select @onchange="OnSelect">
                     <option disabled selected value> -- eligue un equipo -- </option>
                     @foreach (var item in equiposEstadisticas) 
@@ -521,26 +521,26 @@
                 {
 
                     @if (numeroMenu != 0) {
-                        <RadzenButton Text="<" Click="atras"/>
+                        <RadzenButton Text="<" Click="atras" Style="@colorEquipos(3, 1, jugador.team.abbreviation)" />
                     } else
                     {
-                        <RadzenButton Text="<" Click="atras" Disabled/>
+                        <RadzenButton Text="<" Click="atras" Style="@colorEquipos(3, 1, jugador.team.abbreviation)" Disabled />
                     }
 
                     @for (int i = 0; i < estadisticas.Count; i++) {
                         int z = i + 1;
                         @if (i == numeroMenu) {
-                            <RadzenButton Text="@z.ToString()" Click="@(args => buscar(z))" Style="background-color:deepskyblue"/>
+                            <RadzenButton Text="@z.ToString()" Click="@(args => buscar(z))" Style="@colorEquipos(3, 2, jugador.team.abbreviation)" />
                         } else {
-                            <RadzenButton Text="@z.ToString()" Click="@(args => buscar(z))"/>
+                            <RadzenButton Text="@z.ToString()" Click="@(args => buscar(z))" Style="@colorEquipos(3, 1, jugador.team.abbreviation)" />
                         }
                         
                     }
 
                     @if (numeroMenu != estadisticas.Count - 1) {
-                        <RadzenButton Text=">" Click="adelante"/>
+                        <RadzenButton Text=">" Click="adelante" Style="@colorEquipos(3, 1, jugador.team.abbreviation)" />
                     } else {
-                        <RadzenButton Text=">" Click="adelante" Disabled/>
+                        <RadzenButton Text=">" Click="adelante" Style="@colorEquipos(3, 1, jugador.team.abbreviation)" Disabled />
                     }
 
                     <div style="text-align:center">
@@ -587,13 +587,13 @@
 
                     <RadzenTabs>
                         <Tabs>
-                            <RadzenTabsItem Text="Ataque">
+                            <RadzenTabsItem Text="Ataque" Style="@colorEquipos(2, 1, jugador.team.abbreviation)">
                                 <div>
                                     <div class="flexbox-estadisticas">
                                         <div class="row1" style="width:33%">
                                             <RadzenArcGauge Style="width: 100%; height: 150px;">
                                                 <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                    <RadzenArcGaugeScaleValue Value=@getEstadisticasDouble(1)>
+                                                    <RadzenArcGaugeScaleValue Value=@getEstadisticasDouble(1) Fill=@colorFill(1, getEstadisticasDouble(1))>
                                                         <Template Context="pointer">
                                                             @if (getEstadisticasDouble(1) == 0)
                                                             {
@@ -614,8 +614,8 @@
                                         <div class="row1" style="width:33%">
                                             <RadzenArcGauge Style="width: 100%; height: 150px;">
                                                 <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                    <RadzenArcGaugeScaleValue Value=@getEstadisticasDouble(2)>
-                                                        <Template Context="pointer">
+                                                    <RadzenArcGaugeScaleValue Value=@getEstadisticasDouble(2) Fill=@colorFill(2, getEstadisticasDouble(2))>
+                                                        <Template Context="pointer" >
                                                             @if (getEstadisticasDouble(2) == 0) {
                                                                 <h1>0</h1>
                                                             } else
@@ -634,7 +634,7 @@
                                         <div class="row1" style="width:33%">
                                             <RadzenArcGauge Style="width: 100%; height: 150px;">
                                                 <RadzenArcGaugeScale Step="20" Min="0" Max="1000" MinorStep="2" Radius="1.5" TickPosition=GaugeTickPosition.None Y="0.9" Margin="0">
-                                                    <RadzenArcGaugeScaleValue Value=@getEstadisticasDouble(3)>
+                                                    <RadzenArcGaugeScaleValue Value=@getEstadisticasDouble(3) Fill=@colorFill(3, getEstadisticasDouble(3)) >
                                                         <Template Context="pointer">
                                                             @if (getEstadisticasDouble(3) == 0) {
                                                                 <h1>0</h1>
@@ -772,7 +772,7 @@
                                 </div>
                             </RadzenTabsItem>
 
-                            <RadzenTabsItem Text="Defensa">
+                            <RadzenTabsItem Text="Defensa" Style="@colorEquipos(2, 1, jugador.team.abbreviation)">
                                 <div>
                                     <div class="flexbox-estadisticas">
                                         <div style="width:50%;text-align:left">
@@ -1111,97 +1111,309 @@
         return Math.Round(d, 3);
     }
 
-    private void colorEquipos(string tresLetras) {
-        switch (tresLetras) {
+    private string colorEquipos(int numero, int color, string tresLetras) {
+        if (numero == 1) {
+            return "color:" + colorSelect(color, tresLetras);
+        } else if (numero == 2) {
+            return "border-top-color:" + colorSelect(color, tresLetras);
+        } else if (numero == 3) {
+            return "background-color:" + colorSelect(color, tresLetras);
+        }
+        return colorSelect(color, tresLetras);
+    }
+
+    private string colorSelect(int numero, string tresLetras)
+    {
+        switch (tresLetras)
+        {
             case "ATL":
-                break;
+                if (numero == 1) {
+                    return "#C8102E";
+                } else
+                {
+                    return "#FDB927";
+                }
 
             case "BOS":
-                break;
+                if (numero == 1) {
+                    return "#007A33";
+                } else
+                {
+                    return "#BA9653";
+                }
 
             case "BKN":
-                break;
+                if (numero == 1) {
+                    return "#000000";
+                } else
+                {
+                    return "#CD1041";
+                }
 
             case "CHA":
-                break;
+                if (numero == 1) {
+                    return "#1D1160";
+                } else
+                {
+                    return "#00788C";
+                }
 
             case "CHI":
-                break;
+                if (numero == 1) {
+                    return "#CE1141";
+                } else
+                {
+                    return "#000000";
+                }
 
             case "CLE":
-                break;
+                if (numero == 1) {
+                    return "#860038";
+                } else
+                {
+                    return "#041E42";
+                }
 
             case "DAL":
-                break;
+                if (numero == 1)
+                {
+                    return "#00538C";
+                }
+                else
+                {
+                    return "#002B5E";
+                }
 
             case "DEN":
-                break;
+                if (numero == 1) {
+                    return "#0E2240";
+                } else
+                {
+                    return "#FEC524";
+                }
 
             case "DET":
-                break;
+                if (numero == 1) {
+                    return "#C8102E";
+                } else
+                {
+                    return "#1D42BA";
+                }
 
             case "GSW":
-                break;
+                if (numero == 1) {
+                    return "#1D428A";
+                } else
+                {
+                    return "#FFC72C";
+                }
 
             case "HOU":
-                break;
+                if (numero == 1) {
+                    return "#CE1141";
+                } else
+                {
+                    return "#C4CED4";
+                }
 
             case "IND":
-                break;
+                if (numero == 1) {
+                    return "#002D62";
+                } else
+                {
+                    return "#FDBB30";
+                }
 
             case "LAC":
-                break;
+                if (numero == 1) {
+                    return "#C8102E";
+                } else
+                {
+                    return "#1D428A";
+                }
 
             case "LAL":
-                break;
+                if (numero == 1) {
+                    return "#552583";
+                } else
+                {
+                    return "#FDB927";
+                }
 
             case "MEM":
-                break;
+                if (numero == 1) {
+                    return "#5D76A9";
+                } else
+                {
+                    return "#12173F";
+                }
 
             case "MIA":
-                break;
+                if (numero == 1) {
+                    return "#98002E";
+                } else
+                {
+                    return "#F9A01B";
+                }
 
             case "MIL":
-                break;
+                if (numero == 1) {
+                    return "#00471B";
+                } else
+                {
+                    return "#EEE1C6";
+                }
 
             case "MIN":
-                break;
+                if (numero == 1) {
+                    return "#0C2340";
+                } else
+                {
+                    return "#236192";
+                }
 
             case "NOP":
-                break;
+                if (numero == 1) {
+                    return "#0C2340";
+                } else
+                {
+                    return "#C8102E";
+                }
 
             case "NYK":
-                break;
+                if (numero == 1) {
+                    return "#006BB6";
+                } else
+                {
+                    return "#F58426";
+                }
 
             case "OKC":
-                break;
+                if (numero == 1) {
+                    return "#007AC1";
+                } else
+                {
+                    return "#EF3B24";
+                }
 
             case "ORL":
-                break;
+                if (numero == 1) {
+                    return "#0077C0";
+                } else
+                {
+                    return "#C4CED4";
+                }
 
             case "PHI":
-                break;
+                if (numero == 1) {
+                    return "#006BB6";
+                } else
+                {
+                    return "#ED174C";
+                }
 
             case "PHX":
-                break;
+                if (numero == 1) {
+                    return "#1D1160";
+                } else
+                {
+                    return "#E56020";
+                }
 
             case "POR":
-                break;
+                if (numero == 1) {
+                    return "#E03A3E";
+                } else
+                {
+                    return "#000000";
+                }
 
             case "SAC":
-                break;
+                if (numero == 1) {
+                    return "#5A2D81";
+                } else
+                {
+                    return "#63727A";
+                }
 
             case "SAS":
-                break;
+                if (numero == 1) {
+                    return "#C4CED4";
+                } else
+                {
+                    return "#000000";
+                }
 
             case "TOR":
-                break;
+                if (numero == 1) {
+                    return "#CE1141";
+                } else
+                {
+                    return "#000000";
+                }
 
             case "UTA":
-                break;
+                if (numero == 1) {
+                    return "#002B5C";
+                } else
+                {
+                    return "#00471B";
+                }
 
             case "WAS":
-                break;
+                if (numero == 1) {
+                    return "#002B5C";
+                } else
+                {
+                    return "#E31837";
+                }
         }
+        return "#FFFFFF";
+    }
+
+    private string colorFill(int tipo, double numero) {
+        if (tipo == 1) {
+            // tiros de campo
+            if (numero >= 0 && numero < 300)
+            {
+                // rojo
+                return "#FF0000";
+            }
+            else if (numero >= 300 && numero <= 500)
+            {
+                // amarillo
+                return "#FFFF00";
+            }
+            else if (numero > 500 && numero <= 1000)
+            {
+                // verde
+                return "#008000";
+            }
+        } else if (tipo == 2) {
+            // triples
+            if (numero >= 0 && numero < 100) {
+                // rojo
+                return "#FF0000";
+            } else if (numero >= 100 && numero <= 350) {
+                // amarillo
+                return "#FFFF00";
+            } else if (numero > 350 && numero <= 1000) {
+                // verde
+                return "#008000";
+            }
+        } else if (tipo == 3) {
+            // tiros libres
+            if (numero >= 0 && numero < 500) {
+                // rojo
+                return "#FF0000";
+            } else if (numero >= 500 && numero <= 700) {
+                // amarillo
+                return "#FFFF00";
+            } else if (numero > 700 && numero <= 1000) {
+                // verde
+                return "#008000";
+            }
+        }
+        return "#0000FF";
     }
 }
