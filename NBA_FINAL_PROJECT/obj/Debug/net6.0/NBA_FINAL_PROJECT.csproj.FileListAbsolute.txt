@@ -171,3 +171,13 @@ C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\ref
 C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\NBA_FINAL_PROJECT.pdb
 C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\NBA_FINAL_PROJECT.genruntimeconfig.cache
 C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\ref\NBA_FINAL_PROJECT.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.JSInterop.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\MudBlazor.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\System.IO.Pipelines.dll

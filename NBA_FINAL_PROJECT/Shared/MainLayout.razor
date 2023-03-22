@@ -2,18 +2,23 @@
 
 <PageTitle>NBAS</PageTitle>
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+<MudLayout>
+    <MudAppBar Elevation="3">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
+    </MudAppBar>
+    <NavMenu open="@_open" />
+    <MudMainContent Class="pt-16 px-16">
+        <MudContainer Class="mt-6">
             @Body
-        </article>
-    </main>
-</div>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+<MudThemeProvider/>
+
+
+@code {
+    private bool _open = false;
+
+    private void ToggleDrawer() => _open = !_open;
+}

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System.Runtime.ConstrainedExecution;
 using NBA_FINAL_PROJECT.Data;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 var httpClientHandler = new HttpClientHandler();
 httpClientHandler.ServerCertificateCustomValidationCallback =(message, cert, chain, errors)=> true;
 
+builder.Services.AddMudServices();
 builder.Services.AddHttpClient();
 var app = builder.Build();
 
