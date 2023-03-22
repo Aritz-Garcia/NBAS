@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MKJr50e7whJsGh7Lhha5uCYSaoccUq/W0sjUltLmvwo=",
+  "Hash": "cM7Fv/A36aRpDHMjx9Eg/i1HzPC5uiCJf4n1q5BLkuQ=",
   "Source": "NBA_FINAL_PROJECT",
   "BasePath": "_content/NBA_FINAL_PROJECT",
   "Mode": "Default",
@@ -833,12 +833,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ADL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\ADL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/ADL.png",
+      "RelativePath": "img/equipos/ADL.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -847,15 +847,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\ADL.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\ADL.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ATL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\ATL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/ATL.png",
+      "RelativePath": "img/equipos/ATL.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -864,15 +864,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\ATL.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\ATL.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\BKN.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\BKN.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/BKN.png",
+      "RelativePath": "img/equipos/BKN.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -881,15 +881,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\BKN.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\BKN.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\BOS.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\BOS.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/BOS.png",
+      "RelativePath": "img/equipos/BOS.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -898,15 +898,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\BOS.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\BOS.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CHA.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\CHA.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/CHA.png",
+      "RelativePath": "img/equipos/CHA.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -915,15 +915,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\CHA.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\CHA.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CHI.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\CHI.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/CHI.png",
+      "RelativePath": "img/equipos/CHI.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -932,15 +932,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\CHI.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\CHI.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\CLE.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\CLE.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/CLE.png",
+      "RelativePath": "img/equipos/CLE.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -949,15 +949,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\CLE.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\CLE.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DAL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\DAL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/DAL.png",
+      "RelativePath": "img/equipos/DAL.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -966,15 +966,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\DAL.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\DAL.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DEN.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\DEN.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/DEN.png",
+      "RelativePath": "img/equipos/DEN.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -983,15 +983,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\DEN.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\DEN.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\DET.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\DET.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/DET.png",
+      "RelativePath": "img/equipos/DET.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1000,15 +1000,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\DET.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\DET.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\GSW.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\GSW.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/GSW.png",
+      "RelativePath": "img/equipos/GSW.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1017,15 +1017,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\GSW.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\GSW.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\HOU.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\HOU.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/HOU.png",
+      "RelativePath": "img/equipos/HOU.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1034,15 +1034,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\HOU.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\HOU.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\IND.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\IND.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/IND.png",
+      "RelativePath": "img/equipos/IND.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1051,15 +1051,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\IND.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\IND.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\LAC.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\LAC.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/LAC.png",
+      "RelativePath": "img/equipos/LAC.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1068,15 +1068,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\LAC.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\LAC.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\LAL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\LAL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/LAL.png",
+      "RelativePath": "img/equipos/LAL.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1085,15 +1085,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\LAL.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\LAL.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MEM.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\MEM.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/MEM.png",
+      "RelativePath": "img/equipos/MEM.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1102,15 +1102,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\MEM.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\MEM.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIA.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\MIA.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/MIA.png",
+      "RelativePath": "img/equipos/MIA.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1119,15 +1119,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\MIA.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\MIA.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\MIL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/MIL.png",
+      "RelativePath": "img/equipos/MIL.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1136,15 +1136,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\MIL.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\MIL.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\MIN.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\MIN.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/MIN.png",
+      "RelativePath": "img/equipos/MIN.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1153,15 +1153,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\MIN.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\MIN.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\NOP.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\NOP.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/NOP.png",
+      "RelativePath": "img/equipos/NOP.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1170,15 +1170,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\NOP.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\NOP.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\NYK.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\NYK.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/NYK.png",
+      "RelativePath": "img/equipos/NYK.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1187,15 +1187,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\NYK.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\NYK.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\OKC.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\OKC.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/OKC.png",
+      "RelativePath": "img/equipos/OKC.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1204,15 +1204,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\OKC.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\OKC.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\ORL.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\ORL.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/ORL.png",
+      "RelativePath": "img/equipos/ORL.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1221,15 +1221,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\ORL.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\ORL.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\PHI.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\PHI.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/PHI.png",
+      "RelativePath": "img/equipos/PHI.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1238,15 +1238,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\PHI.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\PHI.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\PHX.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\PHX.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/PHX.png",
+      "RelativePath": "img/equipos/PHX.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1255,15 +1255,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\PHX.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\PHX.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\POR.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\POR.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/POR.png",
+      "RelativePath": "img/equipos/POR.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1272,15 +1272,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\POR.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\POR.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\SAC.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\SAC.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/SAC.png",
+      "RelativePath": "img/equipos/SAC.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1289,15 +1289,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\SAC.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\SAC.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\SAS.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\SAS.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/SAS.png",
+      "RelativePath": "img/equipos/SAS.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,15 +1306,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\SAS.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\SAS.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\TOR.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\TOR.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/TOR.png",
+      "RelativePath": "img/equipos/TOR.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1323,15 +1323,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\TOR.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\TOR.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\USA.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\USA.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/USA.png",
+      "RelativePath": "img/equipos/USA.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1340,15 +1340,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\USA.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\USA.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\UTA.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\UTA.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/UTA.png",
+      "RelativePath": "img/equipos/UTA.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1357,15 +1357,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\UTA.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\UTA.png"
     },
     {
-      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\WAS.png",
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\equipos\\WAS.png",
       "SourceId": "NBA_FINAL_PROJECT",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
       "BasePath": "_content/NBA_FINAL_PROJECT",
-      "RelativePath": "img/WAS.png",
+      "RelativePath": "img/equipos/WAS.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1374,7 +1374,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\WAS.png"
+      "OriginalItemSpec": "wwwroot\\img\\equipos\\WAS.png"
+    },
+    {
+      "Identity": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\img\\logo\\Logo_2.0.png",
+      "SourceId": "NBA_FINAL_PROJECT",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\6002441\\Documents\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\wwwroot\\",
+      "BasePath": "_content/NBA_FINAL_PROJECT",
+      "RelativePath": "img/logo/Logo_2.0.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo\\Logo_2.0.png"
     }
   ]
 }
