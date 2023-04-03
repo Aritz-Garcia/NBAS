@@ -54,9 +54,9 @@
 
 <div style="display: flex;align-items: center">
 
-    @if (jugadores2 != null && !error)
-    {
-        <div style="width:40%">
+    <div style="width:40%">
+        @if (jugadores2 != null && !error1)
+        {
             <select @onchange="OnSelect">
                 <option disabled selected value> -- eligue un equipo -- </option>
                 @for(int i = 0; i < jugadores2.data.Length; i++)
@@ -64,8 +64,8 @@
                     <option value="@jugadores2.data[i].id">@jugadores2.data[i].first_name  @jugadores2.data[i].last_name</option>
                 }
             </select>
-        </div>
-    }
+        }
+    </div>
     <div style="width:20%; text-align:center">
         @if (elegido1 && elegido2)
         {
@@ -73,9 +73,9 @@
         }
     </div>
 
-    @if (jugadores4 != null && !error1)
-    {
-        <div style="width:40%">
+    <div style="width:40%">
+        @if (jugadores4 != null && !error2)
+        {
             <select @onchange="OnSelect1">
                 <option disabled selected value> -- eligue un equipo -- </option>
                 @for (int i = 0; i < jugadores4.data.Length; i++)
@@ -83,10 +83,31 @@
                     <option value="@jugadores4.data[i].id">@jugadores4.data[i].first_name  @jugadores4.data[i].last_name</option>
                 }
             </select>
-        </div>
-    }
+        }
+    </div>
 
 </div>
+
+@if (error1 || error2 || error1Datos || error2Datos)
+{
+    <div style="display: flex;align-items: center">
+        <div style="width:40%">
+            @if (error1 || error1Datos)
+            {
+                <p style="color:red"><b>@error1String</b></p>
+            }
+        </div>
+        <div style="width:20%">
+        </div>
+        <div style="width:40%">
+            @if (error2 || error2Datos)
+            {
+                <p style="color:red"><b>@error2String</b></p>
+            }
+        </div>
+    </div>
+}
+
 
 @if (terminado)
 {
@@ -108,8 +129,10 @@
     Jugador jugadores3;
     Jugador jugadores4;
     bool deshabilitado = false;
-    bool error = false;
     bool error1 = false;
+    bool error2 = false;
+    bool error1Datos = false;
+    bool error2Datos = false;
     bool buscado = false;
     string value1 = "";
     string value2 = "";
@@ -119,11 +142,14 @@
     int idJugador2 = -1;
     Estadisticas estadisticas1;
     Estadisticas estadisticas2;
+    Estadisticas statsVacia;
     DataItem[] jugador1Info;
     DataItem[] jugador2Info;
     // Para saber que tipo de rafico quieren
     int info = 1;
     bool terminado = false;
+    string error1String;
+    string error2String;
 
     class DataItem
     {
@@ -131,12 +157,17 @@
         public int Data { get; set; }
     }
 
+    protected override async Task OnInitializedAsync()
+    {
+        statsVacia = await http.GetFromJsonAsync<Estadisticas>($"https://balldontlie.io/api/v1/stats?per_page=100&seasons[]=2022&player_ids[]=14");
+    }
     private async Task buscar()
     {
         deshabilitado = true;
         if (value1.Length < 2)
         {
-            error = true;
+            error1 = true;
+            error1String = errores(1);
             jugadores = null;
             jugadores2 = jugadores;
             deshabilitado = false;
@@ -145,7 +176,8 @@
         }
         else
         {
-            error = false;
+            error1 = false;
+            error1Datos = false;
             jugadores = null;
             jugadores2 = null;
             jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&search={value1}");
@@ -162,7 +194,8 @@
         deshabilitado = true;
         if (value2.Length < 2)
         {
-            error1 = true;
+            error2 = true;
+            error2String = errores(1);
             jugadores3 = null;
             jugadores4 = jugadores;
             deshabilitado = false;
@@ -171,7 +204,8 @@
         }
         else
         {
-            error1 = false;
+            error2 = false;
+            error2Datos = false;
             jugadores3 = null;
             jugadores4 = null;
             jugadores3 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&search={value2}");
@@ -197,6 +231,10 @@
         elegido1 = false;
         elegido2 = false;
         terminado = false;
+        error1 = false;
+        error2 = false;
+        error1Datos = false;
+        error2Datos = false;
     }
 
     private async Task OnSelect(ChangeEventArgs e)
@@ -204,6 +242,7 @@
         elegido1 = false;
         idJugador1 = Int32.Parse(e.Value.ToString());
         elegido1 = true;
+        error1Datos = false;
         terminado = false;
     }
 
@@ -212,6 +251,7 @@
         elegido2 = false;
         idJugador2 = Int32.Parse(e.Value.ToString());
         elegido2 = true;
+        error2Datos = false;
         terminado = false;
     }
 
@@ -221,21 +261,100 @@
 
         terminado = false;
         estadisticas1 = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&seasons[]=2022&player_ids[]={idJugador1}");
-        jugador1Info = new DataItem[estadisticas1.meta.total_count];
-        inicializar(1);
-
-        if (estadisticas1.meta.total_pages > 1)
+        @if (estadisticas1 == null || estadisticas1.data.Equals(statsVacia.data))
         {
-            for (int z = 1; z < estadisticas1.meta.total_pages; z++)
+            error1Datos = true;
+            error1String = errores(2);
+            elegido1 = false;
+        }
+        else
+        {
+            jugador1Info = new DataItem[estadisticas1.meta.total_count];
+            inicializar(1);
+
+            if (estadisticas1.meta.total_pages > 1)
             {
-                if (z != 1)
+                for (int z = 1; z < estadisticas1.meta.total_pages; z++)
                 {
-                    estadisticas1 = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&page={z}&seasons[]=2022&player_ids[]={idJugador1}");
+                    if (z != 1)
+                    {
+                        estadisticas1 = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&page={z}&seasons[]=2022&player_ids[]={idJugador1}");
+                    }
+                    int j;
+                    for (int i = 0; i < estadisticas1.data.Length; i++)
+                    {
+                        j = (z * 100 - 100) + i + 1;
+                        jugador1Info[i].Partido = j;
+                        switch (info)
+                        {
+                            case 1:
+                                // Puntos
+                                jugador1Info[i].Data = estadisticas1.data[i].pts;
+                                break;
+                            case 2:
+                                // Asistencias
+                                jugador1Info[i].Data = estadisticas1.data[i].ast;
+                                break;
+                            case 3:
+                                // Rebotes
+                                jugador1Info[i].Data = estadisticas1.data[i].reb;
+                                break;
+                            case 4:
+                                // Robos
+                                jugador1Info[i].Data = estadisticas1.data[i].stl;
+                                break;
+                            case 5:
+                                // Tapones
+                                jugador1Info[i].Data = estadisticas1.data[i].blk;
+                                break;
+                            case 6:
+                                // Tiros de campo Intentados
+                                jugador1Info[i].Data = estadisticas1.data[i].fga;
+                                break;
+                            case 7:
+                                // Tiros libres Intentados
+                                jugador1Info[i].Data = estadisticas1.data[i].fta;
+                                break;
+                            case 8:
+                                // Tiros de 3 Intentados
+                                jugador1Info[i].Data = estadisticas1.data[i].fg3a;
+                                break;
+                            case 9:
+                                // Tiros de campo Anotados
+                                jugador1Info[i].Data = estadisticas1.data[i].fgm;
+                                break;
+                            case 10:
+                                // Tiros libres Anotados
+                                jugador1Info[i].Data = estadisticas1.data[i].ftm;
+                                break;
+                            case 11:
+                                // Tiros de 3 Anotados
+                                jugador1Info[i].Data = estadisticas1.data[i].fg3m;
+                                break;
+                            case 12:
+                                // Faltas
+                                jugador1Info[i].Data = estadisticas1.data[i].pf;
+                                break;
+                            case 13:
+                                // Rebotes defensivos
+                                jugador1Info[i].Data = estadisticas1.data[i].dreb;
+                                break;
+                            case 14:
+                                // Rebotes ofensivos
+                                jugador1Info[i].Data = estadisticas1.data[i].oreb;
+                                break;
+
+                        }
+                    }
+
                 }
+            }
+            else
+            {
                 int j;
                 for (int i = 0; i < estadisticas1.data.Length; i++)
                 {
-                    j = (z * 100 - 100) + i + 1;
+                    j = i + 1;
                     jugador1Info[i].Partido = j;
                     switch (info)
                     {
@@ -298,95 +417,105 @@
 
                     }
                 }
-
             }
+        }
+        
+
+        estadisticas2 = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&seasons[]=2022&player_ids[]={idJugador2}");
+        @if (estadisticas2 == null || estadisticas2.data.Equals(statsVacia.data))
+        {
+            error2Datos = true;
+            error2String = errores(2);
+            elegido2 = false;
+
         }
         else
         {
-            int j;
-            for (int i = 0; i < estadisticas1.data.Length; i++)
+            jugador2Info = new DataItem[estadisticas2.meta.total_count];
+            inicializar(2);
+
+            if (estadisticas2.meta.total_pages > 1)
             {
-                j = i + 1;
-                jugador1Info[i].Partido = j;
-                switch (info)
+                for (int z = 1; z < estadisticas2.meta.total_pages; z++)
                 {
-                    case 1:
-                        // Puntos
-                        jugador1Info[i].Data = estadisticas1.data[i].pts;
-                        break;
-                    case 2:
-                        // Asistencias
-                        jugador1Info[i].Data = estadisticas1.data[i].ast;
-                        break;
-                    case 3:
-                        // Rebotes
-                        jugador1Info[i].Data = estadisticas1.data[i].reb;
-                        break;
-                    case 4:
-                        // Robos
-                        jugador1Info[i].Data = estadisticas1.data[i].stl;
-                        break;
-                    case 5:
-                        // Tapones
-                        jugador1Info[i].Data = estadisticas1.data[i].blk;
-                        break;
-                    case 6:
-                        // Tiros de campo Intentados
-                        jugador1Info[i].Data = estadisticas1.data[i].fga;
-                        break;
-                    case 7:
-                        // Tiros libres Intentados
-                        jugador1Info[i].Data = estadisticas1.data[i].fta;
-                        break;
-                    case 8:
-                        // Tiros de 3 Intentados
-                        jugador1Info[i].Data = estadisticas1.data[i].fg3a;
-                        break;
-                    case 9:
-                        // Tiros de campo Anotados
-                        jugador1Info[i].Data = estadisticas1.data[i].fgm;
-                        break;
-                    case 10:
-                        // Tiros libres Anotados
-                        jugador1Info[i].Data = estadisticas1.data[i].ftm;
-                        break;
-                    case 11:
-                        // Tiros de 3 Anotados
-                        jugador1Info[i].Data = estadisticas1.data[i].fg3m;
-                        break;
-                    case 12:
-                        // Faltas
-                        jugador1Info[i].Data = estadisticas1.data[i].pf;
-                        break;
-                    case 13:
-                        // Rebotes defensivos
-                        jugador1Info[i].Data = estadisticas1.data[i].dreb;
-                        break;
-                    case 14:
-                        // Rebotes ofensivos
-                        jugador1Info[i].Data = estadisticas1.data[i].oreb;
-                        break;
+                    if (z != 1)
+                    {
+                        estadisticas2 = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&page={z}&seasons[]=2022&player_ids[]={idJugador2}");
+                    }
+                    int j;
+                    for (int i = 0; i < estadisticas2.data.Length; i++)
+                    {
+                        j = (z * 100 - 100) + i + 1;
+                        jugador2Info[i].Partido = j;
+                        switch (info)
+                        {
+                            case 1:
+                                // Puntos
+                                jugador2Info[i].Data = estadisticas2.data[i].pts;
+                                break;
+                            case 2:
+                                // Asistencias
+                                jugador2Info[i].Data = estadisticas2.data[i].ast;
+                                break;
+                            case 3:
+                                // Rebotes
+                                jugador2Info[i].Data = estadisticas2.data[i].reb;
+                                break;
+                            case 4:
+                                // Robos
+                                jugador2Info[i].Data = estadisticas2.data[i].stl;
+                                break;
+                            case 5:
+                                // Tapones
+                                jugador2Info[i].Data = estadisticas2.data[i].blk;
+                                break;
+                            case 6:
+                                // Tiros de campo Intentados
+                                jugador2Info[i].Data = estadisticas2.data[i].fga;
+                                break;
+                            case 7:
+                                // Tiros libres Intentados
+                                jugador2Info[i].Data = estadisticas2.data[i].fta;
+                                break;
+                            case 8:
+                                // Tiros de 3 Intentados
+                                jugador2Info[i].Data = estadisticas2.data[i].fg3a;
+                                break;
+                            case 9:
+                                // Tiros de campo Anotados
+                                jugador2Info[i].Data = estadisticas2.data[i].fgm;
+                                break;
+                            case 10:
+                                // Tiros libres Anotados
+                                jugador2Info[i].Data = estadisticas2.data[i].ftm;
+                                break;
+                            case 11:
+                                // Tiros de 3 Anotados
+                                jugador2Info[i].Data = estadisticas2.data[i].fg3m;
+                                break;
+                            case 12:
+                                // Faltas
+                                jugador2Info[i].Data = estadisticas2.data[i].pf;
+                                break;
+                            case 13:
+                                // Rebotes defensivos
+                                jugador2Info[i].Data = estadisticas2.data[i].dreb;
+                                break;
+                            case 14:
+                                // Rebotes ofensivos
+                                jugador2Info[i].Data = estadisticas1.data[i].oreb;
+                                break;
+                        }
+                    }
 
                 }
             }
-        }
-
-        estadisticas2 = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&seasons[]=2022&player_ids[]={idJugador2}");
-        jugador2Info = new DataItem[estadisticas2.meta.total_count];
-        inicializar(2);
-
-        if (estadisticas2.meta.total_pages > 1)
-        {
-            for (int z = 1; z < estadisticas2.meta.total_pages; z++)
+            else
             {
-                if (z != 1)
-                {
-                    estadisticas2 = await http.GetFromJsonAsync<Estadisticas>($"https://www.balldontlie.io/api/v1/stats?per_page=100&page={z}&seasons[]=2022&player_ids[]={idJugador2}");
-                }
                 int j;
                 for (int i = 0; i < estadisticas2.data.Length; i++)
                 {
-                    j = (z * 100 - 100) + i + 1;
+                    j = i + 1;
                     jugador2Info[i].Partido = j;
                     switch (info)
                     {
@@ -448,78 +577,19 @@
                             break;
                     }
                 }
-
             }
+        }
+
+        @if (estadisticas1 == null || estadisticas1.data.Equals(statsVacia.data) || estadisticas2 == null || estadisticas2.data.Equals(statsVacia.data))
+        {
+            terminado = false;
         }
         else
         {
-            int j;
-            for (int i = 0; i < estadisticas2.data.Length; i++)
-            {
-                j = i + 1;
-                jugador2Info[i].Partido = j;
-                switch (info)
-                {
-                    case 1:
-                        // Puntos
-                        jugador2Info[i].Data = estadisticas2.data[i].pts;
-                        break;
-                    case 2:
-                        // Asistencias
-                        jugador2Info[i].Data = estadisticas2.data[i].ast;
-                        break;
-                    case 3:
-                        // Rebotes
-                        jugador2Info[i].Data = estadisticas2.data[i].reb;
-                        break;
-                    case 4:
-                        // Robos
-                        jugador2Info[i].Data = estadisticas2.data[i].stl;
-                        break;
-                    case 5:
-                        // Tapones
-                        jugador2Info[i].Data = estadisticas2.data[i].blk;
-                        break;
-                    case 6:
-                        // Tiros de campo Intentados
-                        jugador2Info[i].Data = estadisticas2.data[i].fga;
-                        break;
-                    case 7:
-                        // Tiros libres Intentados
-                        jugador2Info[i].Data = estadisticas2.data[i].fta;
-                        break;
-                    case 8:
-                        // Tiros de 3 Intentados
-                        jugador2Info[i].Data = estadisticas2.data[i].fg3a;
-                        break;
-                    case 9:
-                        // Tiros de campo Anotados
-                        jugador2Info[i].Data = estadisticas2.data[i].fgm;
-                        break;
-                    case 10:
-                        // Tiros libres Anotados
-                        jugador2Info[i].Data = estadisticas2.data[i].ftm;
-                        break;
-                    case 11:
-                        // Tiros de 3 Anotados
-                        jugador2Info[i].Data = estadisticas2.data[i].fg3m;
-                        break;
-                    case 12:
-                        // Faltas
-                        jugador2Info[i].Data = estadisticas2.data[i].pf;
-                        break;
-                    case 13:
-                        // Rebotes defensivos
-                        jugador2Info[i].Data = estadisticas2.data[i].dreb;
-                        break;
-                    case 14:
-                        // Rebotes ofensivos
-                        jugador2Info[i].Data = estadisticas1.data[i].oreb;
-                        break;
-                }
-            }
+            terminado = true;
         }
-        terminado = true;
+
+
 
     }
 
@@ -564,6 +634,20 @@
                     };
             }
         }
+    }
+
+    private string errores(int numero)
+    {
+        if (numero == 1)
+        {
+            // error 1
+            return "El texto tiene que ser de dos letras o mas";
+        } else if (numero == 2)
+        {
+            // error 2
+            return "El jugador elegido no tiene datos";
+        }
+        return null;
     }
 
 }
