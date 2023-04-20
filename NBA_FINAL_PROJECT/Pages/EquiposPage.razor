@@ -17,13 +17,14 @@ else if (equipo2 != null)
                 AllowPaging="true"
                 PageSize="10">
         <Columns>
-            <RadzenDataGridColumn TItem="Datum1" Property="abbreviation" Frozen="true" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Title="Foto">
+            <RadzenDataGridColumn TItem="Datum1" Property="abbreviation" Frozen="true" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Title="Escudo">
                 <Template Context="Datum1">
                     <RadzenImage Path="@getImg(Datum1.abbreviation)" class="rz-gravatar"/>
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn TItem="Datum1" Property="full_name" Title="Full Name" />
             <RadzenDataGridColumn TItem="Datum1" Property="name" Title="Name" />
+            <RadzenDataGridColumn TItem="Datum1" Property="conference" Title="Conferencia" />
             <RadzenDataGridColumn TItem="Datum1" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
                 <Template Context="Datum1">
                     <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(Datum1.id))>
@@ -44,6 +45,7 @@ else if (equipo2 != null)
         equipo = await http.GetFromJsonAsync<Equipos>($"https://www.balldontlie.io/api/v1/teams");
         equipo2 = equipo;
     }
+
     private void buscar(int id){
         navigation.NavigateTo($"/equiposinfo/{id}");
     }

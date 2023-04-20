@@ -5,89 +5,121 @@
 @inject HttpClient http
 @inject NavigationManager navigation
 
+<div>
+    <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="arrow_back" Size="ButtonSize.Medium" Click=volver />
+</div>
+
 @if(equipo != null)
 {
-    <div  style="align-items:center;">
-        <div>
+    <RadzenCard class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
+        <RadzenStack Orientation="Radzen.Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4">
+            <RadzenImage Path="@getEqImg(equipo.abbreviation)" Style="width: 100px; height: 100px; border-radius: 50%;" />
+            <RadzenStack Gap="0">
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Equipo</RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1"><b>@equipo.full_name</b></RadzenText>
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Ciudad</RadzenText>
+                <RadzenText TextStyle="TextStyle.Body1"><b>@equipo.city</b></RadzenText>
+            </RadzenStack>
+        </RadzenStack>
+    </RadzenCard>
 
-        </div>
-        <div >
-            <ul>
-                <li>@equipo.abbreviation</li>
-                <li>@equipo.city</li>
-                <li>@equipo.conference</li>
-                <li>@equipo.division</li>
-                <li>@equipo.full_name</li>
-                <li>@equipo.name</li>
-            </ul>
-        </div>
-    </div>
-    <div>
-        <RadzenButton ButtonStyle="ButtonStyle.Primary" Text="Atras"  Size="ButtonSize.Medium" Click=pan>
-        </RadzenButton>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Id</th>
-                <th>Nombre Completo</th>
-            </tr>
-        </thead>
-        <tbody>
-            @*posible Card*@
-            @for(int i =0;i< jugadoresdelequiponombre.Count; i++)
-            {
-                <tr>
-                    <td><img src="($'https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/{@jugadoresdelequipoid[i]}.png')"/></td>
-                    <td>@jugadoresdelequipoid[i].ToString()</td>
-                    <td>@jugadoresdelequiponombre[i].ToString()</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    @if (jugadoresEquipo != null)
+    {
+        <RadzenDataGrid Data="@jugadoresEquipo" TItem="JugadorUnicoEquipo" 
+                AllowFiltering="true"
+                AllowSorting="true"
+                AllowPaging="true"
+                PageSize="10">
+            <Columns>
+                <RadzenDataGridColumn TItem="JugadorUnicoEquipo" Property="dorsal" TextAlign="TextAlign.Center" Title="Dorsal" Width="120px" />
+                <RadzenDataGridColumn TItem="JugadorUnicoEquipo" Property="id" Frozen="true" Sortable="false" Filterable="false" Width="270px" TextAlign="TextAlign.Center" Title="Foto">
+                    <Template Context="JugadorUnicoEquipo">
+                        <RadzenImage Path="@getUrlImg(JugadorUnicoEquipo.id)" class="imgRedondaJugEq" />
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="JugadorUnicoEquipo" Property="full_name" TextAlign="TextAlign.Center" Title="Nombre Completo" />
+            </Columns>
+        </RadzenDataGrid>
+    }
 }
 
 @code {
     [Parameter]
     public String Id { get; set;}
     Equipo equipo;
-    Jugador jugadores;
-    Jugador jugadores2;
-    Jugador jugadores3;
-    List<int> jugadoresdelequipoid = new List<int>();
-    List<String> jugadoresdelequiponombre = new List<String>();
+    Equipos_API2 equipos;
+    Jugador_API2 jugadores;
+    List<JugadorUnicoEquipo> jugadoresEquipo = new List<JugadorUnicoEquipo>();
+    string idEquipo_API2;
+
     protected override async Task OnInitializedAsync()
     {
         equipo = await http.GetFromJsonAsync<Equipo>($"https://www.balldontlie.io/api/v1/teams/{Id}");
 
-        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100");
-        jugadores2 = jugadores;
-        for (int i = 1; i < jugadores.meta.total_pages; i++)
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={i}");
+        equipos = await http.GetFromJsonAsync<Equipos_API2>("https://data.nba.net/data/10s/prod/v1/2022/teams.json");
 
-            if (jugadores3 == null)
+        jugadores = await http.GetFromJsonAsync<Jugador_API2>("https://data.nba.net/data/10s/prod/v1/2022/players.json");
+
+        idEquipo();
+    }
+
+    private void idEquipo()
+    {
+        for (int i = 0; i < equipos.league.standard.Length; i++)
+        {
+            if (equipos.league.standard[i].tricode.Equals(equipo.abbreviation))
             {
-                jugadores3 = jugadores2;
-            }
-            else
-            {
-                jugadores3.data = jugadores2.data.Union(jugadores3.data).ToArray();
+                idEquipo_API2 = equipos.league.standard[i].teamId;
             }
         }
-        for(int i=0; i<jugadores3.data.Length; i++)
+
+        getJugadores();
+    }
+
+    private void getJugadores()
+    {
+        for (int i = 0; i < jugadores.league.standard.Length; i ++)
         {
-            if (jugadores3.data[i].team.id == equipo.id) {
-                jugadoresdelequipoid.Add(jugadores3.data[i].id);
-                String nombrecompleto = jugadores3.data[i].first_name +" "+ jugadores3.data[i].last_name;
-                jugadoresdelequiponombre.Add(nombrecompleto);
+            if (jugadores.league.standard[i].teamId == idEquipo_API2)
+            {
+                JugadorUnicoEquipo jugadorUnicoEquipo = new JugadorUnicoEquipo();
+
+                jugadorUnicoEquipo.id = jugadores.league.standard[i].personId;
+
+                @if (jugadores.league.standard[i].firstName != null && jugadores.league.standard[i].lastName != null)
+                {
+                    jugadorUnicoEquipo.full_name = jugadores.league.standard[i].firstName + " " + jugadores.league.standard[i].lastName;
+                }
+                else if (jugadores.league.standard[i].firstName == null)
+                {
+                    jugadorUnicoEquipo.full_name = jugadores.league.standard[i].lastName;
+                }
+                else if (jugadores.league.standard[i].lastName == null)
+                {
+                    jugadorUnicoEquipo.full_name = jugadores.league.standard[i].firstName;
+                }
+                else
+                {
+                    jugadorUnicoEquipo.full_name = "";
+                }
+                jugadorUnicoEquipo.dorsal = Int32.Parse(jugadores.league.standard[i].jersey);
+                jugadoresEquipo.Add(jugadorUnicoEquipo);
             }
         }
     }
 
-    public void pan(){
-        navigation.NavigateTo("/counter");
+    private void volver(){
+        navigation.NavigateTo("/equipos");
+    }
+
+    private string getUrlImg(string id)
+    {
+        return "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/" + id + ".png";
+    }
+
+    private string getEqImg(string abbreviation)
+    {
+        return "/img/equipos/" + abbreviation + ".png";
     }
 
 }
