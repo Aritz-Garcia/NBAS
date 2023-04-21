@@ -32,7 +32,7 @@
                 PageSize="10">
             <Columns>
                 <RadzenDataGridColumn TItem="JugadorUnicoEquipo" Property="dorsal" TextAlign="TextAlign.Center" Title="Dorsal" Width="120px" />
-                <RadzenDataGridColumn TItem="JugadorUnicoEquipo" Property="id" Frozen="true" Sortable="false" Filterable="false" Width="270px" TextAlign="TextAlign.Center" Title="Foto">
+                <RadzenDataGridColumn TItem="JugadorUnicoEquipo" Property="id" Sortable="false" Filterable="false" Width="270px" TextAlign="TextAlign.Center" Title="Foto">
                     <Template Context="JugadorUnicoEquipo">
                         <RadzenImage Path="@getUrlImg(JugadorUnicoEquipo.id)" class="imgRedondaJugEq" />
                     </Template>
@@ -102,7 +102,14 @@
                 {
                     jugadorUnicoEquipo.full_name = "";
                 }
-                jugadorUnicoEquipo.dorsal = Int32.Parse(jugadores.league.standard[i].jersey);
+                if (jugadores.league.standard[i].jersey.Equals(""))
+                {
+                    jugadorUnicoEquipo.dorsal = -1;
+                }
+                else
+                {
+                    jugadorUnicoEquipo.dorsal = Int32.Parse(jugadores.league.standard[i].jersey);
+                }
                 jugadoresEquipo.Add(jugadorUnicoEquipo);
             }
         }

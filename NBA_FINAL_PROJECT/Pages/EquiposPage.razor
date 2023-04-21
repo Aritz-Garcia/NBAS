@@ -17,7 +17,7 @@ else if (equipo2 != null)
                 AllowPaging="true"
                 PageSize="10">
         <Columns>
-            <RadzenDataGridColumn TItem="Datum1" Property="abbreviation" Frozen="true" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Title="Escudo">
+            <RadzenDataGridColumn TItem="Datum1" Property="abbreviation" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Title="Escudo">
                 <Template Context="Datum1">
                     <RadzenImage Path="@getImg(Datum1.abbreviation)" class="rz-gravatar"/>
                 </Template>

@@ -1,0 +1,103 @@
+﻿@page "/partidoInfo/{id}"
+@using NBA_FINAL_PROJECT.Model
+@using System.Globalization
+@using System.Net.Http
+@using System.Text.Json.Serialization
+@inject HttpClient http
+@inject NavigationManager navigation
+
+
+@if (partido == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div>
+        <RadzenButton ButtonStyle="ButtonStyle.Danger" Click="volver" Icon="arrow_back" Disabled=@deshabilitado />
+        <br/>
+        <br/>
+    </div>
+
+    <div style="text-align:center">
+        <h3>@getDate()</h3>
+        @if (partido.status.Contains("1st") || partido.status.Contains("2nd") || partido.status.Contains("Halftime") || partido.status.Contains("3rd") || partido.status.Contains("4th") || partido.status.Contains("Final"))
+        {
+            <h4>@partido.status</h4>
+        }
+        else
+        {
+            <h4>El partido no ha empezado</h4>
+        }
+
+        @if (partido.status.Contains("1st") || partido.status.Contains("2nd") || partido.status.Contains("Halftime") || partido.status.Contains("3rd") || partido.status.Contains("4th"))
+        {
+            <h4>@partido.time</h4>
+        }
+
+    </div>
+
+    <div class="flexbox-estadisticas">
+        <div>
+            <RadzenCard class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
+                <RadzenStack Orientation="Radzen.Orientation.Vertical" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4">
+                    <RadzenImage Path="@getEqImg(partido.visitor_team.abbreviation)" Style="width: 100px; height: 100px; border-radius: 50%;" />
+                    <RadzenStack Gap="0">
+                        <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Equipo</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1"><b>@partido.visitor_team.full_name</b></RadzenText>
+                        <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Ciudad</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1"><b>@partido.visitor_team.city</b></RadzenText>
+                    </RadzenStack>
+                </RadzenStack>
+            </RadzenCard>
+        </div>
+
+        <div><h3>@partido.visitor_team_score</h3></div>
+        <div><h3>VS</h3></div>
+        <div><h3>@partido.home_team_score</h3></div>
+
+        <div>
+            <RadzenCard class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
+                <RadzenStack Orientation="Radzen.Orientation.Vertical" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4">
+                    <RadzenImage Path="@getEqImg(partido.home_team.abbreviation)" Style="width: 100px; height: 100px; border-radius: 50%;" />
+                    <RadzenStack Gap="0">
+                        <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Equipo</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1"><b>@partido.home_team.full_name</b></RadzenText>
+                        <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Ciudad</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1"><b>@partido.home_team.city</b></RadzenText>
+                    </RadzenStack>
+                </RadzenStack>
+            </RadzenCard>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public String Id { get; set; }
+    PartidoUnico1 partido;
+    string format = "yyyy-MM-dd HH:mm:ss UTC";
+    bool deshabilitado = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        deshabilitado = true;
+        partido = await http.GetFromJsonAsync<PartidoUnico1>($"https://balldontlie.io/api/v1/games/{Id}");
+        deshabilitado = false;
+    }
+
+    private string getEqImg(string abbreviation)
+    {
+        return "/img/equipos/" + abbreviation + ".png";
+    }
+
+    private string getDate()
+    {
+        return DateTime.ParseExact(partido.date, format, CultureInfo.InvariantCulture).ToString();
+    }
+
+    private void volver()
+    {
+        navigation.NavigateTo("/partidos");
+    }
+}
