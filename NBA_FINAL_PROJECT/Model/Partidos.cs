@@ -11,7 +11,7 @@
     {
         public int total_pages { get; set; }
         public int current_page { get; set; }
-        public int next_page { get; set; }
+        public int? next_page { get; set; }
         public int per_page { get; set; }
         public int total_count { get; set; }
     }
@@ -19,7 +19,7 @@
     public class Datum2
     {
         public int id { get; set; }
-        public DateTime date { get; set; }
+        public string date { get; set; }
         public Home_Team home_team { get; set; }
         public int home_team_score { get; set; }
         public int period { get; set; }

@@ -1,63 +1,160 @@
 ﻿@page "/partidos"
+@using NBA_FINAL_PROJECT.Model
+@using System.Globalization
+@using System.Net.Http
+@using System.Text.Json.Serialization
+@inject HttpClient http
+@inject NavigationManager navigation
 
-<PageTitle>Weather forecast</PageTitle>
-
-@using NBA_FINAL_PROJECT.Data
-@inject WeatherForecastService ForecastService
-
-<h1>Weather forecast</h1>
-
-<p>This component demonstrates fetching data from a service.</p>
-
-@if (forecasts == null)
+@if (partidos == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-
-    <RadzenDataGrid Data="@forecasts" TItem="WeatherForecast"
+    <h4>PlayOffs:</h4>
+    <input type="checkbox" @onchange="OnChange" value="@playoffs" disabled="@des" />
+    <br/>
+    <br/>
+    
+    @if (allPartidos != null)
+    {
+        <RadzenDataGrid Data="@allPartidos" TItem="PartidoUnico"
                 AllowFiltering="true"
                 AllowSorting="true"
                 AllowPaging="true"
-                PageSize="5">
-        <Columns>
-            <RadzenDataGridColumn TItem="WeatherForecast" Property="Date" Title="Date">
-                <Template Context="data">@data.Date.ToShortDateString()</Template>
-            </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="WeatherForecast" Property="TemperatureC" Title="Temp. (C)" />
-            <RadzenDataGridColumn TItem="WeatherForecast" Property="TemperatureF" Title="Temp. (F)" />
-            <RadzenDataGridColumn TItem="WeatherForecast" Property="Summary" Title="Summary" />
-        </Columns>
-    </RadzenDataGrid>
+                PageSize="10">
+            <Columns>
+                <RadzenDataGridColumn TItem="PartidoUnico" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Property="visitor_team.abbreviation" Title="Visitante">
+                    <Template Context="PartidoUnico">
+                        <RadzenImage Path="@getImg(PartidoUnico.visitor_team.abbreviation)" class="rz-gravatar" />
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="visitor_team_score" Title="Puntuación" />
+                <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="date" Title="Fecha" />
+                <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="status" Title="Estado" />
+                <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="home_team_score" Title="Puntuación"/>
+                <RadzenDataGridColumn TItem="PartidoUnico" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Property="home_team.abbreviation" Title="Local">
+                    <Template Context="PartidoUnico">
+                        <RadzenImage Path="@getImg(PartidoUnico.home_team.abbreviation)" class="rz-gravatar" />
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="PartidoUnico" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
+                    <Template Context="PartidoUnico">
+                        @if (PartidoUnico.status.Contains("No empezado"))
+                        {
+                            <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) Disabled />
+                        }
+                        else
+                        {
+                            <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) />
+                        }
 
 
-
-
-    <RadzenChart>
-        <RadzenLineSeries Smooth="true" Data="@forecasts" CategoryProperty="Date" Title="Temp. (C)"
-                      LineType="LineType.Solid" ValueProperty="TemperatureC">
-            <RadzenMarkers MarkerType="MarkerType.Circle" />
-        </RadzenLineSeries>
-        <RadzenLineSeries Smooth="true" Data="@forecasts" CategoryProperty="Date" Title="Temp. (F)"
-                      LineType="LineType.Solid" ValueProperty="TemperatureF">
-            <RadzenMarkers MarkerType="MarkerType.Circle" />
-        </RadzenLineSeries>
-
-        <RadzenCategoryAxis FormatString="{0:dd}">
-        </RadzenCategoryAxis>
-        <RadzenValueAxis>
-            <RadzenGridLines Visible="true" />
-            <RadzenAxisTitle Text="Temperature" />
-        </RadzenValueAxis>
-    </RadzenChart>
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+        </RadzenDataGrid>
+    } else
+    {
+        <p>No hay Partidos</p>
+    }
+    
 }
 
 @code {
-    private WeatherForecast[]? forecasts;
+    Partidos partidos;
+    Partidos partido = new Partidos();
+    List<PartidoUnico> allPartidos;
+    bool playoffs = false;
+    bool des = false;
+    string format = "yyyy-MM-ddTHH:mm:ss.fffZ";
+    string format1 = "yyyy-MM-ddTHH:mm:ssZ";
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        des = true;
+        partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page=1&seasons[]=2022&postseason={playoffs}");
+
+        await getAllPartidos();
+    }
+
+    private async Task getAllPartidos()
+    {
+        allPartidos = new List<PartidoUnico>();
+        @for (int i = 1; i <= partidos.meta.total_pages; i++)
+        {
+            partidos = partido;
+            partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page={i}&seasons[]=2022&postseason={playoffs}");
+
+            foreach (var item in partidos.data)
+            {
+                PartidoUnico partidoUnico = new PartidoUnico();
+                partidoUnico.home_team = new Home_Team1();
+                partidoUnico.visitor_team = new Visitor_Team1();
+
+                partidoUnico.id = item.id;
+                partidoUnico.date = DateTime.ParseExact(item.date, format, CultureInfo.InvariantCulture);
+
+                partidoUnico.home_team.id = item.home_team.id;
+                partidoUnico.home_team.abbreviation = item.home_team.abbreviation;
+                partidoUnico.home_team.city = item.home_team.city;
+                partidoUnico.home_team.conference = item.home_team.conference;
+                partidoUnico.home_team.division = item.home_team.division;
+                partidoUnico.home_team.full_name = item.home_team.full_name;
+                partidoUnico.home_team.name = item.home_team.name;
+                partidoUnico.home_team_score = item.home_team_score;
+
+                partidoUnico.period = item.period;
+                partidoUnico.postseason = item.postseason;
+                partidoUnico.season = item.season;
+                if (item.status.Contains("1st") || item.status.Contains("2nd") || item.status.Contains("Halftime") || item.status.Contains("3rd") || item.status.Contains("4th") || item.status.Contains("Final"))
+                {
+                    partidoUnico.status = item.status;
+                } 
+                else 
+                {
+                    partidoUnico.status = "No empezado";
+                }
+                partidoUnico.time = item.time;
+
+                partidoUnico.visitor_team.id = item.visitor_team.id;
+                partidoUnico.visitor_team.abbreviation = item.visitor_team.abbreviation;
+                partidoUnico.visitor_team.city = item.visitor_team.city;
+                partidoUnico.visitor_team.conference = item.visitor_team.conference;
+                partidoUnico.visitor_team.division = item.visitor_team.division;
+                partidoUnico.visitor_team.full_name = item.visitor_team.full_name;
+                partidoUnico.visitor_team.name = item.visitor_team.name;
+                partidoUnico.visitor_team_score = item.visitor_team_score;
+
+                allPartidos.Add(partidoUnico);
+            }
+
+        }
+
+        allPartidos = allPartidos.OrderByDescending(x => x.date).ToList();
+
+        des = false;
+
+    }
+
+    private async Task OnChange(ChangeEventArgs e)
+    {
+        des = true;
+        allPartidos.Clear();
+        playoffs = !playoffs;
+        partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page=1&seasons[]=2022&postseason={playoffs}");
+        await getAllPartidos();
+
+    }
+
+    private string getImg(string abb)
+    {
+        return "/img/equipos/" + abb + ".png";
+    }
+
+    private void buscar(int id)
+    {
+        
     }
 }
