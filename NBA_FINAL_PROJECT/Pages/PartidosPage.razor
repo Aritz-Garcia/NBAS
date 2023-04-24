@@ -74,7 +74,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         des = true;
-        partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page=1&seasons[]=2022&postseason={playoffs}");
+        partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page=1&seasons[]=2022&postseason=false");
 
         await getAllPartidos();
     }
@@ -82,10 +82,17 @@ else
     private async Task getAllPartidos()
     {
         allPartidos = new List<PartidoUnico>();
-        @for (int i = 1; i <= partidos.meta.total_pages; i++)
+        for (int i = 1; i <= partidos.meta.total_pages; i++)
         {
             partidos = partido;
-            partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page={i}&seasons[]=2022&postseason={playoffs}");
+            if (playoffs)
+            {
+                partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page={i}&seasons[]=2022&postseason=true");
+            } else
+            {
+                partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page={i}&seasons[]=2022&postseason=false");
+            }
+
 
             foreach (var item in partidos.data)
             {
@@ -143,7 +150,14 @@ else
         des = true;
         allPartidos.Clear();
         playoffs = !playoffs;
-        partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page=1&seasons[]=2022&postseason={playoffs}");
+        if (playoffs)
+        {
+            partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page=1&seasons[]=2022&postseason=true");
+        } else
+        {
+            partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page=1&seasons[]=2022&postseason=false");
+        }
+
         await getAllPartidos();
 
     }
