@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\img\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\img\ADL.png" />
     <None Include="wwwroot\img\ATL.png" />
     <None Include="wwwroot\img\BKN.png" />
@@ -26,6 +22,7 @@
     <None Include="wwwroot\img\DAL.png" />
     <None Include="wwwroot\img\DEN.png" />
     <None Include="wwwroot\img\DET.png" />
+    <None Include="wwwroot\img\fondo\campo baloncesto.jpg" />
     <None Include="wwwroot\img\GSW.png" />
     <None Include="wwwroot\img\HOU.png" />
     <None Include="wwwroot\img\IND.png" />
