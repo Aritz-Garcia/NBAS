@@ -1,4 +1,15 @@
 /* _content/NBA_FINAL_PROJECT/Pages/EquiposInfoPage.razor.rz.scp.css */
+/* _content/NBA_FINAL_PROJECT/Pages/Mapa.razor.rz.scp.css */
+body[b-gjwjnxb7vx]{
+    margin: 0; 
+    padding: 0; 
+}
+#map[b-gjwjnxb7vx] { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
 /* _content/NBA_FINAL_PROJECT/Shared/MainLayout.razor.rz.scp.css */
 .page[b-4n3sby3lyr] {
     position: relative;

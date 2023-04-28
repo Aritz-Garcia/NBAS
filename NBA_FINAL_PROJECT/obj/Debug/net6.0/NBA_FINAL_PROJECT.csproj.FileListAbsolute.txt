@@ -284,3 +284,4 @@ D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.JSInterop.dll
 D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\MudBlazor.dll
 D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\System.IO.Pipelines.dll
 D:\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\scopedcss\Pages\EquiposInfoPage.razor.rz.scp.css
+D:\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\scopedcss\Pages\Mapa.razor.rz.scp.css
