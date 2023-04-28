@@ -858,19 +858,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xabit\\.nuget\\packages\\": {}
+    "C:\\Users\\in2dm3\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xabit\\OneDrive\\Documentos\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj",
+      "projectUniqueName": "D:\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj",
       "projectName": "NBA_FINAL_PROJECT",
-      "projectPath": "C:\\Users\\xabit\\OneDrive\\Documentos\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj",
-      "packagesPath": "C:\\Users\\xabit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xabit\\OneDrive\\Documentos\\GitHub\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\",
+      "projectPath": "D:\\G05_NBA\\NBA_FINAL_PROJECT\\NBA_FINAL_PROJECT.csproj",
+      "packagesPath": "C:\\Users\\in2dm3\\.nuget\\packages\\",
+      "outputPath": "D:\\G05_NBA\\NBA_FINAL_PROJECT\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\xabit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\in2dm3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -878,6 +883,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -924,7 +930,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -273,3 +273,14 @@ C:\Users\xabit\OneDrive\Documentos\GitHub\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\ne
 C:\Users\xabit\OneDrive\Documentos\GitHub\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\NBA_FINAL_PROJECT.pdb
 C:\Users\xabit\OneDrive\Documentos\GitHub\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\NBA_FINAL_PROJECT.genruntimeconfig.cache
 C:\Users\xabit\OneDrive\Documentos\GitHub\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\ref\NBA_FINAL_PROJECT.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.JSInterop.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\MudBlazor.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\System.IO.Pipelines.dll
+D:\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\scopedcss\Pages\EquiposInfoPage.razor.rz.scp.css
