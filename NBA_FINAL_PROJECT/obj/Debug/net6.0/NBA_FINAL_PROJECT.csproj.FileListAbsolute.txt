@@ -285,3 +285,13 @@ D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\MudBlazor.dll
 D:\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\System.IO.Pipelines.dll
 D:\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\scopedcss\Pages\EquiposInfoPage.razor.rz.scp.css
 D:\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\scopedcss\Pages\Mapa.razor.rz.scp.css
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.JSInterop.dll
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\MudBlazor.dll
+D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\System.IO.Pipelines.dll

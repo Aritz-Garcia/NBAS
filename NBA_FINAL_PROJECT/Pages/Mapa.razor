@@ -5,14 +5,25 @@
 @using System.Text.Json.Serialization
 @inject HttpClient http
 @inject NavigationManager navigation
-@inject IJSRuntime jsRuntime
+@inject IJSRuntime JSRuntime
 
 
-<div id="map" style="width: 30px; height: 50px;"></div>
+<div id="map"></div>
 
 
 
 
 @code {
-    
+    string[] nombresEste = { "ATL", "BOS", "BRK", "CHA", "CHI", "CLE", "DET", "IND", "MIA", "MIL", "NYK", "ORL", "PHI", "TOR", "WAS" };
+    double[] coordenadasEste = { -2.96476, 43.28475, -101.46394314630489, 39.97724130613545 };
+    string[] nombresWest = { "DAL", "DEN", "GSW", "HOU", "LAC", "LAL", "MEM", "MIN", "NOP", "OKC", "PHX", "POR", "SAC", "SAS", "UTA" };
+    double[] coordenadasWest = {  };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initialize", coordenadasEste, nombresEste);
+        }
+    }
 }

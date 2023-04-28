@@ -7,52 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Pages\Mapa.razor.css" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Pages\Mapa.razor.css" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MudBlazor" Version="6.2.0" />
     <PackageReference Include="Radzen.Blazor" Version="4.7.13" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\img\ADL.png" />
-    <None Include="wwwroot\img\ATL.png" />
-    <None Include="wwwroot\img\BKN.png" />
-    <None Include="wwwroot\img\BOS.png" />
-    <None Include="wwwroot\img\CHA.png" />
-    <None Include="wwwroot\img\CHI.png" />
-    <None Include="wwwroot\img\CLE.png" />
-    <None Include="wwwroot\img\DAL.png" />
-    <None Include="wwwroot\img\DEN.png" />
-    <None Include="wwwroot\img\DET.png" />
     <None Include="wwwroot\img\fondo\campo baloncesto.jpg" />
-    <None Include="wwwroot\img\GSW.png" />
-    <None Include="wwwroot\img\HOU.png" />
-    <None Include="wwwroot\img\IND.png" />
-    <None Include="wwwroot\img\LAC.png" />
-    <None Include="wwwroot\img\LAL.png" />
-    <None Include="wwwroot\img\MEM.png" />
-    <None Include="wwwroot\img\MIA.png" />
-    <None Include="wwwroot\img\MIL.png" />
-    <None Include="wwwroot\img\MIN.png" />
-    <None Include="wwwroot\img\NOP.png" />
-    <None Include="wwwroot\img\NYK.png" />
-    <None Include="wwwroot\img\OKC.png" />
-    <None Include="wwwroot\img\ORL.png" />
-    <None Include="wwwroot\img\PHI.png" />
-    <None Include="wwwroot\img\PHX.png" />
-    <None Include="wwwroot\img\POR.png" />
-    <None Include="wwwroot\img\SAC.png" />
-    <None Include="wwwroot\img\SAS.png" />
-    <None Include="wwwroot\img\TOR.png" />
-    <None Include="wwwroot\img\USA.png" />
-    <None Include="wwwroot\img\UTA.png" />
-    <None Include="wwwroot\img\WAS.png" />
   </ItemGroup>
 
 </Project>
