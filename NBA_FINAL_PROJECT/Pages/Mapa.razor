@@ -7,6 +7,15 @@
 @inject NavigationManager navigation
 @inject IJSRuntime JSRuntime
 
+<div style="text-align:center">
+    <RadzenSelectBar @bind-Value=@sitio TValue="bool" Change="(args => OnChange())" class="mb-5" Disabled=@des>
+        <Items>
+            <RadzenSelectBarItem Text="Este" Value="false" />
+            <RadzenSelectBarItem Text="Oeste" Value="true" />
+        </Items>
+    </RadzenSelectBar>
+</div>
+
 
 <div id="map"></div>
 
@@ -14,16 +23,42 @@
 
 
 @code {
+    bool sitio = false;
+    bool des = false;
     string[] nombresEste = { "ATL", "BOS", "BRK", "CHA", "CHI", "CLE", "DET", "IND", "MIA", "MIL", "NYK", "ORL", "PHI", "TOR", "WAS" };
-    double[] coordenadasEste = { -2.96476, 43.28475, -101.46394314630489, 39.97724130613545 };
+    string[] estadioEste = { "State Farm Arena", "TD Garden", "Barclays Center", "Spectrum Center", "United Center", "Rocket Mortgage FieldHouse", "Little Caesars Arena", "Bankers Life Fieldhouse", "FTX Arena", "Fiserv Forum", "Madison Square Garden", "Amway Center", "Wells Fargo Center", "Scotiabank Arena", "Capital One Arena" };
+    double[] coordenadasEste = { 33.75780635511085, -84.39645274602786, 42.36675282263578, -71.06206008465739, 40.68557590191238, -73.97455769314776, 35.225186, -80.839301, 41.880691, -87.674178, 41.496806, -81.688056, 42.341151, -83.055419, 39.763943, -86.155268, 25.781389, -80.187222, 43.043969, -87.917641, 40.750556, -73.993611, 28.539167, -81.383611, 39.901111, -75.171944, 43.643333, -79.379167, 38.898125, -77.020958 };
+    double[] coordInEste = { 35.67812168084672, -81.58400795344038 };
     string[] nombresWest = { "DAL", "DEN", "GSW", "HOU", "LAC", "LAL", "MEM", "MIN", "NOP", "OKC", "PHX", "POR", "SAC", "SAS", "UTA" };
-    double[] coordenadasWest = {  };
+    string[] estadioWest = { "American Airlines Center", "Ball Arena", "Chase Center", "Toyota Center", "Crypto.com Arena", "Crypto.com Arena", "FedExForum", "Target Center", "Smoothie King Center", "Paycom Center", "Footprint Center", "Moda Center", "Golden 1 Center", "AT&T Center", "Vivint Arena" };
+    double[] coordenadasWest = { 32.79058422236794, -96.81021850523652, 39.748663, -105.007222, 37.768056, -122.3875, 29.750833, -95.362222, 34.043, -118.267, 34.043, -118.267, 35.138072, -90.050505, 44.979444, -93.276111, 29.949722, -90.081944, 35.463333, -97.515, 33.445278, -112.071389, 45.531667, -122.666944, 38.580278, -121.499444, 29.426944, -98.4375, 40.768333, -111.901111 };
+    double[] coordInWest = { 38.22661622669721, -105.92112180131453 };
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        des = true;
+
         if (firstRender)
         {
-            await JSRuntime.InvokeVoidAsync("initialize", coordenadasEste, nombresEste);
+            await JSRuntime.InvokeVoidAsync("initialize", coordenadasEste, nombresEste, estadioEste, coordInEste);
         }
+
+        des = false;
+    }
+
+    private async Task OnChange()
+    {
+        des = true;
+
+        if (!sitio)
+        {
+            await JSRuntime.InvokeVoidAsync("initialize", coordenadasEste, nombresEste, estadioEste, coordInEste);
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("initialize", coordenadasWest, nombresWest, estadioWest, coordInWest);
+        }
+
+        des = false;
     }
 }
