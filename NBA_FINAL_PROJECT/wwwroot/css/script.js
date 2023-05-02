@@ -3,7 +3,7 @@ function initialize(coordenadas, nombre, estadio, inicio) {
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        style: 'mapbox://styles/mapbox/streets-v12', // style URL
         center: [inicio[1], inicio[0]], // starting position [lng, lat]
         zoom: 4.5 // starting zoom
     });
@@ -22,5 +22,7 @@ function initialize(coordenadas, nombre, estadio, inicio) {
         var popup = new mapboxgl.Popup().setText(estadio[i]);
 
         var marcador = new mapboxgl.Marker(element).setLngLat({ lng, lat }).setPopup(popup).addTo(map);
+
+        popup.on('open', () => { map.setCenter([lng, lat]).zoomTo(17, { duration: 3000 }) });
     }
 }
