@@ -3,7 +3,7 @@ function initialize(coordenadas, nombre, estadio, inicio) {
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/mapbox/streets-v12', // style URL
+        style: 'mapbox://styles/agarciaelo/clh0b0fh400j001quaz1j511x', // style URL
         center: [inicio[1], inicio[0]], // starting position [lng, lat]
         zoom: 4.5 // starting zoom
     });
@@ -23,6 +23,7 @@ function initialize(coordenadas, nombre, estadio, inicio) {
 
         var marcador = new mapboxgl.Marker(element).setLngLat({ lng, lat }).setPopup(popup).addTo(map);
 
-        popup.on('open', () => { map.setCenter([lng, lat]).zoomTo(17, { duration: 3000 }) });
+        popup.on('open', () => { map.setCenter([lng, lat]).setPitch(60).zoomTo(17, { duration: 3000 }) });
+        popup.on('close', () => { map.setPitch(0) });
     }
 }
