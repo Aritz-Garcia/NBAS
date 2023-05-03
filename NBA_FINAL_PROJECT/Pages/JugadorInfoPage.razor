@@ -11,29 +11,37 @@
 
 
 @if (jugador != null) {
-    <h3>@jugador.first_name @jugador.last_name</h3>
-
-    <div class="contenedor-flexbox">
-        <div style="display:inline-block">
-            <img src="@getImgTeam(jugador.team.abbreviation)" alt="foto equipo" class="imgRedonda"/>
+    <div class="flexbox-estadisticas">
+        <div style="width:50%">
+            <RadzenCard class="rz-mx-auto" Style="max-width: 420px">
+                <RadzenStack Orientation="Radzen.Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4">
+                    @if (idJugador != null)
+                    {
+                        <RadzenImage Path="@url" Style="width: 137px; height: 100px; border-radius: 50%;" />
+                    }
+                    <RadzenStack Gap="0" AlignItems="Radzen.AlignItems.Normal">
+                        <RadzenText TextStyle="TextStyle.Overline" Style="@colorEquipos(1, 2, jugador.team.abbreviation)">Nombre</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1" Style="@colorEquipos(1, 1, jugador.team.abbreviation)"><b>@jugador.first_name @jugador.last_name</b></RadzenText>
+                    </RadzenStack>
+                </RadzenStack>
+            </RadzenCard>
         </div>
 
-        <div style="display:inline-block">
-            <h5>@jugador.team.full_name</h5>
+        <div style="width:50%">
+            <RadzenCard class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
+                <RadzenStack Orientation="Radzen.Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4">
+                    <RadzenImage Path="@getImgTeam(jugador.team.abbreviation)" Style="width: 100px; height: 100px; border-radius: 50%;" />
+                    <RadzenStack Gap="0">
+                        <RadzenText TextStyle="TextStyle.Overline" Style="@colorEquipos(1, 2, jugador.team.abbreviation)" class="rz-display-flex rz-mt-2 rz-my-0">Equipo</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1" Style="@colorEquipos(1, 1, jugador.team.abbreviation)"><b>@jugador.team.full_name</b></RadzenText>
+                        <RadzenText TextStyle="TextStyle.Overline" Style="@colorEquipos(1, 2, jugador.team.abbreviation)" class="rz-display-flex rz-mt-4 rz-mb-0">Ciudad</RadzenText>
+                        <RadzenText TextStyle="TextStyle.Body1" Style="@colorEquipos(1, 1, jugador.team.abbreviation)"><b>@jugador.team.city</b></RadzenText>
+                    </RadzenStack>
+                </RadzenStack>
+            </RadzenCard>
         </div>
     </div>
-    <br/>
 }
-
-@if (idJugador != null)
-{
-    <div class="divMedio">
-        <img src="@url" alt="foto jugador" class="imgRedonda1" />
-    </div>
-    <br/>
-    <br/>
-}
-
 
 @if (stats != null && !stats.data.Equals(statsVacia.data) || numeroCamiseta != null || posicion != null || altura != null || peso != null || fechaNacimiento != null || debut != null || anosPro != null || universidad != null || seasonDraft != "" && seasonDraft != null || roundDraft != "" && roundDraft != null || pickDraft != "" && pickDraft != null || equipos != null)
 {

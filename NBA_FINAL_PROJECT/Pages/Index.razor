@@ -85,7 +85,7 @@
             <RadzenDataGridColumn TItem="Datum" Property="last_name" Title="Last Name" />
             <RadzenDataGridColumn TItem="Datum" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
                 <Template Context="Datum">
-                     <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> info(Datum.id))>
+                     <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="info" Size="ButtonSize.Small" Click=@(()=> info(Datum.id))>
                      </RadzenButton>
                  </Template>
             </RadzenDataGridColumn>
