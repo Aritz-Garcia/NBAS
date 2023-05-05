@@ -39,7 +39,7 @@ else
 
     <div class="flexbox-estadisticas">
         <div>
-            <RadzenCard class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
+            <RadzenCard onclick="@(() => verEquipo(partido.visitor_team.id))" class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
                 <RadzenStack Orientation="Radzen.Orientation.Vertical" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4">
                     <RadzenImage Path="@getEqImg(partido.visitor_team.abbreviation)" Style="width: 100px; height: 100px; border-radius: 50%;" />
                     <RadzenStack Gap="0">
@@ -57,7 +57,7 @@ else
         <div><h3>@partido.home_team_score</h3></div>
 
         <div>
-            <RadzenCard class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
+            <RadzenCard onclick="@(() => verEquipo(partido.home_team.id))" class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
                 <RadzenStack Orientation="Radzen.Orientation.Vertical" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4">
                     <RadzenImage Path="@getEqImg(partido.home_team.abbreviation)" Style="width: 100px; height: 100px; border-radius: 50%;" />
                     <RadzenStack Gap="0">
@@ -99,5 +99,10 @@ else
     private void volver()
     {
         navigation.NavigateTo("/partidos");
+    }
+
+    private void verEquipo(int id)
+    {
+        navigation.NavigateTo($"/equiposinfo/{id}");
     }
 }

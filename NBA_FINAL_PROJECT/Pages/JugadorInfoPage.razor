@@ -28,7 +28,7 @@
         </div>
 
         <div style="width:50%">
-            <RadzenCard class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
+            <RadzenCard onclick="@(() => verEquipo(jugador.team.id))" class="rz-my-12 rz-mx-auto" Style="max-width: 420px">
                 <RadzenStack Orientation="Radzen.Orientation.Horizontal" JustifyContent="JustifyContent.Start" Gap="1rem" Class="rz-p-4">
                     <RadzenImage Path="@getImgTeam(jugador.team.abbreviation)" Style="width: 100px; height: 100px; border-radius: 50%;" />
                     <RadzenStack Gap="0">
@@ -1437,5 +1437,10 @@
     private void volver()
     {
         navigation.NavigateTo("/");
+    }
+
+    private void verEquipo(int id)
+    {
+        navigation.NavigateTo($"/equiposinfo/{id}");
     }
 }

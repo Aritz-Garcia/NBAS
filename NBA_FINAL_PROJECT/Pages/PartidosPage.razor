@@ -5,6 +5,7 @@
 @using System.Text.Json.Serialization
 @inject HttpClient http
 @inject NavigationManager navigation
+@inject IJSRuntime JSRuntime
 
 @if (partidos == null)
 {
@@ -12,64 +13,127 @@
 }
 else
 {
-    <h4>PlayOffs:</h4>
-    <input type="checkbox" @onchange="OnChange" value="@playoffs" disabled="@des" />
-    <br/>
-    <br/>
-    
-    @if (allPartidos != null)
-    {
-        <RadzenDataGrid Data="@allPartidos" TItem="PartidoUnico"
-                AllowFiltering="true"
-                AllowSorting="true"
-                AllowPaging="true"
-                PageSize="10">
-            <Columns>
-                <RadzenDataGridColumn TItem="PartidoUnico" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Property="visitor_team.abbreviation" Title="Visitante">
-                    <Template Context="PartidoUnico">
-                        <RadzenImage Path="@getImg(PartidoUnico.visitor_team.abbreviation)" class="rz-gravatar" />
-                    </Template>
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="visitor_team_score" Title="Puntuación" />
-                <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="date" Title="Fecha" />
-                <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="status" Title="Estado" />
-                <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="home_team_score" Title="Puntuación"/>
-                <RadzenDataGridColumn TItem="PartidoUnico" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Property="home_team.abbreviation" Title="Local">
-                    <Template Context="PartidoUnico">
-                        <RadzenImage Path="@getImg(PartidoUnico.home_team.abbreviation)" class="rz-gravatar" />
-                    </Template>
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn TItem="PartidoUnico" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
-                    <Template Context="PartidoUnico">
-                        @if (PartidoUnico.status.Contains("No empezado"))
-                        {
-                            <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) Disabled />
-                        }
-                        else
-                        {
-                            <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) />
-                        }
+    // Select Radzen
+    <div style="text-align:center">
+        <RadzenSelectBar @bind-Value=@elegir TValue="bool" class="mb-5">
+            <Items>
+                <RadzenSelectBarItem id="selectBarRadzen" Text="Calendario" Value="false" />
+                <RadzenSelectBarItem id="selectBarRadzen" Text="Tabla" Value="true" />
+            </Items>
+        </RadzenSelectBar>
+    </div>
 
-
-                    </Template>
-                </RadzenDataGridColumn>
-            </Columns>
-        </RadzenDataGrid>
-    } else
+    @if (!elegir)
     {
-        <p>No hay Partidos</p>
+        // Calendario
+        <div>
+            @if (partidosCalendario != null)
+            {
+                <div>
+                    <RadzenScheduler @ref=@scheduler Style="height: 2000px;" TItem="PartidoCalendario" Data="@partidosCalendario" StartProperty="Start" EndProperty="End"
+                         TextProperty="Text" SelectedIndex="0" SlotRender=@OnSlotRender AppointmentRender=@OnAppointmentRender AppointmentSelect=@OnAppointmentSelect>
+                        <RadzenMonthView Text="Mes" />
+                    </RadzenScheduler>
+                </div>
+                <br />
+                <br />
+
+                @if (showDialog)
+                {
+                    <div id="overlay"></div>
+                    <dialog id="ms">
+                        <h2 id="titulo">Partido</h2>
+                        <p id="texto">@texto</p>
+                        <div>
+                            @if (partidoVisible)
+                            {
+                                <button id="aceptar" @onclick="Aceptar">Aceptar</button>
+                            }
+                            <button id="cancelar" @onclick="Cancelar">Cancelar</button>
+                        </div>
+                    </dialog>
+                }
+            }
+        </div>
     }
-    
+    else
+    {
+        // Tabla
+        <div>
+            <h4>PlayOffs:</h4>
+            <input type="checkbox" @onchange="OnChange" value="@playoffs" disabled="@des" />
+            <br />
+            <br />
+
+            @if (allPartidos != null)
+            {
+                <div>
+                    <RadzenDataGrid Data="@allPartidos" TItem="PartidoUnico"
+                        AllowFiltering="true"
+                        AllowSorting="true"
+                        AllowPaging="true"
+                        PageSize="10">
+                        <Columns>
+                            <RadzenDataGridColumn TItem="PartidoUnico" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Property="visitor_team.abbreviation" Title="Visitante">
+                                <Template Context="PartidoUnico">
+                                    <RadzenImage Path="@getImg(PartidoUnico.visitor_team.abbreviation)" class="rz-gravatar" />
+                                </Template>
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="visitor_team_score" Title="Puntuación" />
+                            <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="date" Title="Fecha" />
+                            <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="status" Title="Estado" />
+                            <RadzenDataGridColumn TItem="PartidoUnico" TextAlign="TextAlign.Center" Property="home_team_score" Title="Puntuación" />
+                            <RadzenDataGridColumn TItem="PartidoUnico" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Property="home_team.abbreviation" Title="Local">
+                                <Template Context="PartidoUnico">
+                                    <RadzenImage Path="@getImg(PartidoUnico.home_team.abbreviation)" class="rz-gravatar" />
+                                </Template>
+                            </RadzenDataGridColumn>
+                            <RadzenDataGridColumn TItem="PartidoUnico" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
+                                <Template Context="PartidoUnico">
+                                    @if (PartidoUnico.status.Contains("No empezado"))
+                                    {
+                                        <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) Disabled />
+                                    }
+                                    else
+                                    {
+                                        <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) />
+                                    }
+
+
+                                </Template>
+                            </RadzenDataGridColumn>
+                        </Columns>
+                    </RadzenDataGrid>
+                </div>
+            }
+            else
+            {
+                <p>No hay Partidos</p>
+            }
+        </div>
+    }
 }
 
 @code {
+    RadzenScheduler<PartidoCalendario> scheduler;
     Partidos partidos;
     Partidos partido = new Partidos();
     List<PartidoUnico> allPartidos;
+    List<PartidoUnico> partidosUnicosCalendario;
+    List<PartidoCalendario> partidosCalendario = new List<PartidoCalendario>();
     bool playoffs = false;
     bool des = false;
     string format = "yyyy-MM-ddTHH:mm:ss.fffZ";
     string format1 = "yyyy-MM-ddTHH:mm:ssZ";
+
+    //Select Radzen
+    bool elegir = false;
+
+    // dialogo
+    bool showDialog = false;
+    string texto;
+    bool partidoVisible = false;
+    int idPartido;
 
     protected override async Task OnInitializedAsync()
     {
@@ -77,6 +141,16 @@ else
         partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page=1&seasons[]=2022&postseason=false");
 
         await getAllPartidos();
+        partidosUnicosCalendario = allPartidos;
+        await consultaPlayOff();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("dialog", showDialog);
+        }
     }
 
     private async Task getAllPartidos()
@@ -162,6 +236,90 @@ else
 
     }
 
+    private async Task consultaPlayOff()
+    {
+        partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page=1&seasons[]=2022&postseason=true");
+        for (int i = 1; i <= partidos.meta.total_pages; i++)
+        {
+            partidos = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&page={i}&seasons[]=2022&postseason=true");
+
+            foreach (var item in partidos.data)
+            {
+                PartidoUnico partidoUnico = new PartidoUnico();
+                partidoUnico.home_team = new Home_Team1();
+                partidoUnico.visitor_team = new Visitor_Team1();
+
+                partidoUnico.id = item.id;
+                partidoUnico.date = DateTime.ParseExact(item.date, format, CultureInfo.InvariantCulture);
+
+                partidoUnico.home_team.id = item.home_team.id;
+                partidoUnico.home_team.abbreviation = item.home_team.abbreviation;
+                partidoUnico.home_team.city = item.home_team.city;
+                partidoUnico.home_team.conference = item.home_team.conference;
+                partidoUnico.home_team.division = item.home_team.division;
+                partidoUnico.home_team.full_name = item.home_team.full_name;
+                partidoUnico.home_team.name = item.home_team.name;
+                partidoUnico.home_team_score = item.home_team_score;
+
+                partidoUnico.period = item.period;
+                partidoUnico.postseason = item.postseason;
+                partidoUnico.season = item.season;
+                if (item.status.Contains("1st") || item.status.Contains("2nd") || item.status.Contains("Halftime") || item.status.Contains("3rd") || item.status.Contains("4th") || item.status.Contains("Final"))
+                {
+                    partidoUnico.status = item.status;
+                }
+                else
+                {
+                    partidoUnico.status = "No empezado";
+                }
+                partidoUnico.time = item.time;
+
+                partidoUnico.visitor_team.id = item.visitor_team.id;
+                partidoUnico.visitor_team.abbreviation = item.visitor_team.abbreviation;
+                partidoUnico.visitor_team.city = item.visitor_team.city;
+                partidoUnico.visitor_team.conference = item.visitor_team.conference;
+                partidoUnico.visitor_team.division = item.visitor_team.division;
+                partidoUnico.visitor_team.full_name = item.visitor_team.full_name;
+                partidoUnico.visitor_team.name = item.visitor_team.name;
+                partidoUnico.visitor_team_score = item.visitor_team_score;
+
+                partidosUnicosCalendario.Add(partidoUnico);
+            }
+        }
+
+        partidosUnicosCalendario = partidosUnicosCalendario.OrderByDescending(x => x.date).ToList();
+
+        calendario();
+    }
+
+    private void calendario()
+    {
+        for (int i = 0; i < partidosUnicosCalendario.Count; i++)
+        {
+            PartidoCalendario partido = new PartidoCalendario();
+            partido.Id = partidosUnicosCalendario[i].id;
+            partido.Start = partidosUnicosCalendario[i].date.Date;
+            partido.End = partidosUnicosCalendario[i].date.Date.AddHours(23);
+            partido.Text = partidosUnicosCalendario[i].visitor_team.name + " " + partidosUnicosCalendario[i].visitor_team_score + " vs " + partidosUnicosCalendario[i].home_team_score + " " + partidosUnicosCalendario[i].home_team.name;
+            partido.TextD = "Quieres ver la informacion del partido entre " + partidosUnicosCalendario[i].visitor_team.full_name + " y " + partidosUnicosCalendario[i].home_team.full_name + " del dia " + partidosUnicosCalendario[i].date.Date.ToString("dd/MM/yyyy") + "?";
+            partido.TextDN = "No se puede ver informacion del partido entre " + partidosUnicosCalendario[i].visitor_team.full_name + " y " + partidosUnicosCalendario[i].home_team.full_name + " del dia " + partidosUnicosCalendario[i].date.Date.ToString("dd/MM/yyyy") + " porque todavia no ha empezado";
+
+            if(partidosUnicosCalendario[i].visitor_team_score > partidosUnicosCalendario[i].home_team_score)
+            {
+                partido.Color = partidosUnicosCalendario[i].visitor_team.abbreviation;
+            }
+            else if (partidosUnicosCalendario[i].visitor_team_score < partidosUnicosCalendario[i].home_team_score)
+            {
+                partido.Color = partidosUnicosCalendario[i].home_team.abbreviation;
+            } else
+            {
+                partido.Color = null;
+            }
+
+            partidosCalendario.Add(partido);
+        }
+    }
+
     private string getImg(string abb)
     {
         return "/img/equipos/" + abb + ".png";
@@ -170,5 +328,183 @@ else
     private void buscar(int id)
     {
         navigation.NavigateTo($"/partidoInfo/{id}");
+    }
+
+    private async Task Aceptar()
+    {
+        showDialog = false;
+        await JSRuntime.InvokeVoidAsync("dialog", showDialog);
+        await JSRuntime.InvokeVoidAsync("lockBody", false);
+        buscar(idPartido);
+    }
+
+    private async Task Cancelar()
+    {
+        showDialog = false;
+        await JSRuntime.InvokeVoidAsync("dialog", showDialog);
+        await JSRuntime.InvokeVoidAsync("lockBody", false);
+    }
+
+    void OnSlotRender(SchedulerSlotRenderEventArgs args)
+    {
+        if (args.View.Text == "Mes" && args.Start.Date == DateTime.Today)
+        {
+            args.Attributes["style"] = "background: rgba(230, 230, 250, 0.5);";
+        }
+    }
+
+    async Task OnAppointmentSelect(SchedulerAppointmentSelectEventArgs<PartidoCalendario> args)
+    {
+        Console.WriteLine("OnAppointmentSelect function is being executed.");
+        if (args.Start < DateTime.Today)
+        {
+            // Entra
+
+            showDialog = true;
+            partidoVisible = true;
+            texto = args.Data.TextD;
+            idPartido = args.Data.Id;
+            await JSRuntime.InvokeVoidAsync("dialog", showDialog);
+            await JSRuntime.InvokeVoidAsync("lockBody", true);
+        }
+        else
+        {
+            // Partido no empezado
+            showDialog = true;
+            partidoVisible = false;
+            texto = args.Data.TextDN;
+            await JSRuntime.InvokeVoidAsync("dialog", showDialog);
+            await JSRuntime.InvokeVoidAsync("lockBody", true);
+        }
+    }
+
+    void OnAppointmentRender(SchedulerAppointmentRenderEventArgs<PartidoCalendario> args)
+    {
+        switch (args.Data.Color)
+        {
+            case "ATL":
+
+                args.Attributes["style"] = "background: #C8102E; color: #FFFFFF";
+                break;
+
+            case "BOS":
+                args.Attributes["style"] = "background: #007A33; color: #FFFFFF";
+                break;
+
+            case "BKN":
+                args.Attributes["style"] = "background: #000000; color: #FFFFFF";
+                break;
+
+            case "CHA":
+                args.Attributes["style"] = "background: #1D1160; color: #FFFFFF";
+                break;
+
+            case "CHI":
+                args.Attributes["style"] = "background: #CE1141; color: #FFFFFF";
+                break;
+
+            case "CLE":
+                args.Attributes["style"] = "background: #860038; color: #FFFFFF";
+                break;
+
+            case "DAL":
+                args.Attributes["style"] = "background: #00538C; color: #FFFFFF";
+                break;
+
+            case "DEN":
+                args.Attributes["style"] = "background: #0E2240; color: #FFFFFF";
+                break;
+
+            case "DET":
+                args.Attributes["style"] = "background: #C8102E; color: #FFFFFF";
+                break;
+
+            case "GSW":
+                args.Attributes["style"] = "background: #1D428A; color: #FFFFFF";
+                break;
+
+            case "HOU":
+                args.Attributes["style"] = "background: #CE1141; color: #FFFFFF";
+                break;
+
+            case "IND":
+                args.Attributes["style"] = "background: #002D62; color: #FFFFFF";
+                break;
+
+            case "LAC":
+                args.Attributes["style"] = "background: #C8102E; color: #FFFFFF";
+                break;
+
+            case "LAL":
+                args.Attributes["style"] = "background: #552583; color: #FFFFFF";
+                break;
+
+            case "MEM":
+                args.Attributes["style"] = "background: #5D76A9; color: #FFFFFF";
+                break;
+
+            case "MIA":
+                args.Attributes["style"] = "background: #98002E; color: #FFFFFF";
+                break;
+
+            case "MIL":
+                args.Attributes["style"] = "background: #00471B; color: #FFFFFF";
+                break;
+
+            case "MIN":
+                args.Attributes["style"] = "background: #0C2340; color: #FFFFFF";
+                break;
+
+            case "NOP":
+                args.Attributes["style"] = "background: #0C2340; color: #FFFFFF";
+                break;
+
+            case "NYK":
+                args.Attributes["style"] = "background: #006BB6; color: #FFFFFF";
+                break;
+
+            case "OKC":
+                args.Attributes["style"] = "background: #007AC1; color: #FFFFFF";
+                break;
+
+            case "ORL":
+                args.Attributes["style"] = "background: #0077C0; color: #FFFFFF";
+                break;
+
+            case "PHI":
+                args.Attributes["style"] = "background: #006BB6; color: #FFFFFF";
+                break;
+
+            case "PHX":
+                args.Attributes["style"] = "background: #1D1160; color: #FFFFFF";
+                break;
+
+            case "POR":
+                args.Attributes["style"] = "background: #E03A3E; color: #FFFFFF";
+                break;
+
+            case "SAC":
+                args.Attributes["style"] = "background: #5A2D81; color: #FFFFFF";
+                break;
+
+            case "SAS":
+                args.Attributes["style"] = "background: #C4CED4; color: #000000";
+                break;
+
+            case "TOR":
+                args.Attributes["style"] = "background: #CE1141; color: #FFFFFF";
+                break;
+
+            case "UTA":
+                args.Attributes["style"] = "background: #002B5C; color: #FFFFFF";
+                break;
+
+            case "WAS":
+                args.Attributes["style"] = "background: #002B5C; color: #FFFFFF";
+                break;
+            default:
+                args.Attributes["style"] = "background: #F5F5DC; color: #000000";
+                break;
+        }
     }
 }

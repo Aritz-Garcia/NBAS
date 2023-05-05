@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "NBA_FINAL_PROJECT/1.0.0": {
         "dependencies": {
-          "MudBlazor": "6.2.0",
-          "Radzen.Blazor": "4.7.13"
+          "MudBlazor": "6.2.3",
+          "Radzen.Blazor": "4.10.2"
         },
         "runtime": {
           "NBA_FINAL_PROJECT.dll": {}
@@ -76,7 +76,6 @@
           }
         }
       },
-      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Extensions.DependencyInjection/6.0.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
@@ -117,30 +116,29 @@
           }
         }
       },
-      "MudBlazor/6.2.0": {
+      "MudBlazor/6.2.3": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "6.0.11",
           "Microsoft.AspNetCore.Components.Web": "6.0.11"
         },
         "runtime": {
           "lib/net6.0/MudBlazor.dll": {
-            "assemblyVersion": "6.2.0.0",
-            "fileVersion": "6.2.0.0"
+            "assemblyVersion": "6.2.3.0",
+            "fileVersion": "6.2.3.0"
           }
         }
       },
-      "Radzen.Blazor/4.7.13": {
+      "Radzen.Blazor/4.10.2": {
         "dependencies": {
           "LibSassBuilder": "2.0.1",
           "Microsoft.AspNetCore.Components": "6.0.11",
           "Microsoft.AspNetCore.Components.Web": "6.0.11",
-          "Microsoft.CSharp": "4.7.0",
           "System.Linq.Dynamic.Core": "1.2.22"
         },
         "runtime": {
           "lib/net6.0/Radzen.Blazor.dll": {
-            "assemblyVersion": "4.7.13.0",
-            "fileVersion": "4.7.13.0"
+            "assemblyVersion": "4.10.2.0",
+            "fileVersion": "4.10.2.0"
           }
         }
       },
@@ -218,13 +216,6 @@
       "path": "microsoft.aspnetcore.metadata/6.0.11",
       "hashPath": "microsoft.aspnetcore.metadata.6.0.11.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
-    },
     "Microsoft.Extensions.DependencyInjection/6.0.1": {
       "type": "package",
       "serviceable": true,
@@ -267,19 +258,19 @@
       "path": "microsoft.jsinterop/6.0.11",
       "hashPath": "microsoft.jsinterop.6.0.11.nupkg.sha512"
     },
-    "MudBlazor/6.2.0": {
+    "MudBlazor/6.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Oqf+63FIhPGwuBURFihcXmCsE94doxHTcnpRa8Dna8TI/Mk3DAheWxOu7tnkKyCJiEzWEJSiFGbGPETIywVWVQ==",
-      "path": "mudblazor/6.2.0",
-      "hashPath": "mudblazor.6.2.0.nupkg.sha512"
+      "sha512": "sha512-LbsM8/3eK5tk9OPPDIKdV5Fm+hM4KmzAJ8JAtEg9x33TJG3jqFPQ249tSp7l1F628rGCaHoIVjVGjfbgkt7hDg==",
+      "path": "mudblazor/6.2.3",
+      "hashPath": "mudblazor.6.2.3.nupkg.sha512"
     },
-    "Radzen.Blazor/4.7.13": {
+    "Radzen.Blazor/4.10.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-q+orCBbD3XsORVGhr+QkH6QW4CCGinhOwI3u0RtEbOcLgzBQWGhnjiA1ebnGQQiBi0iPTRAkINjfBQTPvyTEjw==",
-      "path": "radzen.blazor/4.7.13",
-      "hashPath": "radzen.blazor.4.7.13.nupkg.sha512"
+      "sha512": "sha512-3yI3R1+LhnQIK0poFIrADrlefT2893h2dLZu9DVfLRFvGqBM0RmzfRrGQ+sZzsEXusqODgZRxNVPhddp4uXstw==",
+      "path": "radzen.blazor/4.10.2",
+      "hashPath": "radzen.blazor.4.10.2.nupkg.sha512"
     },
     "System.IO.Pipelines/6.0.3": {
       "type": "package",

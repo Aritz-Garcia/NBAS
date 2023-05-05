@@ -12,7 +12,7 @@
 }
 
 <div class="rz-p-12 rz-text-align-center">
-    <RadzenRadioButtonList @bind-Value=@info TValue="int" class="mb-5">
+    <RadzenRadioButtonList  @bind-Value=@info TValue="int" class="mb-5">
         <Items>
             <RadzenRadioButtonListItem Text="Puntos" Value="1" />
             <RadzenRadioButtonListItem Text="Asistencias" Value="2" />
@@ -112,10 +112,10 @@
 @if (terminado)
 {
     <RadzenChart>
-        <RadzenLineSeries Smooth="true" Data="@jugador1Info" CategoryProperty="Partido" Title="@getNombre(1)" ValueProperty="Data">
+        <RadzenLineSeries Stroke="#0277bd" Smooth="true" Data="@jugador1Info" CategoryProperty="Partido" Title="@getNombre(1)" ValueProperty="Data">
             <RadzenMarkers MarkerType="MarkerType.Circle" />
         </RadzenLineSeries>
-        <RadzenLineSeries Smooth="true" Data="@jugador2Info" CategoryProperty="Partido" Title="@getNombre(2)" ValueProperty="Data">
+        <RadzenLineSeries Stroke="#ef6c00" Smooth="true" Data="@jugador2Info" CategoryProperty="Partido" Title="@getNombre(2)" ValueProperty="Data">
             <RadzenMarkers MarkerType="MarkerType.Circle" />
         </RadzenLineSeries>
     </RadzenChart>
@@ -161,6 +161,7 @@
     {
         statsVacia = await http.GetFromJsonAsync<Estadisticas>($"https://balldontlie.io/api/v1/stats?per_page=100&seasons[]=2022&player_ids[]=14");
     }
+
     private async Task buscar()
     {
         deshabilitado = true;

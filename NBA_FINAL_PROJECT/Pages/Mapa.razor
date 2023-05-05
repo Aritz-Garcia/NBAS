@@ -10,8 +10,8 @@
 <div style="text-align:center">
     <RadzenSelectBar @bind-Value=@sitio TValue="bool" Change="(args => OnChange())" class="mb-5" Disabled=@des>
         <Items>
-            <RadzenSelectBarItem Text="Este" Value="false" />
-            <RadzenSelectBarItem Text="Oeste" Value="true" />
+            <RadzenSelectBarItem id="selectBarRadzen" Text="Este" Value="false" />
+            <RadzenSelectBarItem id="selectBarRadzen" Text="Oeste" Value="true" />
         </Items>
     </RadzenSelectBar>
 </div>

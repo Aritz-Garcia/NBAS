@@ -27,3 +27,23 @@ function initialize(coordenadas, nombre, estadio, inicio) {
         popup.on('close', () => { map.setPitch(0) });
     }
 }
+
+function dialog(open) {
+
+    var element = document.getElementById('ms');
+    if (element != null) {
+        if (open) {
+            element.showModal();
+        } else {
+            element.close();
+        }
+    }
+}
+
+function lockBody(lock) {
+    if (lock) {
+        document.body.classList.add('locked');
+    } else {
+        document.body.classList.remove('locked');
+    }
+}
