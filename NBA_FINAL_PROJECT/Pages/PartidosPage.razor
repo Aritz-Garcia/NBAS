@@ -30,9 +30,10 @@ else
             @if (partidosCalendario != null)
             {
                 <div>
-                    <RadzenScheduler @ref=@scheduler Style="height: 2000px;" TItem="PartidoCalendario" Data="@partidosCalendario" StartProperty="Start" EndProperty="End"
-                         TextProperty="Text" SelectedIndex="0" SlotRender=@OnSlotRender AppointmentRender=@OnAppointmentRender AppointmentSelect=@OnAppointmentSelect>
-                        <RadzenMonthView Text="Mes" />
+                    <RadzenScheduler @ref=@scheduler Style="height:2000px" TItem="PartidoCalendario" Data="@partidosCalendario" StartProperty="Start" EndProperty="End"
+                         TextProperty="Text" SelectedIndex="1" SlotRender=@OnSlotRender AppointmentRender=@OnAppointmentRender AppointmentSelect=@OnAppointmentSelect>
+                        <RadzenDayView StartTime="TimeSpan.Zero" EndTime="TimeSpan.FromSeconds(86400)" MinutesPerSlot="15" TimeFormat="hh:mm tt" Text="Dia" />
+                        <RadzenMonthView MaxAppointmentsInSlot="20" Text="Mes" />
                     </RadzenScheduler>
                 </div>
                 <br />
@@ -92,11 +93,11 @@ else
                                 <Template Context="PartidoUnico">
                                     @if (PartidoUnico.status.Contains("No empezado"))
                                     {
-                                        <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) Disabled />
+                                        <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) Disabled />
                                     }
                                     else
                                     {
-                                        <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) />
+                                        <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(PartidoUnico.id)) />
                                     }
 
 
@@ -298,8 +299,8 @@ else
         {
             PartidoCalendario partido = new PartidoCalendario();
             partido.Id = partidosUnicosCalendario[i].id;
-            partido.Start = partidosUnicosCalendario[i].date.Date;
-            partido.End = partidosUnicosCalendario[i].date.Date.AddHours(23);
+            partido.Start = partidosUnicosCalendario[i].date;
+            partido.End = partidosUnicosCalendario[i].date.AddHours(2).AddMinutes(15);
             partido.Text = partidosUnicosCalendario[i].visitor_team.name + " " + partidosUnicosCalendario[i].visitor_team_score + " vs " + partidosUnicosCalendario[i].home_team_score + " " + partidosUnicosCalendario[i].home_team.name;
             partido.TextD = "Quieres ver la informacion del partido entre " + partidosUnicosCalendario[i].visitor_team.full_name + " y " + partidosUnicosCalendario[i].home_team.full_name + " del dia " + partidosUnicosCalendario[i].date.Date.ToString("dd/MM/yyyy") + "?";
             partido.TextDN = "No se puede ver informacion del partido entre " + partidosUnicosCalendario[i].visitor_team.full_name + " y " + partidosUnicosCalendario[i].home_team.full_name + " del dia " + partidosUnicosCalendario[i].date.Date.ToString("dd/MM/yyyy") + " porque todavia no ha empezado";
@@ -350,6 +351,16 @@ else
         if (args.View.Text == "Mes" && args.Start.Date == DateTime.Today)
         {
             args.Attributes["style"] = "background: rgba(230, 230, 250, 0.5);";
+        }
+    }
+
+    void clickBoton(int i)
+    {
+        if (i == 1)
+        {
+            
+        } else if (i == 2) {
+            
         }
     }
 

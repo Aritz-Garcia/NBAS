@@ -47,3 +47,22 @@ function lockBody(lock) {
         document.body.classList.remove('locked');
     }
 }
+
+function clickButtonById(buttonNum) {
+    if (buttonNum == 1) {
+        var button = document.getElementById("dia");
+        if (button) {
+            button.click();
+        } else {
+            console.error("Button with ID dia not found.");
+        }
+    } else {
+        var button = document.getElementById("mes");
+        if (button) {
+            button.click();
+        } else {
+            console.error("Button with ID mes not found.");
+        }
+    }
+    
+}

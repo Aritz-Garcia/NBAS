@@ -20,6 +20,19 @@ else
     </div>
 
     <div style="text-align:center">
+        @if (partido.postseason == true)
+        {
+            <h2>PlayOffs</h2>
+        } else
+        {
+            @if (partido.home_team.conference == "East")
+            {
+                <h2>Liga Regular de la conferencia Este</h2>
+            } else
+            {
+                <h2>Liga Regular de la conferencia Oeste</h2>
+            }
+        }
         <h3>@getDate()</h3>
         @if (partido.status.Contains("1st") || partido.status.Contains("2nd") || partido.status.Contains("Halftime") || partido.status.Contains("3rd") || partido.status.Contains("4th") || partido.status.Contains("Final"))
         {
