@@ -20,8 +20,10 @@
 
 @if (jugadores2 == null)
 {
-    <div class="spinner"></div>
-}else if(jugadores2!=null)
+    <br/>
+    <p><em>Loading...</em></p>
+}
+else
 {
     <div style="text-align:center">
         @if (jugadores2.meta.current_page == 1)

@@ -7,7 +7,7 @@
 
 @if (equipo2 == null)
 {
-    <div class="spinner"></div>
+    <p><em>Loading...</em></p>
 }
 else if (equipo2 != null)
 {
@@ -27,7 +27,7 @@ else if (equipo2 != null)
             <RadzenDataGridColumn TItem="Datum1" Property="conference" Title="Conferencia" />
             <RadzenDataGridColumn TItem="Datum1" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
                 <Template Context="Datum1">
-                    <RadzenButton ButtonStyle="ButtonStyle.Warning" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(Datum1.id))/>
+                    <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="info" Size="ButtonSize.Small" Click=@(()=> buscar(Datum1.id))/>
                 </Template>
             </RadzenDataGridColumn>
         </Columns>

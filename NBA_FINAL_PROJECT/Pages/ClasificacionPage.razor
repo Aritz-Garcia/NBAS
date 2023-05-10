@@ -1,0 +1,165 @@
+﻿@page "/clasificacion"
+@using NBA_FINAL_PROJECT.Model
+@using System.Net.Http
+@using System.Text.Json.Serialization
+@inject NavigationManager navigation
+@inject HttpClient http
+
+@if (clasificacion != null) {
+
+    // Select Radzen
+    <div style="text-align:center">
+        <RadzenSelectBar @bind-Value=@conferencia TValue="bool" class="mb-5">
+            <Items>
+                <RadzenSelectBarItem id="selectBarRadzen" Text="Este" Value="false" />
+                <RadzenSelectBarItem id="selectBarRadzen" Text="Oeste" Value="true" />
+            </Items>
+        </RadzenSelectBar>
+    </div>
+
+    @if (!conferencia)
+    {
+        // Conferencia este
+        @if (clasificacionEste != null)
+        {
+            <RadzenDataGrid Data="@clasificacionEste" TItem="Clasificacion"
+                        AllowFiltering="true"
+                        AllowSorting="true"
+                        AllowPaging="true"
+                        PageSize="15">
+                <Columns>
+                    <RadzenDataGridColumn TItem="Clasificacion" Sortable="false" Filterable="false" TextAlign="TextAlign.Center" Property="NumeroList" Title="Clasificación" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Property="Key" Title="Escudo">
+                        <Template Context="Clasificacion">
+                            <RadzenImage Path="@getImgEq(Clasificacion.Key)" class="rz-gravatar" />
+                        </Template>
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="Wins" Title="V" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="Losses" Title="D" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="Percentage" Title="%" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="ConferenceWins" Title="Conf V" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="ConferenceLosses" Title="Conf D" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="HomeWins" Title="Casa V" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="HomeLosses" Title="Casa D" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="AwayWins" Title="Fuera V" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="AwayLosses" Title="Fuera D" />
+                </Columns>
+            </RadzenDataGrid>
+        }
+
+    } 
+    else
+    {
+        // Conferencia oeste
+        @if (clasificacionOeste != null)
+        {
+            <RadzenDataGrid Data="@clasificacionOeste" TItem="Clasificacion"
+                    AllowFiltering="true"
+                    AllowSorting="true"
+                    AllowPaging="true"
+                    PageSize="15">
+                <Columns>
+                    <RadzenDataGridColumn TItem="Clasificacion" Sortable="false" Filterable="false" TextAlign="TextAlign.Center" Property="NumeroList" Title="Clasificación" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Sortable="false" Filterable="false" Width="80px" TextAlign="TextAlign.Center" Property="Key" Title="Escudo">
+                        <Template Context="Clasificacion">
+                            <RadzenImage Path="@getImgEq(Clasificacion.Key)" class="rz-gravatar" />
+                        </Template>
+                    </RadzenDataGridColumn>
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="Wins" Title="V" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="Losses" Title="D" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="Percentage" Title="%" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="ConferenceWins" Title="Conf V" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="ConferenceLosses" Title="Conf D" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="HomeWins" Title="Casa V" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="HomeLosses" Title="Casa D" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="AwayWins" Title="Fuera V" />
+                    <RadzenDataGridColumn TItem="Clasificacion" Filterable="false" TextAlign="TextAlign.Center" Property="AwayLosses" Title="Fuera D" />
+                </Columns>
+            </RadzenDataGrid>
+        }
+    }
+
+    <br/>
+    <br/>
+
+} 
+else
+{
+    <p><em>Loading...</em></p>
+}
+
+@code {
+    Clasificacion[] clasificacion;
+    List<Clasificacion> clasificacionEste = new List<Clasificacion>();
+    List<Clasificacion> clasificacionOeste = new List<Clasificacion>();
+    bool conferencia = false;
+
+    // En esta función se obtiene la clasificación de la NBA y se manda a otra función la cual separa la clasificación por conferencias
+    protected override async Task OnInitializedAsync()
+    {
+        clasificacion = await http.GetFromJsonAsync<Clasificacion[]>($"https://api.sportsdata.io/v3/nba/scores/json/Standings/2023?key=735f0445c7c54fac882a1a1d8ea3a235");
+        separarClasificacion();
+    }
+
+    // Esta funcion separa la clasificación por conferencias y las ordena por el ranking de cada equipo
+    private void separarClasificacion()
+    {
+        for (int i = 0; i < clasificacion.Length; i++)
+        {
+            if (clasificacion[i].Conference.Equals("Eastern"))
+            {
+                Clasificacion clasificacionEq = new Clasificacion();
+                clasificacionEq = clasificacion[i];
+                clasificacionEste.Add(clasificacionEq);
+            }
+            else if (clasificacion[i].Conference.Equals("Western"))
+            {
+                Clasificacion clasificacionEq = new Clasificacion();
+                clasificacionEq = clasificacion[i];
+                clasificacionOeste.Add(clasificacionEq);
+            }
+        }
+
+        clasificacionEste = clasificacionEste.OrderBy(x => x.ConferenceRank).ToList();
+        clasificacionOeste = clasificacionOeste.OrderBy(x => x.ConferenceRank).ToList();
+
+        for (int i = 0; i < clasificacionEste.Count; i++) {
+            clasificacionEste[i].NumeroList = i + 1;
+        }
+
+        for (int i = 0; i < clasificacionOeste.Count; i++)
+        {
+            clasificacionOeste[i].NumeroList = i + 1;
+        }
+    }
+
+    // Esta función obtiene el escudo de cada equipo
+    private string getImgEq(string abbreviation)
+    {
+        if (abbreviation == "NY")
+        {
+            // knicks
+            abbreviation = "NYK";
+        } else if (abbreviation == "PHO")
+        {
+            // suns
+            abbreviation = "PHX";
+        }
+        else if (abbreviation == "GS")
+        {
+            // golden state
+            abbreviation = "GSW";
+        }
+        else if (abbreviation == "NO")
+        {
+            // pelicans
+            abbreviation = "NOP";
+        }
+        else if (abbreviation == "SA")
+        {
+            // spurs
+            abbreviation = "SAS";
+        }
+        return "/img/equipos/" + abbreviation + ".png";
+    }
+}
