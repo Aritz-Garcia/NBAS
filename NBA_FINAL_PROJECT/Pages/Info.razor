@@ -1,0 +1,71 @@
+﻿@page "/info"
+@using NBA_FINAL_PROJECT.Model
+@using System.Net.Http
+@inject HttpClient http
+@inject NavigationManager navigation
+
+<h1>NBAS</h1>
+<br/>
+<h3>Sobre nosotros:</h3>
+<br/>
+<p class="info-text">NBAS es una página web dedicada a proporcionar estadísticas e información actualizada de la NBA. Nuestro objetivo es ofrecer a los aficionados al baloncesto y a la NBA una experiencia enriquecedora al proporcionar datos precisos y recargados a tiempo real. En NBAS, puedes encontrar estadísticas detalladas de equipos y jugadores, resultados de partidos en vivo, noticias y artículos sobre la NBA y mucho más. Si eres un apasionado de la NBA, NBAS es el lugar perfecto para mantenerte actualizado y conectado con el mundo del baloncesto profesional.</p>
+<br/>
+<p class="info-text">En esta página web, puedes encontrar diversas secciones que están diseñadas para satisfacer tus necesidades de información y estadísticas sobre la NBA. Estas secciones son:</p>
+
+<div class="flexbox-estadisticas">
+    <div class="divMenu" @onclick="@(() => buscar(1))">
+        <MudIcon Icon="@Icons.Material.Filled.Person" />
+        <h6>Jugadores</h6>
+    </div>
+    <div class="divMenu" @onclick="@(() => buscar(2))">
+        <MudIcon Icon="@Icons.Material.Filled.Groups" />
+        <h6>Equipos</h6>
+    </div>
+    <div class="divMenu" @onclick="@(() => buscar(3))">
+        <MudIcon Icon="@Icons.Material.Filled.FormatListNumbered" />
+        <h6>Clasificación</h6>
+    </div>
+    <div class="divMenu" @onclick="@(() => buscar(4))">
+        <MudIcon Icon="@Icons.Material.Filled.SportsBasketball" />
+        <h6>Partidos</h6>
+    </div>
+    <div class="divMenu" @onclick="@(() => buscar(5))">
+        <MudIcon Icon="@Icons.Material.Filled.StackedLineChart" />
+        <h6>Graficos</h6>
+    </div>
+    <div class="divMenu" @onclick="@(() => buscar(6))">
+        <MudIcon Icon="@Icons.Material.Filled.Map" />
+        <h6>Mapa</h6>
+    </div>
+</div>
+<br/>
+<br/>
+<p class="info-text">En resumen, NBAS es una página web completa y actualizada para los fans de la NBA, que ofrece información detallada sobre jugadores, equipos y partidos, así como estadísticas y herramientas de comparación para analizar el desempeño de los jugadores.</p>
+
+@code {
+    private void buscar(int num)
+    {
+        string text ="/";
+        switch(num)
+        {
+            case 2:
+                text = text + "equipos";
+                break;
+            case 3 :
+                text = text + "clasificacion";
+                break;
+            case 4:
+                text = text + "partidos";
+                break;
+            case 5:
+                text = text + "graficos";
+                break;
+            case 6:
+                text = text + "mapa";
+                break;
+            default:
+                break;
+        }
+        navigation.NavigateTo(text);
+    }
+}

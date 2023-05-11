@@ -295,3 +295,4 @@ D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.Extensions.Loggin
 D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\Microsoft.JSInterop.dll
 D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\MudBlazor.dll
 D:\Github\G05_NBA\NBA_FINAL_PROJECT\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\6002441\Documents\GitHub\G05_NBA\NBA_FINAL_PROJECT\obj\Debug\net6.0\scopedcss\Pages\Info.razor.rz.scp.css

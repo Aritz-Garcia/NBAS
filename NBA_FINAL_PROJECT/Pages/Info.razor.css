@@ -1,0 +1,19 @@
+﻿.info-text{
+    text-align: justify;
+    color: black;
+    font-size: 15px;
+}
+
+.divMenu {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #bbdefb;
+}
+
+.divMenu:hover {
+    background-color: #0d47a1;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}

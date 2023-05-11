@@ -1,4 +1,24 @@
 /* _content/NBA_FINAL_PROJECT/Pages/EquiposInfoPage.razor.rz.scp.css */
+/* _content/NBA_FINAL_PROJECT/Pages/Info.razor.rz.scp.css */
+.info-text[b-029ahxqzll]{
+    text-align: justify;
+    color: black;
+    font-size: 15px;
+}
+
+.divMenu[b-029ahxqzll] {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #bbdefb;
+}
+
+.divMenu:hover[b-029ahxqzll] {
+    background-color: #0d47a1;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
 /* _content/NBA_FINAL_PROJECT/Shared/MainLayout.razor.rz.scp.css */
 .page[b-4n3sby3lyr] {
     position: relative;
