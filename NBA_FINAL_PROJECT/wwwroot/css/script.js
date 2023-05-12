@@ -5,8 +5,19 @@ function initialize(coordenadas, nombre, estadio, inicio) {
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/agarciaelo/clh0b0fh400j001quaz1j511x', // style URL
         center: [inicio[1], inicio[0]], // starting position [lng, lat]
-        zoom: 4.5 // starting zoom
+        zoom: 4.5, // starting zoom
     });
+
+    map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken,
+            language: 'es',
+            interactive: false
+        }),
+        'top-left'
+    );
+
+    map.addControl(new mapboxgl.NavigationControl());
 
     for (var i = 0; i < (coordenadas.length / 2); i++) {
 
@@ -48,21 +59,10 @@ function lockBody(lock) {
     }
 }
 
-function clickButtonById(buttonNum) {
-    if (buttonNum == 1) {
-        var button = document.getElementById("dia");
-        if (button) {
-            button.click();
-        } else {
-            console.error("Button with ID dia not found.");
-        }
-    } else {
-        var button = document.getElementById("mes");
-        if (button) {
-            button.click();
-        } else {
-            console.error("Button with ID mes not found.");
-        }
-    }
-    
+function rotateCamera(map, timestamp) {
+    // clamp the rotation between 0 -360 degrees
+    // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+    map.rotateTo((timestamp / 100) % 360, { duration: 0 });
+    // Request the next frame of the animation.
+    requestAnimationFrame(rotateCamera);
 }
