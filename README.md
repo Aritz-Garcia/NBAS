@@ -1,8 +1,9 @@
 # NBAS
 Este proyecto ha sido creado con "Visual Studio" en una "Aplicación Blazor Server".
-## Descripción
-![Logo_NBAS_3](https://github.com/Aritz-Garcia/G05_NBA/assets/73273260/6aff59bb-3aa8-4c52-9b8c-e4a0a4f54339)
 
+<img src="NBA_FINAL_PROJECT/wwwroot/img/logo/Logo_NBAS_3.gif" width="100px" alt="animación logo" />
+
+## Descripción
 NBAS es un proyecto hecho en una página web dedicada a proporcionar estadísticas e información actualizada de la NBA. Nuestro objetivo es ofrecer a los aficionados al baloncesto y a la NBA una experiencia enriquecedora al proporcionar datos precisos y recargados a tiempo real. En NBAS, se pueden encontrar estadísticas detalladas de equipos y jugadores, resultados de partidos en vivo, noticias y artículos sobre la NBA y mucho más.
 
 ### Secciones
