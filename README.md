@@ -12,15 +12,15 @@ En esta página web, se pueden encontrar diversas secciones que están diseñada
 * Equipos
 * Clasificación
 * Partidos
-* Graficos
+* Gráficos
 * Mapa
 * Información
 
-### APIs
- Además, hemos utilizado tres APIs diferentes:
+### API
+ También, hemos utilizado tres API diferentes:
 * [Balldontlie.io](https://app.balldontlie.io/)
 * [data.nba.net](https://github.com/kshvmdn/nba.js/blob/master/docs/api/DATA.md)
 * [SportsData.io](https://sportsdata.io/developers/api-documentation/nba)
 
 ## Contribución
-Las contribuciones son bienvenidas. Si encuentras un error o tienes alguna sugerencia, no dudes en abrir un "issue" o enviar un email con una imagen del error y una breve descripcción de la misma al email "nbas@elorrieta-errekamari.com".
+Las contribuciones son bienvenidas. Si encuentras un error o tienes alguna sugerencia, no dudes en abrir un "issue" o enviar un correo electrónico con una imagen del error y una breve descripción de la misma al correo electrónico: "**nbas@elorrieta-errekamari.com**".
