@@ -3,14 +3,23 @@
 @using System.Net.Http
 @inject HttpClient http
 @inject NavigationManager navigation
+@inject IJSRuntime JSRuntime
 
-<h1>NBAS</h1>
-<br/>
 <h3>Sobre nosotros:</h3>
 <br/>
-<p class="info-text">NBAS es una página web dedicada a proporcionar estadísticas e información actualizada de la NBA. Nuestro objetivo es ofrecer a los aficionados al baloncesto y a la NBA una experiencia enriquecedora al proporcionar datos precisos y recargados a tiempo real. En NBAS, puedes encontrar estadísticas detalladas de equipos y jugadores, resultados de partidos en vivo, noticias y artículos sobre la NBA y mucho más. Si eres un apasionado de la NBA, NBAS es el lugar perfecto para mantenerte actualizado y conectado con el mundo del baloncesto profesional.</p>
+<div class="contenedor-flexbox">
+    <img src="/img/logo/Logo_NBAS_3.gif" alt="Logo NBAS" style="width:150px;"/>
+    <div style="width:100px"/>
+    <p class="info-text">NBAS es una página web dedicada a proporcionar estadísticas e información actualizada de la NBA. Nuestro objetivo es 
+        ofrecer a los aficionados al baloncesto y a la NBA una experiencia enriquecedora al proporcionar datos precisos y recargados a tiempo real. 
+        En NBAS, puedes encontrar estadísticas detalladas de equipos y jugadores, resultados de partidos en vivo, noticias y artículos sobre la NBA y 
+        mucho más. Si eres un apasionado de la NBA, NBAS es el lugar perfecto para mantenerte actualizado y conectado con el mundo del baloncesto 
+        profesional.</p>
+</div>
+
 <br/>
-<p class="info-text">En esta página web, puedes encontrar diversas secciones que están diseñadas para satisfacer tus necesidades de información y estadísticas sobre la NBA. Estas secciones son:</p>
+<p class="info-text">En esta página web, puedes encontrar diversas secciones que están diseñadas para satisfacer tus necesidades de información y 
+    estadísticas sobre la NBA. Estas secciones son:</p>
 
 <div class="flexbox-estadisticas">
     <div class="divMenu" @onclick="@(() => buscar(1))">
@@ -31,7 +40,7 @@
     </div>
     <div class="divMenu" @onclick="@(() => buscar(5))">
         <MudIcon Icon="@Icons.Material.Filled.StackedLineChart" />
-        <h6>Graficos</h6>
+        <h6>Gráficos</h6>
     </div>
     <div class="divMenu" @onclick="@(() => buscar(6))">
         <MudIcon Icon="@Icons.Material.Filled.Map" />
@@ -40,7 +49,25 @@
 </div>
 <br/>
 <br/>
-<p class="info-text">En resumen, NBAS es una página web completa y actualizada para los fans de la NBA, que ofrece información detallada sobre jugadores, equipos y partidos, así como estadísticas y herramientas de comparación para analizar el desempeño de los jugadores.</p>
+<p class="info-text">En resumen, en nuestra página podrás encontrar estadísticas detalladas sobre cada jugador de la NBA, incluyendo puntos, 
+    rebotes, asistencias, bloqueos, robos y porcentajes de tiro. También puedes encontrar información sobre los equipos de la NBA, en qué ciudad 
+    se encuentra cada equipo y que jugadores forman parte de este mismo.</p>
+
+<p class="info-text">Además, en NBAS te mantendremos actualizado con los últimos resultados de los partidos, las clasificaciones de la temporada 
+    regular y de los playoffs y otros datos relevantes sobre la NBA. Nuestros gráficos y visualizaciones te ayudarán a entender y analizar los 
+    datos de una manera más clara y efectiva.</p>
+
+<p class="info-text">En nuestra página, también encontrarás información sobre la localización de los estadios de los equipos de la NBA, lo que te 
+    permitirá planear tus viajes para ver a tu equipo favorito en acción.</p>
+
+<br/>
+<h3>Contacto:</h3>
+<br/>
+<p class="info-text">Si tienes alguna pregunta o comentario sobre nuestra página, no dudes en contactar con nosotros a través del número de teléfono 
+    <b>+34 633 467 509</b> o <a href="https://mail.google.com/mail/?view=cm&to=nbas@elorrieta-errekamari.com&su=Consulta%20NBAS" target="_blank">enviándonos 
+    un correo electrónico</a> a <b>nbas@elorrieta-errekamari.com</b>. Las personas de soperte de la página NBAS, estarán encantados de ayudarte en 
+    todo lo que necesites.</p>
+<br/>
 
 @code {
     private void buscar(int num)
