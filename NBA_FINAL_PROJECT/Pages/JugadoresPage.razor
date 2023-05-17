@@ -1,0 +1,219 @@
+﻿@page "/jugadores"
+@using NBA_FINAL_PROJECT.Model
+@using System.Net.Http
+@using System.Text.Json.Serialization
+@inject HttpClient http
+@inject NavigationManager navigation
+
+
+@if (buscado)
+{
+    <RadzenButton ButtonStyle="ButtonStyle.Danger" Click="volver" Icon="arrow_back" Disabled=@deshabilitado />
+    <br/>
+    <br/>
+}
+
+<div> 
+    <RadzenTextBox Placeholder="Buscar..." @bind-Value=@value Change="buscar" class="w-100" />
+</div>
+<br/>
+
+@if (jugadores2 == null)
+{
+    <br/>
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div style="text-align:center">
+        @if (jugadores2.meta.current_page == 1)
+        {
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=primero Icon="fast_rewind" Disabled />
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=anterior Text="Anterior" Disabled />
+        }
+        else
+        {
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=primero Icon="fast_rewind" Disabled=@deshabilitado />
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=anterior Text="Anterior" Disabled=@deshabilitado />
+        }
+
+        @for (int i = 1; i <= jugadores2.meta.total_pages; i++)
+        {
+            int z = i;
+            @if (jugadores2.meta.current_page <= 5 && z <= 5)
+            {
+                @if (jugadores2.meta.current_page == z)
+                {
+                    <RadzenButton ButtonStyle="ButtonStyle.Info" Click=@(args => numero(z)) Text="@i.ToString()" Disabled=@deshabilitado />
+                }
+                else
+                {
+                    <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=@(args => numero(z)) Text="@i.ToString()" Disabled=@deshabilitado />
+                }
+            }
+            else if (i >= (jugadores2.meta.current_page - 4) && i <= (jugadores2.meta.current_page + 4))
+            {
+                @if (jugadores2.meta.current_page == z)
+                {
+                    <RadzenButton ButtonStyle="ButtonStyle.Info" Click=@(args => numero(z)) Text="@i.ToString()" Disabled=@deshabilitado />
+                }
+                else
+                {
+                    <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=@(args => numero(z)) Text="@i.ToString()" Disabled=@deshabilitado />
+                }
+            }
+        }
+
+        @if (jugadores2.meta.current_page == jugadores2.meta.total_pages)
+        {
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=siguiente Text="Siguiente" Disabled />
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=ultimo Icon="fast_forward" Disabled />
+        }
+        else
+        {
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=siguiente Text="Siguiente" Disabled=@deshabilitado />
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=ultimo Icon="fast_forward" Disabled=@deshabilitado />
+        }
+    </div>
+    <br/>
+
+    <RadzenDataGrid Data="@jugadores2.data" TItem="Datum"
+                AllowFiltering="true"
+                AllowSorting="true"
+                AllowPaging="true"
+                PageSize="10">
+        <Columns>
+            <RadzenDataGridColumn TItem="Datum" Property="first_name" Title="Name" />
+            <RadzenDataGridColumn TItem="Datum" Property="last_name" Title="Last Name" />
+            <RadzenDataGridColumn TItem="Datum" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
+                <Template Context="Datum">
+                     <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="info" Size="ButtonSize.Small" Click=@(()=> info(Datum.id))>
+                     </RadzenButton>
+                 </Template>
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+}
+
+
+@code{
+    Jugador jugadores;
+    Jugador jugadores2;
+    bool deshabilitado = false;
+    bool buscado = false;
+    string buscador = "";
+    string value = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        deshabilitado = true;
+        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100");
+        jugadores2 = jugadores;
+        deshabilitado = false;
+    }
+
+    private async Task primero()
+    {
+        deshabilitado = true;
+        if (buscado)
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page=1&search={buscador}");
+        }
+        else
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page=1");
+        }
+
+        jugadores = jugadores2;
+        deshabilitado = false;
+    }
+
+    private async Task ultimo()
+    {
+        deshabilitado = true;
+        if (buscado)
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.total_pages}&search={buscador}");
+        }
+        else
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.total_pages}");
+        }
+
+        jugadores = jugadores2;
+        deshabilitado = false;
+    }
+
+    private async Task numero(int numero)
+    {
+        deshabilitado = true;
+        if (buscado)
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={numero}&search={buscador}");
+        }
+        else
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={numero}");
+        }
+
+        jugadores = jugadores2;
+        deshabilitado = false;
+    }
+
+    private async Task siguiente()
+    {
+        deshabilitado = true;
+        if (buscado)
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.next_page}&search={buscador}");
+        }
+        else
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.next_page}");
+        }
+
+        jugadores = jugadores2;
+        deshabilitado = false;
+    }
+
+    private async Task anterior()
+    {
+        deshabilitado = true;
+        if (buscado)
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={(jugadores.meta.current_page - 1)}&search={buscador}");
+        }
+        else
+        {
+            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={(jugadores.meta.current_page - 1)}");
+        }
+        jugadores = jugadores2;
+        deshabilitado = false;
+    }
+
+    private async Task buscar()
+    {
+        deshabilitado = true;
+        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&search={value}");
+        jugadores2 = jugadores;
+        deshabilitado = false;
+        buscador = value;
+        buscado = true;
+    }
+
+    private async Task volver()
+    {
+        deshabilitado = true;
+        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100");
+        jugadores2 = jugadores;
+        deshabilitado = false;
+        value = "";
+        buscado = false;
+    }
+    
+    private void info(int id)
+    {
+        navigation.NavigateTo($"/jugadorinfopage/{id}");
+    }
+
+}

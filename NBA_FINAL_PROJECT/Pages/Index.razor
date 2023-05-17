@@ -2,218 +2,217 @@
 @using NBA_FINAL_PROJECT.Model
 @using System.Net.Http
 @using System.Text.Json.Serialization
+@using System.Globalization
 @inject HttpClient http
 @inject NavigationManager navigation
 
-
-@if (buscado)
-{
-    <RadzenButton ButtonStyle="ButtonStyle.Danger" Click="volver" Icon="arrow_back" Disabled=@deshabilitado />
-    <br/>
-    <br/>
-}
-
-<div> 
-    <RadzenTextBox Placeholder="Buscar..." @bind-Value=@value Change="buscar" class="w-100" />
+<br/>
+<div style="text-align:center">
+    <img src="/img/logo/Logo_NBAS_3.gif" alt="logo NBAS" width="300"/>
 </div>
+
+<br/>
 <br/>
 
-@if (jugadores2 == null)
+@if (partidos != null && partidos.Count == 5)
 {
+    <h3>Ultimos Partidos:</h3>
     <br/>
-    <p><em>Loading...</em></p>
-}
+    <MudCarousel Class="mud-width-full" Style="height:200px; border-radius:10px" ShowArrows="true" ShowBullets="true" EnableSwipeGesture="false" 
+            AutoCycle="true" AutoCycleTime="TimeSpan.FromSeconds(10)" TData="PartidoUnico">
+
+        @foreach (var item in partidos)
+        {
+            <MudCarouselItem Transition="Transition.Slide" Color="Color.Info" @onclick="(() => buscar(item.id))">
+                <div style="text-align:center">
+                    <br/>
+                    <h3>@item.date</h3>
+                    <div class="flexbox-estadisticas">
+                        <RadzenImage Path="@getEqImg(item.visitor_team.abbreviation)" Style="width: 100px; height: 100px; border-radius: 50%;" />
+                        @if (item.status.Contains("1st") || item.status.Contains("2nd") || item.status.Contains("Halftime") || item.status.Contains("3rd") || item.status.Contains("4th") || item.status.Contains("Final"))
+                        {
+                            <h4>@item.visitor_team_score</h4>
+                            <h4>VS</h4>
+                            <h4>@item.home_team_score</h4>
+                        } else
+                        {
+                            <h4>VS</h4>
+                        }
+                        <RadzenImage Path="@getEqImg(item.home_team.abbreviation)" Style="width: 100px; height: 100px; border-radius: 50%;" />
+                    </div>
+                </div>
+            </MudCarouselItem>
+        }
+        
+    </MudCarousel>
+} 
 else
 {
-    <div style="text-align:center">
-        @if (jugadores2.meta.current_page == 1)
-        {
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=primero Icon="fast_rewind" Disabled />
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=anterior Text="Anterior" Disabled />
-        }
-        else
-        {
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=primero Icon="fast_rewind" Disabled=@deshabilitado />
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=anterior Text="Anterior" Disabled=@deshabilitado />
-        }
-
-        @for (int i = 1; i <= jugadores2.meta.total_pages; i++)
-        {
-            int z = i;
-            @if (jugadores2.meta.current_page <= 5 && z <= 5)
-            {
-                @if (jugadores2.meta.current_page == z)
-                {
-                    <RadzenButton ButtonStyle="ButtonStyle.Info" Click=@(args => numero(z)) Text="@i.ToString()" Disabled=@deshabilitado />
-                }
-                else
-                {
-                    <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=@(args => numero(z)) Text="@i.ToString()" Disabled=@deshabilitado />
-                }
-            }
-            else if (i >= (jugadores2.meta.current_page - 4) && i <= (jugadores2.meta.current_page + 4))
-            {
-                @if (jugadores2.meta.current_page == z)
-                {
-                    <RadzenButton ButtonStyle="ButtonStyle.Info" Click=@(args => numero(z)) Text="@i.ToString()" Disabled=@deshabilitado />
-                }
-                else
-                {
-                    <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=@(args => numero(z)) Text="@i.ToString()" Disabled=@deshabilitado />
-                }
-            }
-        }
-
-        @if (jugadores2.meta.current_page == jugadores2.meta.total_pages)
-        {
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=siguiente Text="Siguiente" Disabled />
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=ultimo Icon="fast_forward" Disabled />
-        }
-        else
-        {
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=siguiente Text="Siguiente" Disabled=@deshabilitado />
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Click=ultimo Icon="fast_forward" Disabled=@deshabilitado />
-        }
-    </div>
-    <br/>
-
-    <RadzenDataGrid Data="@jugadores2.data" TItem="Datum"
-                AllowFiltering="true"
-                AllowSorting="true"
-                AllowPaging="true"
-                PageSize="10">
-        <Columns>
-            <RadzenDataGridColumn TItem="Datum" Property="first_name" Title="Name" />
-            <RadzenDataGridColumn TItem="Datum" Property="last_name" Title="Last Name" />
-            <RadzenDataGridColumn TItem="Datum" Property="id" Title="Info" Width="90px" TextAlign="TextAlign.Center" Filterable="false" Sortable="false">
-                <Template Context="Datum">
-                     <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="info" Size="ButtonSize.Small" Click=@(()=> info(Datum.id))>
-                     </RadzenButton>
-                 </Template>
-            </RadzenDataGridColumn>
-        </Columns>
-    </RadzenDataGrid>
+    <p><em>Loading...</em></p>
 }
 
-
-@code{
-    Jugador jugadores;
-    Jugador jugadores2;
-    bool deshabilitado = false;
-    bool buscado = false;
-    string buscador = "";
-    string value = "";
+<br/>
+    
+@code {
+    Partidos partidosDespues;
+    Partidos partidosAntes;
+    List<PartidoUnico> partidos = new List<PartidoUnico>();
+    DateTime dateTimeHoy = DateTime.Now.Date;
+    string hoy;
+    string format = "yyyy-MM-ddTHH:mm:ss.fffZ";
 
     protected override async Task OnInitializedAsync()
     {
-        deshabilitado = true;
-        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100");
-        jugadores2 = jugadores;
-        deshabilitado = false;
+        hoy = dateTimeHoy.ToString("yyyy-MM-dd");
+        partidosDespues = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?per_page=100&seasons[]=2022&start_date={hoy}");
+        if (partidosDespues != null)
+        {
+            if (partidosDespues.meta.total_count >= 5)
+            {
+                for (int i = 0; i < partidosDespues.meta.total_count; i++)
+                {
+                    if (i < 5)
+                    {
+                        PartidoUnico partidoUnico = new PartidoUnico();
+                        partidoUnico.home_team = new Home_Team1();
+                        partidoUnico.visitor_team = new Visitor_Team1();
+
+                        partidoUnico.id = partidosDespues.data[i].id;
+                        partidoUnico.status = partidosDespues.data[i].status;
+                        partidoUnico.date = DateTime.ParseExact(partidosDespues.data[i].date, format, CultureInfo.InvariantCulture);
+
+                        partidoUnico.home_team.id = partidosDespues.data[i].home_team.id;
+                        partidoUnico.home_team.name = partidosDespues.data[i].home_team.name;
+                        partidoUnico.home_team.full_name = partidosDespues.data[i].home_team.full_name;
+                        partidoUnico.home_team.abbreviation = partidosDespues.data[i].home_team.abbreviation;
+                        partidoUnico.home_team_score = partidosDespues.data[i].home_team_score;
+
+                        partidoUnico.visitor_team.id = partidosDespues.data[i].visitor_team.id;
+                        partidoUnico.visitor_team.name = partidosDespues.data[i].visitor_team.name;
+                        partidoUnico.visitor_team.full_name = partidosDespues.data[i].visitor_team.full_name;
+                        partidoUnico.visitor_team.abbreviation = partidosDespues.data[i].visitor_team.abbreviation;
+                        partidoUnico.visitor_team_score = partidosDespues.data[i].visitor_team_score;
+
+                        partidos.Add(partidoUnico);
+                    }
+                }               
+            } else if (partidosDespues.meta.total_count > 0)
+            {
+                foreach (var item in partidosDespues.data)
+                {
+                    PartidoUnico partidoUnico = new PartidoUnico();
+                    partidoUnico.home_team = new Home_Team1();
+                    partidoUnico.visitor_team = new Visitor_Team1();
+
+                    partidoUnico.id = item.id;
+                    partidoUnico.status = item.status;
+                    partidoUnico.date = DateTime.ParseExact(item.date, format, CultureInfo.InvariantCulture);
+
+                    partidoUnico.home_team.id = item.home_team.id;
+                    partidoUnico.home_team.name = item.home_team.name;
+                    partidoUnico.home_team.full_name = item.home_team.full_name;
+                    partidoUnico.home_team.abbreviation = item.home_team.abbreviation;
+                    partidoUnico.home_team_score = item.home_team_score;
+
+                    partidoUnico.visitor_team.id = item.visitor_team.id;
+                    partidoUnico.visitor_team.name = item.visitor_team.name;
+                    partidoUnico.visitor_team.full_name = item.visitor_team.full_name;
+                    partidoUnico.visitor_team.abbreviation = item.visitor_team.abbreviation;
+                    partidoUnico.visitor_team_score = item.visitor_team_score;
+
+                    partidos.Add(partidoUnico);
+                }
+            }
+        }
+
+        await consultaAntes();
+
+        ordenar();
+
     }
 
-    private async Task primero()
+    private async Task consultaAntes()
     {
-        deshabilitado = true;
-        if (buscado)
+        if (partidos.Count < 5)
         {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page=1&search={buscador}");
-        }
-        else
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page=1");
-        }
+            partidosAntes = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?end_date={hoy}&per_page=100&seasons[]=2022");
 
-        jugadores = jugadores2;
-        deshabilitado = false;
+            if (partidosAntes.meta.total_pages > 1)
+            {
+                int num = partidosAntes.meta.total_pages;
+                partidosAntes = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?end_date={hoy}&page={num}&per_page=100&seasons[]=2022");
+
+                for (int i = partidosAntes.data.Length - 1; partidos.Count < 5 && i >= 0; i--)
+                {
+                    PartidoUnico partidoUnico = new PartidoUnico();
+                    partidoUnico.home_team = new Home_Team1();
+                    partidoUnico.visitor_team = new Visitor_Team1();
+
+                    partidoUnico.id = partidosAntes.data[i].id;
+                    partidoUnico.status = partidosAntes.data[i].status;
+                    partidoUnico.date = DateTime.ParseExact(partidosAntes.data[i].date, format, CultureInfo.InvariantCulture);
+
+                    partidoUnico.home_team.id = partidosAntes.data[i].home_team.id;
+                    partidoUnico.home_team.name = partidosAntes.data[i].home_team.name;
+                    partidoUnico.home_team.full_name = partidosAntes.data[i].home_team.full_name;
+                    partidoUnico.home_team.abbreviation = partidosAntes.data[i].home_team.abbreviation;
+                    partidoUnico.home_team_score = partidosAntes.data[i].home_team_score;
+
+                    partidoUnico.visitor_team.id = partidosAntes.data[i].visitor_team.id;
+                    partidoUnico.visitor_team.name = partidosAntes.data[i].visitor_team.name;
+                    partidoUnico.visitor_team.full_name = partidosAntes.data[i].visitor_team.full_name;
+                    partidoUnico.visitor_team.abbreviation = partidosAntes.data[i].visitor_team.abbreviation;
+                    partidoUnico.visitor_team_score = partidosAntes.data[i].visitor_team_score;
+
+                    partidos.Add(partidoUnico);
+                }
+
+                if (partidos.Count < 5)
+                {
+                    num = num - 1;
+                    partidosAntes = await http.GetFromJsonAsync<Partidos>($"https://www.balldontlie.io/api/v1/games?end_date={hoy}&page={num}&per_page=100&seasons[]=2022");
+                    for (int i = partidosAntes.data.Length - 1; partidos.Count < 5 && i > 0; i--)
+                    {
+                        PartidoUnico partidoUnico = new PartidoUnico();
+                        partidoUnico.home_team = new Home_Team1();
+                        partidoUnico.visitor_team = new Visitor_Team1();
+
+                        partidoUnico.id = partidosAntes.data[i].id;
+                        partidoUnico.status = partidosAntes.data[i].status;
+                        partidoUnico.date = DateTime.ParseExact(partidosAntes.data[i].date, format, CultureInfo.InvariantCulture);
+
+                        partidoUnico.home_team.id = partidosAntes.data[i].home_team.id;
+                        partidoUnico.home_team.name = partidosAntes.data[i].home_team.name;
+                        partidoUnico.home_team.full_name = partidosAntes.data[i].home_team.full_name;
+                        partidoUnico.home_team.abbreviation = partidosAntes.data[i].home_team.abbreviation;
+                        partidoUnico.home_team_score = partidosAntes.data[i].home_team_score;
+
+                        partidoUnico.visitor_team.id = partidosAntes.data[i].visitor_team.id;
+                        partidoUnico.visitor_team.name = partidosAntes.data[i].visitor_team.name;
+                        partidoUnico.visitor_team.full_name = partidosAntes.data[i].visitor_team.full_name;
+                        partidoUnico.visitor_team.abbreviation = partidosAntes.data[i].visitor_team.abbreviation;
+                        partidoUnico.visitor_team_score = partidosAntes.data[i].visitor_team_score;
+
+                        partidos.Add(partidoUnico);
+                    }
+                }
+            }
+        }
     }
 
-    private async Task ultimo()
+    private void ordenar()
     {
-        deshabilitado = true;
-        if (buscado)
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.total_pages}&search={buscador}");
-        }
-        else
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.total_pages}");
-        }
-
-        jugadores = jugadores2;
-        deshabilitado = false;
+        partidos = partidos.OrderBy(x => x.date).ToList();
     }
 
-    private async Task numero(int numero)
+    private string getEqImg(string abbreviation)
     {
-        deshabilitado = true;
-        if (buscado)
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={numero}&search={buscador}");
-        }
-        else
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={numero}");
-        }
-
-        jugadores = jugadores2;
-        deshabilitado = false;
+        return "/img/equipos/" + abbreviation + ".png";
     }
 
-    private async Task siguiente()
+    private void buscar(int id)
     {
-        deshabilitado = true;
-        if (buscado)
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.next_page}&search={buscador}");
-        }
-        else
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={jugadores.meta.next_page}");
-        }
-
-        jugadores = jugadores2;
-        deshabilitado = false;
-    }
-
-    private async Task anterior()
-    {
-        deshabilitado = true;
-        if (buscado)
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={(jugadores.meta.current_page - 1)}&search={buscador}");
-        }
-        else
-        {
-            jugadores2 = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&page={(jugadores.meta.current_page - 1)}");
-        }
-        jugadores = jugadores2;
-        deshabilitado = false;
-    }
-
-    private async Task buscar()
-    {
-        deshabilitado = true;
-        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100&search={value}");
-        jugadores2 = jugadores;
-        deshabilitado = false;
-        buscador = value;
-        buscado = true;
-    }
-
-    private async Task volver()
-    {
-        deshabilitado = true;
-        jugadores = await http.GetFromJsonAsync<Jugador>($"https://www.balldontlie.io/api/v1/players?per_page=100");
-        jugadores2 = jugadores;
-        deshabilitado = false;
-        value = "";
-        buscado = false;
-    }
-    
-    private void info(int id)
-    {
-        navigation.NavigateTo($"/jugadorinfopage/{id}");
+        navigation.NavigateTo($"/partidoInfo/{id}");
     }
 
 }
